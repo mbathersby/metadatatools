@@ -19,7 +19,15 @@
 	</head>
 	<body>
 	
-		THIS IS YOUR CALLBACK URL
+		<script>
+			function getToken() {
+				//substring(1) to remove the '#'
+				hash = parseParms(document.location.hash.substring(1));
+				return hash.access_token;
+				
+				console.log(hash.access_token);
+			}
+		</script>
 	
 	</body>
 </html>
