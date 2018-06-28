@@ -18,16 +18,30 @@
 		
 	</head>
 	<body>
-	
+		
 		<script>
 			function getToken() {
 				//substring(1) to remove the '#'
-				hash = parseParms(document.location.hash.substring(1));
-				return hash.access_token;
+				var hash = parseParms(document.location.hash.substring(1));
 				
-				console.log(hash.access_token);
+				var accessToken = hash.access_token;
+				console.log(accessToken);
+				return accessToken;
+			}
+			
+			function parseParms(str) {
+				var pieces = str.split("&"), data = {}, i, parts;
+				// process each query pair
+				for (i = 0; i < pieces.length; i++) {
+					parts = pieces[i].split("=");
+					if (parts.length < 2) {
+						parts.push("");
+					}
+					data[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+				}
+				return data;
 			}
 		</script>
-	
+		
 	</body>
 </html>
