@@ -108,12 +108,10 @@
 											<input type="file" class="slds-file-selector__input slds-assistive-text" accept=".csv" id="file-upload-input" aria-labelledby="file-selector-primary-label file-selector-secondary-label" />
 											<label class="slds-file-selector__body" for="file-upload-input" id="file-selector-secondary-label">
 												<span class="slds-file-selector__button slds-button slds-button_neutral">
-													<svg class="slds-icon slds-icon_small" aria-hidden="true">
-														<use xlink:href="slds/assets/icons/action-sprite/svg/symbols.svg#upload"></use>
-													</svg>
-													Upload File
-												</span>
-												<span class="slds-file-selector__text slds-medium-show" id="input-file-name">No File Selected</span>
+													<svg class="slds-button__icon slds-button__icon_left" aria-hidden="true" >
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#upload" />
+													</svg>Upload Files</span>
+													<span class="slds-file-selector__text slds-medium-show">No File Selected</span>
 											</label>
 										</div>
 									</div>
@@ -163,6 +161,13 @@
 		</div>
 		
 		<script>
+			jsforce.browser.init({
+				clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
+				redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm'
+			});
+			
+			jsforce.browser.login();
+			
 			$('#file-upload-input').change(function(){
 				$('#file-info').removeClass('slds-hide');
 				var file = $(this)[0].files[0];
