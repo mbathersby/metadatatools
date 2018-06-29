@@ -39,7 +39,7 @@ function getCookie(cname) {
         }
     }
     return "";
-}
+} 
 
 function checkCookie(cname) {
     var x = getCookie(cname);
