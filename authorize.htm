@@ -23,7 +23,7 @@
 			$(document).ready(function(){
 				var hash = parseParms(document.location.hash.substring(1));
 
-				document.cookie = 'access_token=' + hash.access_token;
+				document.cookie = 'mdtk__access_token=' + hash.access_token + '; mdtk__instance_url=' = hash.instance_url + '; path=/';
 				
 				var x = document.cookie;
 				console.log(x);
