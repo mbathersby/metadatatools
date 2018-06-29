@@ -1,13 +1,3 @@
-function showTooltip(id){
-	var tooltip = document.getElementById(id);
-	$(tooltip).removeClass('slds-hide');
-}
-
-function hideTooltip(id){
-	var tooltip = document.getElementById(id);
-	$(tooltip).addClass('slds-hide');
-}
-
 function parseParms(str) {
 	var pieces = str.split("&"), data = {}, i, parts;
 	// process each query pair
@@ -47,4 +37,14 @@ function checkCookie(cname) {
         return x;
     } 
 	return "";
+}
+
+function showTooltip(id){
+	var tooltip = document.getElementById(id);
+	$(tooltip).removeClass('slds-hide');
+}
+
+function hideTooltip(id){
+	var tooltip = document.getElementById(id);
+	$(tooltip).addClass('slds-hide');
 }
