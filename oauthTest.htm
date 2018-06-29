@@ -19,8 +19,8 @@
 		
 		<script>
 			jsforce.browser.init({
-				clientId: '[ your Salesforce OAuth2 ClientID is here ]',
-				redirectUri: '[ your Salesforce registered redirect URI is here ]'
+				clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
+				redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm'
 			});
 			jsforce.browser.on('connect', function(conn) {
 				conn.query('SELECT Id, Name FROM Account', function(err, res) {
