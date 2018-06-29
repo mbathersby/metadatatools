@@ -30,11 +30,14 @@
 						return console.error(err);
 					}
 					console.log(res);
+					$('#results').html(res);
 				});
 			});
 		</script>
 	</head>
 	<body>
 		<button onclick="javascript:jsforce.browser.login();">Login</button>
+		<br/>
+		<div id="results"></div>
 	</body>
 </html>
