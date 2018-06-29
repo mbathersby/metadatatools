@@ -15,22 +15,15 @@
 		<script src="js/js.cookie.js" type="text/javascript"></script>
 		<script src="js/mdTools.js" type="text/javascript"></script>
 		
-		
 	</head>
 	<body>
 		
 		<script>
-			$(document).ready(function(){
+			function(){
 				var hash = parseParms(document.location.hash.substring(1));
-
-				setCookie('mdtk.access_token', hash.access_token);
-				setCookie('mdtk.instance_url', hash.instance_url);
-				setCookie('path', '/');
-				
-				var x = document.cookie;
-				console.log(x);
-
-			});
+				Cookies.set('mdtk__access_token', hash.access_token);
+				Cookies.set('mdtk__instance_url', hash.instance_url);
+			};
 		</script>
 		
 	</body>
