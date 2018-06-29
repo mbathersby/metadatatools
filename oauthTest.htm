@@ -27,8 +27,18 @@
 			jsforce.browser.on('connect', function(conn) {
 				conn.describeGlobal(function(err, res) {
 					if (err) { return console.error(err); }
+					
 					console.log('Num of SObjects : ' + res.sobjects.length);
-					$('#results').html(JSON.stringify(res.sobjects));
+					
+					var mdObjs = [];
+					
+					for(key in res.sobjects){
+						console.log(key);
+						console.log(res[key]);
+					}
+					
+					$('#results').html(JSON.stringify(mdObjs));
+					
 				});
 			});
 		</script>
