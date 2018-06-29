@@ -30,7 +30,7 @@
 						return console.error(err);
 					}
 					console.log(res);
-					$('#results').html(res);
+					$('#results').html(JSON.stringify(res.records));
 				});
 			});
 		</script>
