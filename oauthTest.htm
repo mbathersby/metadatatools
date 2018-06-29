@@ -35,6 +35,7 @@
 					for(key in res.sobjects){
 						console.log(key);
 						console.log(res.sobjects[key].name);
+						mdObjs.push(res.sobjects[key]);
 					}
 					
 					$('#results').html(JSON.stringify(mdObjs));
