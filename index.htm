@@ -173,7 +173,9 @@
 				
 				var conn = new jsforce.Connection({
 				  instanceUrl : Cookies.get('mdtk__instance_url'),
-				  accessToken : Cookies.get('mdtk__access_token');
+				  accessToken : Cookies.get('mdtk__access_token')
+				}).then(function(response){
+					console.log(response);
 				});
 			}
 			
