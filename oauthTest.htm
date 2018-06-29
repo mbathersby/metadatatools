@@ -33,7 +33,7 @@
 					var mdObjs = [];
 					
 					for(key in res.sobjects){
-						if(res.sobjects[key].name.includes('__mdt'){
+						if(res.sobjects[key].name.includes('__mdt')){
 							mdObjs.push(res.sobjects[key]);
 						}
 					}
