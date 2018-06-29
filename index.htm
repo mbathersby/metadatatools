@@ -20,7 +20,7 @@
 	</head>
 	<body>
 		
-		<div class="slds">
+		<div id="container" class="slds slds-hide">
 			
 			<div class="slds-page-header slds-m-bottom_medium slds-p-around_x-medium">
 				<div class="slds-grid">
@@ -169,6 +169,8 @@
 			if(Cookies.get('mdtk__access_token') == null){
 				jsforce.browser.login();
 			} else {
+				$('#container').removeClass('slds-hide');
+				
 				var conn = new jsforce.Connection({
 				  instanceUrl : Cookies.get('mdtk__instance_url'),
 				  accessToken : Cookies.get('mdtk__access_token');
