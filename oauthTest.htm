@@ -22,6 +22,12 @@
 				clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
 				redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm'
 			});
+			
+			var conn = new jsforce.Connection({
+			  instanceUrl : Cookies.get('mdtk__instance_url'),
+			  accessToken : Cookies.get('mdtk__access_token')
+			});
+			
 			jsforce.browser.on('connect', function(conn) {
 				conn.query('SELECT Id, Name FROM Account', function(err, res) {
 					if (err) { return console.error(err); }
