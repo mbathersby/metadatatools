@@ -8,6 +8,19 @@ function hideTooltip(id){
 	$(tooltip).addClass('slds-hide');
 }
 
+function parseParms(str) {
+	var pieces = str.split("&"), data = {}, i, parts;
+	// process each query pair
+	for (i = 0; i < pieces.length; i++) {
+		parts = pieces[i].split("=");
+		if (parts.length < 2) {
+			parts.push("");
+		}
+		data[decodeURIComponent(parts[0])] = decodeURIComponent(parts[1]);
+	}
+	return data;
+}
+
 function setCookie(cname, cvalue) {
 	document.cookie = cname + '=' + hash.access_token + ';';
 }
