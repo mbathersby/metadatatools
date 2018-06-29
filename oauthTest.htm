@@ -23,14 +23,12 @@
 				redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm',
 				proxyUrl: "https://node-salesforce-proxy.herokuapp.com/proxy/"
 			});
-
+			
 			jsforce.browser.on('connect', function(conn) {
-				conn.query('SELECT Id, Name FROM Account', function(err, res) {
-					if (err) {
-						return console.error(err);
-					}
-					console.log(res);
-					$('#results').html(JSON.stringify(res.records));
+				conn.describeGlobal(function(err, res) {
+					if (err) { return console.error(err); }
+					console.log('Num of SObjects : ' + res.sobjects.length);
+					$('#results').html(JSON.stringify(res.sobjects));
 				});
 			});
 		</script>
