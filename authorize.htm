@@ -19,6 +19,8 @@
 			var expiry = 1/24;
 			Cookies.set('mdtk__access_token', hash.access_token, {expires: expiry});
 			Cookies.set('mdtk__instance_url', hash.instance_url, {expires: expiry});
+			
+			window.location = '/';
 		</script>
 		
 	</body>
