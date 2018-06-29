@@ -33,9 +33,9 @@
 					var mdObjs = [];
 					
 					for(key in res.sobjects){
-						console.log(key);
-						console.log(res.sobjects[key].name);
-						mdObjs.push(res.sobjects[key]);
+						if(res.sobjects[key].name.includes('__mdt'){
+							mdObjs.push(res.sobjects[key]);
+						}
 					}
 					
 					$('#results').html(JSON.stringify(mdObjs));
