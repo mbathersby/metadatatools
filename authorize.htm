@@ -19,11 +19,9 @@
 	<body>
 		
 		<script>
-			function(){
-				var hash = parseParms(document.location.hash.substring(1));
-				Cookies.set('mdtk__access_token', hash.access_token);
-				Cookies.set('mdtk__instance_url', hash.instance_url);
-			};
+			var hash = parseParms(document.location.hash.substring(1));
+			Cookies.set('mdtk__access_token', hash.access_token);
+			Cookies.set('mdtk__instance_url', hash.instance_url);
 		</script>
 		
 	</body>
