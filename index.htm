@@ -166,7 +166,14 @@
 				redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm'
 			});
 			
-			jsforce.browser.login();
+			if(Cookies.get('mdtk__access_token') == null){
+				jsforce.browser.login();
+			} else {
+				var conn = new jsforce.Connection({
+				  instanceUrl : Cookies.get('mdtk__instance_url'),
+				  accessToken : Cookies.get('mdtk__access_token');
+				});
+			}
 			
 			$('#file-upload-input').change(function(){
 				$('#file-info').removeClass('slds-hide');

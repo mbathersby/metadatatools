@@ -16,16 +16,10 @@
 		
 		<script>
 			var hash = parseParms(document.location.hash.substring(1));
-			var expiry = 
-			Cookies.set('mdtk__access_token', hash.access_token, {expires: 0.0003});
-			Cookies.set('mdtk__instance_url', hash.instance_url);
-			
-			$('#accesstoken').html(hash.access_token);
-			$('#instanceurl').html(hash.access_token);
+			var expiry = 1/24;
+			Cookies.set('mdtk__access_token', hash.access_token, {expires: expiry});
+			Cookies.set('mdtk__instance_url', hash.instance_url, {expires: expiry});
 		</script>
-		
-		<div id="accesstoken"></div>
-		<div id="instanceurl"></div>
 		
 	</body>
 </html>
