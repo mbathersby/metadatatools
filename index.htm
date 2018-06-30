@@ -79,6 +79,20 @@
 							</header>
 						</div>
 						
+						<div class="slds-card__body">
+							<div class="slds-form-element slds-m-around_medium">
+								<label class="slds-form-element__label" for="select-01">Custom Metadata Objects</label>
+								<div class="slds-form-element__control">
+									<div class="slds-select_container">
+									  <select class="slds-select" id="object-select">
+										<option value="">Please select</option>
+									  </select>
+									</div>
+								  </div>
+								</div>
+							</div>
+						</div>
+						
 					</article>
 					
 					<article class="slds-card">
@@ -158,6 +172,9 @@
 		</div>
 		
 		<script>
+		
+			var mdObjs = [];
+			
 			jsforce.browser.init({
 				clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
 				redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm',
@@ -174,19 +191,19 @@
 					if (err) { return console.error(err); }
 					
 					console.log('Num of SObjects : ' + res.sobjects.length);
-					
-					var mdObjs = [];
-					
+
 					for(key in res.sobjects){
 						if(res.sobjects[key].name.includes('__mdt')){
 							mdObjs.push(res.sobjects[key]);
+							
+							$('#object-select').append($("<option></option>")
+							.attr("value", res.sobjects[key].name)
+							.text(res.sobjects[key].name));
 						}
 					}
 					
 					console.log(mdObjs);
-					
-					$('#results').html(JSON.stringify(mdObjs));
-					
+
 				});
 			});
 			
