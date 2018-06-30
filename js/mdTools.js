@@ -1,5 +1,14 @@
+jsforce.browser.init({
+	clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
+	redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm',
+	proxyUrl: "https://node-salesforce-proxy.herokuapp.com/proxy/"
+});
+
 function parseParms(str) {
-	var pieces = str.split("&"), data = {}, i, parts;
+	var pieces = str.split("&"),
+	data = {},
+	i,
+	parts;
 	// process each query pair
 	for (i = 0; i < pieces.length; i++) {
 		parts = pieces[i].split("=");
@@ -16,42 +25,44 @@ function setCookie(cname, cvalue) {
 }
 
 function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
+	var name = cname + "=";
+	var decodedCookie = decodeURIComponent(document.cookie);
+	var ca = decodedCookie.split(';');
+	for (var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') {
+			c = c.substring(1);
 		}
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
 		}
 	}
-    return "";
-} 
+	return "";
+}
 
-function getMetadataObjects(conn){
-	conn.describeGlobal(function(err, res) {
-		if (err) { return console.error(err); }
+function getMetadataObjects(conn) {
+	conn.describeGlobal(function (err, res) {
+		if (err) {
+			return console.error(err);
+		}
 		console.log(res.sobjects);
 	});
 };
 
 function checkCookie(cname) {
-    var x = getCookie(cname);
-    if (x != "") {
-        return x;
-	} 
+	var x = getCookie(cname);
+	if (x != "") {
+		return x;
+	}
 	return "";
 }
 
-function showTooltip(id){
+function showTooltip(id) {
 	var tooltip = document.getElementById(id);
 	$(tooltip).removeClass('slds-hide');
 }
 
-function hideTooltip(id){
+function hideTooltip(id) {
 	var tooltip = document.getElementById(id);
 	$(tooltip).addClass('slds-hide');
 }
