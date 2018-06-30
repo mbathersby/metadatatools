@@ -366,10 +366,7 @@
 					
 				</div>
 				<div class="slds-col slds-size_2-of-3">
-					
-					
 					<div id="results"></div>
-					
 				</div>
 			</div>
 			
@@ -400,6 +397,8 @@
 							mdObjs.push(res.sobjects[key]);
 						}
 					}
+					
+					console.log(mdObjs);
 					
 					$('#results').html(JSON.stringify(mdObjs));
 					
