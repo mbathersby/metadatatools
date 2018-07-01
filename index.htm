@@ -223,7 +223,8 @@
 							
 							$('#object-select').append($("<option></option>")
 							.attr("value", res.sobjects[key].name)
-							.text(res.sobjects[key].label));
+							.text(res.sobjects[key].label + ' (' + res.sobjects[key].name + ')')
+							);
 						}
 					}
 					
@@ -255,7 +256,7 @@
 				//$('#input-file-name').html(file.name);
 				$("[name='fileName']").html(file.name);
 				$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
-				$('#last-modified').html(file.lastModifiedDate);
+				$('#last-modified').html(file.lastModified);
 				
 				var reader = new FileReader();
 				
