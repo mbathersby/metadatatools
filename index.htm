@@ -93,7 +93,7 @@
 								<div class="slds-form-element__control">
 									<div class="slds-select_container">
 									  <select class="slds-select" id="object-select">
-										<option value="">Please select</option>
+										<option value="" disabled>Please select</option>
 									  </select>
 									</div>
 								  </div>
@@ -212,7 +212,7 @@
 					
 					console.log(mdObjs);
 					
-					$('#overlay').removeClass('slds-is-open');
+					$('#overlay').removeClass('slds-backdrop_open');
 					$('#spinner').addClass('slds-hide');
 
 				});
