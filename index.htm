@@ -33,15 +33,9 @@
 						<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#user"></use>
 					</svg>
 				</span>
-				<h2>Logged in as John Smith (johnsmith@acme.com).
-					<a href="javascript:void(0);">Log out</a>
+				<h2>Logged in as <span id="userFullName"></span> <span id="userUsername"></span>.
+					<a href="javascript:jsforce.browser.logout();">Log out</a>
 				</h2>
-				<button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
-					<svg class="slds-button__icon" aria-hidden="true">
-						<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
-					</svg>
-					<span class="slds-assistive-text">Close</span>
-				</button>
 			</div>
 			
 			<div role="status" id="spinner" class="slds-spinner slds-spinner_medium slds-spinner_brand">
