@@ -133,7 +133,7 @@
 													<svg class="slds-button__icon slds-button__icon_left" aria-hidden="true" >
 														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#upload" />
 													</svg>Upload Files</span>
-													<span class="slds-file-selector__text slds-medium-show">No File Selected</span>
+													<span name="fileName" class="slds-file-selector__text slds-medium-show">No File Selected</span>
 											</label>
 										</div>
 									</div>
@@ -164,7 +164,7 @@
 						<div class="slds-card__body slds-p-horizontal_medium">
 							<dl class="slds-list_horizontal slds-wrap">
 								<dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">File Name:</dt>
-								<dd class="slds-item_detail slds-truncate" title="File Name" id="file-name"></dd>
+								<dd class="slds-item_detail slds-truncate" title="File Name" name="fileName"></dd>
 								<dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">File Size:</dt>
 								<dd class="slds-item_detail slds-truncate" title="File Name" id="file-size"></dd>
 							</dl>
@@ -250,15 +250,14 @@
 				console.log(file.size / 1024 + ' kb');
 				console.log(((file.size / 1024) / 1024) + ' Mb');
 				
-				$('#input-file-name').html(file.name);
-				$('#file-name').html(file.name);
+				//$('#input-file-name').html(file.name);
+				$("[name='fileName']").html(file.name);
 				$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
 				
 				var reader = new FileReader();
 				
 				reader.onload = function(){
 					csvFile = reader.result;
-					console.log(csvFile);
 				};
 				
 				reader.readAsText(file);
