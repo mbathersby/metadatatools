@@ -257,9 +257,9 @@
 				$("[name='fileName']").html(file.name);
 				$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
 				
-				var d = new Date(file.lastModified).toLocaleString();
+				var d = new Date(file.lastModified);
 				
-				$('#last-modified').html(d);
+				$('#last-modified').html(d.toLocaleateString());
 				
 				var reader = new FileReader();
 				
