@@ -215,7 +215,11 @@
 			$('#loginAlert').addClass('slds-hide');
 			$('#container').removeClass('slds-hide');
 			
-			console.log(conn.identity());
+			conn.identity(
+				function(err,res){
+					console.log(res);
+				}
+			);
 			
 			conn.describeGlobal(function(err, res) {
 				if (err) { return console.error(err); }
