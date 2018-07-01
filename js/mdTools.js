@@ -1,10 +1,10 @@
-jsforce.browser.init({
+var init = jsforce.browser.init({
 	clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
 	redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm',
 	proxyUrl: "https://node-salesforce-proxy.herokuapp.com/proxy/"
 });
 
-function parseParms(str) {
+/*function parseParms(str) {
 	var pieces = str.split("&"),
 	data = {},
 	i,
@@ -65,4 +65,4 @@ function showTooltip(id) {
 function hideTooltip(id) {
 	var tooltip = document.getElementById(id);
 	$(tooltip).addClass('slds-hide');
-}
+}*/
