@@ -1,1 +1,1 @@
-<?php include_once("oauthTest.htm"); ?>
+<?php include_once("index.htm"); ?>
