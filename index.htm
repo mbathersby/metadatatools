@@ -257,7 +257,8 @@
 				var reader = new FileReader();
 				
 				reader.onload = function(){
-					var csvFile = reader.result;
+					csvFile = reader.result;
+					console.log(csvFile);
 				};
 				
 				reader.readAsText(file);
