@@ -212,9 +212,6 @@
 		}
 		
 		jsforce.browser.on('connect', function(conn) {
-			$('#loginAlert').addClass('slds-hide');
-			$('#container').removeClass('slds-hide');
-			
 			var userQuery = 'select Name, Username from User where Id = \'' + jsforce.browser.connection.userInfo.id + '\' limit 1';
 			
 			jsforce.browser.connection.query(userQuery, function(err, res){
@@ -242,6 +239,8 @@
 				
 				$('#overlay').removeClass('slds-backdrop_open');
 				$('#spinner').addClass('slds-hide');
+				$('#loginAlert').addClass('slds-hide');
+				$('#container').removeClass('slds-hide');
 				
 			});
 		});
