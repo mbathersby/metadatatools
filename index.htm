@@ -33,7 +33,7 @@
 						<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#user"></use>
 					</svg>
 				</span>
-				<h2>Logged in as <span id="userFullName"></span> <span id="userUsername"></span>.
+				<h2>Logged in as <span id="userFullname"></span> <span id="userUsername"></span>.
 					<a href="javascript:jsforce.browser.logout();">Log out</a>
 				</h2>
 			</div>
@@ -215,11 +215,13 @@
 			$('#loginAlert').addClass('slds-hide');
 			$('#container').removeClass('slds-hide');
 			
-			conn.identity(
-				function(err,res){
-					console.log(res);
-				}
-			);
+			var userQuery = 'select Name, Username from User where Id = \'' + jsforce.browser.connection.userInfo.id + '\' limit 1';
+			
+			jsforce.browser.connection.query(userQuery, function(err, res){
+				console.log(res);
+				$('#userFullname').html(res.records[0].Name);
+				$('#userUsername').html(' (' + res.records[0].Username + ')');
+			});
 			
 			conn.describeGlobal(function(err, res) {
 				if (err) { return console.error(err); }
