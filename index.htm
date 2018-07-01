@@ -189,6 +189,7 @@
 			//init();
 			
 			var mdObjs = [];
+			var csvFile;
 			
 			jsforce.browser.init({
 				clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
@@ -254,13 +255,12 @@
 				$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
 				
 				var reader = new FileReader();
+				
 				reader.onload = function(){
-					var dataURL = reader.result;
-					var output = document.getElementById('output');
-					output.src = dataURL;
+					var csvFile = reader.result;
 				};
 				
-				reader.readAsDataURL(file);
+				reader.readAsText(file);
 				
 			});
 		</script>
