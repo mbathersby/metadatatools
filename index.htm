@@ -256,7 +256,10 @@
 				//$('#input-file-name').html(file.name);
 				$("[name='fileName']").html(file.name);
 				$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
-				$('#last-modified').html(file.lastModified);
+				
+				var d = new Date(file.lastModified).toLocaleString();
+				
+				$('#last-modified').html(d);
 				
 				var reader = new FileReader();
 				
