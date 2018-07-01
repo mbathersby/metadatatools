@@ -167,6 +167,8 @@
 								<dd class="slds-item_detail slds-truncate" title="File Name" name="fileName"></dd>
 								<dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">File Size:</dt>
 								<dd class="slds-item_detail slds-truncate" title="File Name" id="file-size"></dd>
+								<dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">Last Modified:</dt>
+								<dd class="slds-item_detail slds-truncate" title="File Name" id="last-modified"></dd>
 							</dl>
 						</div>
 					</article>
@@ -253,6 +255,7 @@
 				//$('#input-file-name').html(file.name);
 				$("[name='fileName']").html(file.name);
 				$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
+				$('#last-modified').html(file.lastModifiedDate);
 				
 				var reader = new FileReader();
 				
