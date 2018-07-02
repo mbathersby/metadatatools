@@ -203,6 +203,7 @@
 			}
 			
 			jsforce.browser.on('connect', function(conn) {
+				console.log('connecting...');
 				var userQuery = 'select Name, Username from User where Id = \'' + conn.userInfo.id + '\' limit 1';
 				
 				conn.query(userQuery, function(err, res){
@@ -223,18 +224,17 @@
 							);
 						}
 					}
-
-					$('#overlay').removeClass('slds-backdrop_open');
-					$('#spinner').addClass('slds-hide');
-					$('#loginAlert').addClass('slds-hide');
-					$('#container').removeClass('slds-hide');
-					
 				});
+				
+				$('#overlay').removeClass('slds-backdrop_open');
+				$('#spinner').addClass('slds-hide');
+				$('#loginAlert').addClass('slds-hide');
+				$('#container').removeClass('slds-hide');
 			});
 			
 			function logout(){
 				jsforce.browser.logout();
-				window.reload();
+				window.location.reload();
 			}
 			
 			$('#file-upload-input').change(function(){
