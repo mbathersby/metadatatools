@@ -258,9 +258,9 @@
 				$("[name='fileName']").html(file.name);
 				$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
 				
-				var d = moment.locale('en-au').millsecond(file.lastModified).format('lll');
-				
-				$('#last-modified').html(d);
+				moment.locale('en-au');
+
+				$('#last-modified').html(moment(file.lastModified).format('lll'));
 				
 				var reader = new FileReader();
 				
