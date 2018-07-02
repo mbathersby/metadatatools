@@ -203,7 +203,7 @@
 			}
 			
 			jsforce.browser.on('connect', function(conn) {
-				var userQuery = 'select Name, Username from User where Id = \'' + jsforce.browser.connection.userInfo.id + '\' limit 1';
+				var userQuery = 'select Name, Username from User where Id = \'' + conn.userInfo.id + '\' limit 1';
 				
 				conn.query(userQuery, function(err, res){
 					$('#userFullname').html(res.records[0].Name);
