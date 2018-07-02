@@ -208,7 +208,7 @@
 				var userQuery = 'select Name, Username from User where Id = \'' + jsforce.browser.connection.userInfo.id + '\' limit 1';
 				
 				jsforce.browser.connection.query(userQuery, function(err, res){
-					console.log(res);
+					//console.log(res);
 					$('#userFullname').html(res.records[0].Name);
 					$('#userUsername').html(' (' + res.records[0].Username + ')');
 				});
@@ -216,7 +216,7 @@
 				conn.describeGlobal(function(err, res) {
 					if (err) { return console.error(err); }
 					
-					console.log('Num of SObjects : ' + res.sobjects.length);
+					//console.log('Num of SObjects : ' + res.sobjects.length);
 					
 					for(key in res.sobjects){
 						if(res.sobjects[key].name.includes('__mdt')){
@@ -229,7 +229,7 @@
 						}
 					}
 					
-					console.log(mdObjs);
+					//console.log(mdObjs);
 					
 					$('#overlay').removeClass('slds-backdrop_open');
 					$('#spinner').addClass('slds-hide');
@@ -247,12 +247,12 @@
 			$('#file-upload-input').change(function(){
 				$('#file-info').removeClass('slds-hide');
 				var file = $(this)[0].files[0];
-				console.log(file);
+				/*console.log(file);
 				
 				console.log('File Size Data:');
 				console.log(file.size + ' bytes');
 				console.log(file.size / 1024 + ' kb');
-				console.log(((file.size / 1024) / 1024) + ' Mb');
+				console.log(((file.size / 1024) / 1024) + ' Mb');*/
 				
 				//$('#input-file-name').html(file.name);
 				$("[name='fileName']").html(file.name);
