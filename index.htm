@@ -258,7 +258,7 @@
 				$("[name='fileName']").html(file.name);
 				$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
 				
-				var d = moment.millseconds(file.lastModified).format('lll');
+				var d = moment.locale('en-au').millsecond(file.lastModified).format('lll');
 				
 				$('#last-modified').html(d);
 				
