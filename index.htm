@@ -21,7 +21,7 @@
 	</head>
 	<body>
 		
-		<div id="noLoginContainer">
+		<div id="noLoginContainer" class="slds slds-hide">
 			<section role="alertdialog" tabindex="-1" aria-labelledby="prompt-heading-id" aria-describedby="prompt-message-wrapper" class="slds-modal slds-fade-in-open slds-modal_prompt" aria-modal="true">
 				<div class="slds-modal__container">
 					<header class="slds-modal__header slds-theme_error slds-theme_alert-texture">
@@ -213,7 +213,7 @@
 			});
 			
 			if(!jsforce.browser.isLoggedIn()){
-				jsforce.browser.login();
+				$('#noLoginContainer').removeClass('slds-hide');
 			}
 			
 			jsforce.browser.on('connect', function(conn) {
@@ -242,7 +242,7 @@
 				
 				$('#overlay').removeClass('slds-backdrop_open');
 				$('#spinner').addClass('slds-hide');
-				$('#loginAlert').addClass('slds-hide');
+				$('#noLoginContainer').addClass('slds-hide');
 				$('#container').removeClass('slds-hide');
 			});
 			
