@@ -203,9 +203,21 @@
 		</div>
 		
 		<script>
-			
+		
 			var mdObjs = [];
 			var csvFile;
+			
+			function login(instance){
+				jsforce.browser.connection.loginURL = 'https://' + instance + '.salesforce.com';
+			
+				jsforce.browser.init({
+					clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
+					redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm',
+					proxyUrl: 'https://node-salesforce-proxy.herokuapp.com/proxy/'
+				});
+				
+				
+			}
 
 			if(!jsforce.browser.isLoggedIn()){
 				$('#noLoginContainer').removeClass('slds-hide');
@@ -241,13 +253,8 @@
 				$('#container').removeClass('slds-hide');
 			});
 			
-			function login(instance){
-				jsforce.browser.init({
-					loginUrl : 'https://' + instance + '.salesforce.com',
-					clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
-					redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm',
-					proxyUrl: 'https://node-salesforce-proxy.herokuapp.com/proxy/'
-				});
+			function productionLogin(){
+				jsforce.browser.
 			}
 			
 			function logout(){
