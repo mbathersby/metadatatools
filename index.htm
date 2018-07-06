@@ -206,24 +206,12 @@
 		
 			var mdObjs = [];
 			var csvFile;
-			
-			function login(instance){
-				var loginUrl = 'https://' + instance + '.salesforce.com';
-			
-				jsforce.browser.init({
-					loginUrl: loginUrl,
-					clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
-					redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm',
-					proxyUrl: 'https://node-salesforce-proxy.herokuapp.com/proxy/'
-				});
-				
-				jsforce.browser.login();
-				
-			}
 
 			if(!jsforce.browser.isLoggedIn()){
 				$('#noLoginContainer').removeClass('slds-hide');
-			} else {
+			} else {	
+			
+				jsforce.browser.init();
 			
 				jsforce.browser.on('connect', function(conn) {
 					console.log('connecting...');
