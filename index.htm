@@ -227,37 +227,33 @@
 			
 			jsforce.browser.on('connect', function(conn) {
 				console.log('connecting...');
+				$('#noLoginContainer').addClass('slds-hide');
 				var userQuery = 'select Name, Username from User where Id = \'' + conn.userInfo.id + '\' limit 1';
 				
 				conn.query(userQuery, function(err, res){
 					$('#userFullname').html(res.records[0].Name);
 					$('#userUsername').html(' (' + res.records[0].Username + ')');
-				});
-				
-				conn.describeGlobal(function(err, res) {
-					if (err) { return console.error(err); }
-					
-					for(key in res.sobjects){
-						if(res.sobjects[key].name.includes('__mdt')){
-							mdObjs.push(res.sobjects[key]);
-							
-							$('#object-select').append($("<option></option>")
-							.attr("value", res.sobjects[key].name)
-							.text(res.sobjects[key].label + ' (' + res.sobjects[key].name + ')')
-							);
+				}).then(function(res){
+					conn.describeGlobal(function(err, res) {
+						if (err) { return console.error(err); }
+						
+						for(key in res.sobjects){
+							if(res.sobjects[key].name.includes('__mdt')){
+								mdObjs.push(res.sobjects[key]);
+								
+								$('#object-select').append($("<option></option>")
+								.attr("value", res.sobjects[key].name)
+								.text(res.sobjects[key].label + ' (' + res.sobjects[key].name + ')')
+								);
+							}
 						}
-					}
-					
-					resolve();
+					});
+				}).then(function(){
+					$('#overlay').removeClass('slds-backdrop_open');
+					$('#spinner').addClass('slds-hide');
+					$('#container').removeClass('slds-hide');
 				});
-				
-				
-			}).then(function(){
-				$('#overlay').removeClass('slds-backdrop_open');
-				$('#spinner').addClass('slds-hide');
-				$('#noLoginContainer').addClass('slds-hide');
-				$('#container').removeClass('slds-hide');
-			});
+			}
 			
 			function logout(){
 				jsforce.browser.logout();
