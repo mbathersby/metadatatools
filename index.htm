@@ -247,10 +247,12 @@
 							);
 						}
 					}
+					
+					resolve();
 				});
 				
 				
-			}).then(function(err, res){
+			}).then(function(){
 				$('#overlay').removeClass('slds-backdrop_open');
 				$('#spinner').addClass('slds-hide');
 				$('#noLoginContainer').addClass('slds-hide');
