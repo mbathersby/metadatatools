@@ -217,6 +217,8 @@
 					proxyUrl: 'https://node-salesforce-proxy.herokuapp.com/proxy/'
 				});
 				
+				jsforce.browser.login();
+				
 			}
 
 			if(!jsforce.browser.isLoggedIn()){
@@ -255,7 +257,7 @@
 			
 			function logout(){
 				jsforce.browser.logout();
-				window.location.reload();
+				//window.location.reload();
 			}
 			
 			$('#file-upload-input').change(function(){
