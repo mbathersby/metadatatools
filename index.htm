@@ -33,7 +33,7 @@
 						</button>
 						<h2 class="slds-text-heading_medium" id="prompt-heading-id">Authentication Required</h2>
 					</header>
-					<div class="slds-modal__content slds-p-around_medium" id="prompt-message-wrapper">
+					<div class="slds-modal__content slds-p-around_medium slds-align_absolute-center" id="prompt-message-wrapper">
 						<p>You must be loged in to a Salesforce Instance to use this toolkit</p>
 					</div>
 					<footer class="slds-modal__footer slds-theme_default">
@@ -252,10 +252,6 @@
 				$('#noLoginContainer').addClass('slds-hide');
 				$('#container').removeClass('slds-hide');
 			});
-			
-			function productionLogin(){
-				jsforce.browser.
-			}
 			
 			function logout(){
 				jsforce.browser.logout();
