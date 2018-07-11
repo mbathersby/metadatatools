@@ -132,8 +132,6 @@ function constructPackage() {
 		colMap = swapMap(colMap);
 		
 		console.log(fileRow);
-		console.log(colList);
-		console.log(colMap);
 
 		var rowElements = [];
 
@@ -148,7 +146,7 @@ function constructPackage() {
 			var fieldValue = fileRow[colMap[fieldName]];
 			var fieldType = "TEXT";
 
-			//console.log(fieldName + " : " + fieldValue);
+			console.log(fieldName + " : " + fieldValue);
 
 			if (fieldName == "DeveloperName") {
 				rowElements.unshift('\t<label>' + fieldValue + '</label>\n');
