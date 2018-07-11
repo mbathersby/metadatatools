@@ -329,7 +329,7 @@
 					selectedObj = res;
 					console.log('Selected Object: ', selectedObj);
 					
-					if(csvFile != null){
+					if(csvFile != {}){
 						buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
 					}	
 				});

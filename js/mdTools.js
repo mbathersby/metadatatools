@@ -1,6 +1,6 @@
-var mdObjs = [];
-var csvFile = {};
-var selectedObj = {};
+var mdObjs;
+var csvFile;
+var selectedObj;
 
 function init() {
 	jsforce.browser.init({
