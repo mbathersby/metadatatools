@@ -203,17 +203,16 @@
 		</div>
 		
 		<script>
-		
-			$(document).ready(this, init());
-		
+
 			var mdObjs = [];
 			var csvFile;
 
 			if(!jsforce.browser.isLoggedIn()){
 				$('#noLoginContainer').removeClass('slds-hide');
 			} else {	
-			
-			
+				
+				$(document).ready(this, init());
+				
 				jsforce.browser.on('connect', function(conn) {
 					console.log('connecting...');
 					$('#noLoginContainer').addClass('slds-hide');
