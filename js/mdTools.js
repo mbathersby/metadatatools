@@ -76,4 +76,20 @@ function buildTable(tableId, cols, fields, sample){
 			
 		$('#'+tableId+' tbody').append(tableRow);
 	}
-};
+}
+
+var columnToFieldMap = function(){
+	var columnToFieldMap = {};
+	
+	var selectInputs = document.getElementsByClassName("slds-select");
+	
+	var i;
+	for(i=0; i < selectInputs.length; i++){
+		var index = selectInputs[i].dataset['index'];
+		var fieldName = selectInputs[i].value;
+		
+		columnToFieldMap[index] = (fieldName != null) ? fieldName : '';
+	}
+	
+	return columnToFieldMap;
+}
