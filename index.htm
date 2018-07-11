@@ -320,7 +320,7 @@
 				
 				var conn = jsforce.browser.connection;
 				
-				conn.sobject($(this).val())describe(function(err, res) {
+				conn.sobject($(this).val()).describe(function(err, res) {
 					selectedObj = res;
 					console.log('Selected Object: ', selectedObj);
 				});
