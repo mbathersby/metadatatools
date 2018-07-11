@@ -40,7 +40,7 @@ var packageXml = function (){
 }
 
 function buildTable(tableId, cols, fields){
-	$('#'+tableId+'> tbody').append('THIS IS MY TABLE BODY');
+	$('#'+tableId+' tbody').append('THIS IS MY TABLE BODY');
 	console.log(cols);
 	console.log(fields);
 };
