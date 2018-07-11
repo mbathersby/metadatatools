@@ -311,6 +311,10 @@
 					console.log('CSV File Data');
 					console.log(csvFile);
 					$("#rowCount").html(csvFile.data.length);
+					
+					if($('#object-select').val() != null){
+						buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
+					}
 				};
 				
 				reader.readAsText(file);
@@ -327,9 +331,9 @@
 					selectedObj = res;
 					console.log('Selected Object: ', selectedObj);
 					
-					//if(csvFile !){
+					if(csvFile != null){
 						buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
-					//}	
+					}	
 				});
 				
 			});
