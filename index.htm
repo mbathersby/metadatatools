@@ -213,6 +213,24 @@
 							</div>
 							<div class="slds-card__body slds-p-horizontal_medium">
 								
+								<table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered">
+									<thead>
+										<tr class="slds-text-title_caps">
+											<th scope="col slds-size_1-of-2">
+												<div class="slds-truncate" title="Column Name">Column Name</div>
+											</th>
+											<th scope="col slds-size_1-of-2">
+												<div class="slds-truncate" title="Map To">Map To</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody id="mappingTableBody">
+										
+										
+										
+									</tbody>
+								</table>
+								
 							</div>
 						</article>
 
@@ -297,8 +315,16 @@
 			});
 			
 			$('#object-select').change(function(){
-				selectedObj = $('#object-select').val();
-				console.log('Selected Object: ', selectedObj);
+				//selectedObj = $('#object-select').val();
+				//console.log('Selected Object: ', selectedObj);
+				
+				var conn = jsforce.browser.connection;
+				
+				conn.sobject($(this).val())describe(function(err, res) {
+					selectedObj = res;
+					console.log('Selected Object: ', selectedObj);
+				});
+				
 			});
 		</script>
 		
