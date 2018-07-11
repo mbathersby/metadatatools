@@ -20,6 +20,14 @@
 		
 	</head>
 	<body>
+	
+		<div role="status" id="spinner" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+			<span class="slds-assistive-text">Loading</span>
+			<div class="slds-spinner__dot-a"></div>
+			<div class="slds-spinner__dot-b"></div>
+		</div>
+		
+		<div id="overlay" class="slds-backdrop slds-backdrop_open"></div>
 		
 		<div id="noLoginContainer" class="slds slds-hide">
 			<section role="alertdialog" tabindex="-1" aria-labelledby="prompt-heading-id" aria-describedby="prompt-message-wrapper" class="slds-modal slds-fade-in-open slds-modal_prompt" aria-modal="true">
@@ -42,7 +50,6 @@
 					</footer>
 				</div>
 			</section>
-			<div class="slds-backdrop slds-backdrop_open"></div>
 		</div>
 		
 		<div id="container" class="slds slds-hide">
@@ -58,14 +65,7 @@
 					<a onclick="logout();">Log out</a>
 				</h2>
 			</div>
-			
-			<div role="status" id="spinner" class="slds-spinner slds-spinner_medium slds-spinner_brand">
-				<span class="slds-assistive-text">Loading</span>
-				<div class="slds-spinner__dot-a"></div>
-				<div class="slds-spinner__dot-b"></div>
-			</div>
-			
-			<div id="overlay" class="slds-backdrop slds-backdrop_open"></div>
+
 			
 			<div class="slds-page-header slds-m-bottom_medium slds-p-around_x-medium">
 				<div class="slds-grid">
