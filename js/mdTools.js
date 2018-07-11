@@ -1,6 +1,7 @@
 var mdObjs;
 var csvFile;
 var selectedObj;
+var userInfo;
 
 function init() {
 	jsforce.browser.init({
@@ -116,7 +117,7 @@ function constructPackage() {
 	var colMap = columnToFieldMap();
 
 	var zip = new JSZip();
-	zip.file('package.xml', packageXML());
+	zip.file('package.xml', packageXml());
 
 	/*var developerName;
 	var xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
