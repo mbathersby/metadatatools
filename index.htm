@@ -272,6 +272,8 @@
 					conn.describeGlobal(function(err, res) {
 						if (err) { return console.error(err); }
 						
+						mdObjs = [];
+						
 						for(key in res.sobjects){
 							var sObj = res.sobjects[key];
 							if(sObj.name.includes('__mdt')){
