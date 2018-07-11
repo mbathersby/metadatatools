@@ -164,8 +164,8 @@ function constructPackage() {
 					rowElements.push(
 						'\t<values>\n'
 						 + '\t\t<field>' + fieldName + '</field>\n'
-						//+ '\t\t<value xsi:type="xsd:' + this.fieldTypeMap()[fieldType] + '">' + fieldValue + '</value>\n'
-						 + '\t\t<value>' + fieldValue + '</value>\n'
+				+ '\t\t<value xsi:type="xsd:' + fieldTypeMap()[fieldType] + '">' + fieldValue + '</value>\n'
+						 //+ '\t\t<value>' + fieldValue + '</value>\n'
 						 + '\t</values>\n');
 
 				}
@@ -186,7 +186,7 @@ function constructPackage() {
 		xml += '</CustomMetadata>';
 
 		if (developerName != '') {
-			zip.file('customMetadata/' + sObjectType.replace('__mdt', '') + '.' + developerName + '.md', xml);
+			zip.file('customMetadata/' + selectedObj.name.replace('__mdt', '') + '.' + developerName + '.md', xml);
 		}
 	}
 
