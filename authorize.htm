@@ -16,15 +16,17 @@
 	<body>
 		
 		<script>
-			jsforce.browser.init({
+			/*jsforce.browser.init({
 				clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
 				redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm',
 				proxyUrl: "https://node-salesforce-proxy.herokuapp.com/proxy/"
-			});
+			});*/
+			
+			$(document).ready(this, init());
 			
 			jsforce.browser.on('connect', function(conn) {
+				window.opener.location.reload();
 				window.close();
-				window.opener.reload();
 			});
 		</script>
 		
