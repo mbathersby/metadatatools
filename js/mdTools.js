@@ -107,7 +107,7 @@ var swapMap = function(json){
 	return ret;
 }
 
-function constructPackage = function () {
+function constructPackage() {
 	$('uploadStatus').html('Building deployment package...');
 
 	var fileColumns = csvFile.meta.fields;
