@@ -244,9 +244,10 @@
 		
 		<script>
 		
-			var mdObjs = [];
-			var csvFile = {};
-			var selectedObj = {};
+			var mdObjs;
+			var csvFile;
+			var selectedObj;
+			var userInfo;
 		
 			$(document).ready(this, init());
 
@@ -264,19 +265,21 @@
 				var userQuery = 'select Name, Username from User where Id = \'' + conn.userInfo.id + '\' limit 1';
 				
 				conn.query(userQuery, function(err, res){
-					$('#userFullname').html(res.records[0].Name);
-					$('#userUsername').html(' (' + res.records[0].Username + ')');
+					userInfo = res.records[0];
+					$('#userFullname').html(userInfo.Name);
+					$('#userUsername').html(' (' + userInfo.Username + ')');
 				}).then(function(res){
 					conn.describeGlobal(function(err, res) {
 						if (err) { return console.error(err); }
 						
 						for(key in res.sobjects){
-							if(res.sobjects[key].name.includes('__mdt')){
-								mdObjs.push(res.sobjects[key]);
+							var sObj = res.sobjects[key];
+							if(sObj.name.includes('__mdt')){
+								mdObjs.push(sObj);
 								
 								$('#object-select').append($("<option></option>")
-								.attr("value", res.sobjects[key].name)
-								.text(res.sobjects[key].label + ' (' + res.sobjects[key].name + ')')
+								.attr("value", sObj.name)
+								.text(sObj.label + ' (' + sObj.name + ')')
 								);
 							}
 						}
@@ -329,7 +332,7 @@
 					selectedObj = res;
 					console.log('Selected Object: ', selectedObj);
 					
-					if(csvFile != {}){
+					if(csvFile != null){
 						buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
 					}	
 				});
