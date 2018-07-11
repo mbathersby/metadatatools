@@ -112,7 +112,7 @@ function constructPackage() {
 	$('uploadStatus').html('Building deployment package...');
 
 	var fileColumns = csvFile.meta.fields;
-	var fileRows = csvFile.data;
+	var fileRows = csvFile.data.pop();
 	var sObjectType = selectedObj;
 	var colMap = columnToFieldMap();
 
