@@ -246,15 +246,9 @@
 		
 			$(document).ready(this, init());
 
-			var mdObjs = [];
-			var csvFile;
-			var selectedObj;
-
 			if(!jsforce.browser.isLoggedIn()){
 				$('#noLoginContainer').removeClass('slds-hide');
 			} 
-				
-				
 				
 			jsforce.browser.on('connect', function(conn) {
 			
