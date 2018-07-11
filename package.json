@@ -7,8 +7,8 @@
     "start": "node proxy/lib/server.js"
   },
   "files": [
-    "proxy/lib",
-    "proxy/Procfile",
+    "proxy",
+    "Procfile",
     "package.json"
   ],
   "dependencies": {
