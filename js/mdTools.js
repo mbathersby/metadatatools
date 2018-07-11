@@ -46,7 +46,6 @@ function buildTable(tableId, cols, fields){
 			+ '<td data-label="Column Name" data-index="0">'
 			+ '<div class="slds-truncate" title="' + cols[i] + '">' + cols[i] + '</div>'
 			+ '</td>'
-			+ '<td>'
 			+ '<td data-label="Map To" data-index="2">'
 			+ '<div class="slds-form-element">'
 			+ '<div class="slds-form-element__control">'
