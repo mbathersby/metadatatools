@@ -81,7 +81,7 @@ function buildTable(tableId, cols, fields, sample){
 var columnToFieldMap = function(){
 	var columnToFieldMap = {};
 	
-	var selectInputs = $("#mappingSelect");
+	var selectInputs = document.getElementsByClassName('mappingSelect');
 	
 	var i;
 	for(i=0; i < selectInputs.length; i++){
