@@ -46,6 +46,7 @@ var packageXml = function () {
 function buildTable(tableId, cols, fields, sample) {
 
 	$('#' + tableId + ' tbody').html('');
+	$('#' + tableId).removeClass('slds-hide');
 
 	for (var i = 0; i < cols.length; i++) {
 		var tableRow = '<tr data-index="' + i + '">'
@@ -79,7 +80,7 @@ function buildTable(tableId, cols, fields, sample) {
 		$('#' + tableId + ' tbody').append(tableRow);
 	}
 	
-	$('#mappingTable').removeClass('slds-hide');
+	
 }
 
 var columnToFieldMap = function () {
