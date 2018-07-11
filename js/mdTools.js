@@ -78,6 +78,8 @@ function buildTable(tableId, cols, fields, sample) {
 
 		$('#' + tableId + ' tbody').append(tableRow);
 	}
+	
+	$('#mappingTable').removeClass('slds-hide');
 }
 
 var columnToFieldMap = function () {
