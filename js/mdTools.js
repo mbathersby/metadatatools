@@ -40,7 +40,15 @@ var packageXml = function (){
 }
 
 function buildTable(tableId, cols, fields){
-	$('#'+tableId+' tbody').append('THIS IS MY TABLE BODY');
-	console.log(cols);
-	console.log(fields);
+	
+	for(var i = 0; i < cols.length; i++){
+		var tableRow = '<tr data-index="' + i + '">'
+			+ '<td data-label="Column Name" data-index="0">'
+			+ '<div class="slds-truncate" title="' + cols[i] + '">' + cols[i] + '</div>'
+			+ '</td>'
+			+ '<td></td>'
+			+ '</tr>';
+			
+		$('#'+tableId+' tbody').append(tableRow);
+	}
 };
