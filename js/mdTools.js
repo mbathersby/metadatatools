@@ -125,7 +125,7 @@ function constructPackage() {
 	+ 'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
 	+ 'xmlns:xsd="http://www.w3.org/2001/XMLSchema">\n'; */
 
-	for (var i = 0; i < fileRows.length; i++) {
+	for (var i = 0; i < csvFile.data.length; i++) {
 
 		var fileRow = csvFile.data[i];
 		var colList = Object.values(colMap);
