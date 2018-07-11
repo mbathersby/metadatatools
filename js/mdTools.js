@@ -41,6 +41,8 @@ var packageXml = function (){
 
 function buildTable(tableId, cols, fields){
 	
+	$('#'+tableId+' tbody').html('');
+	
 	for(var i = 0; i < cols.length; i++){
 		var tableRow = '<tr data-index="' + i + '">'
 			+ '<td data-label="Column Name" data-index="0">'
@@ -55,13 +57,13 @@ function buildTable(tableId, cols, fields){
 
 			
 			for(var j = 0; j < fields.length; j++){
-				if(fields[j].updateable){
+				//if(fields[j].updateable){
 					if(fields[j].name == cols[i] || fields[j].label == cols[i]){
 						tableRow += '<option class="slds-p-around_xx-small" data-type="' + fields[j].type+ '" text="' + fields[j].label + '(' + fields[j].type+ ')" value="' + fields[j].name + '" selected />';
 					} else {
 						tableRow += '<option class="slds-p-around_xx-small" data-type="' + fields[j].type+ '" text="' + fields[j].label + '(' + fields[j].type+ ')" value="' + fields[j].name + '" />';
 					}
-				}
+				//}
 			}
 			
 			
