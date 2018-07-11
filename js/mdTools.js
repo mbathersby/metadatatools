@@ -38,3 +38,7 @@ var packageXml = function (){
 		 + '</Package>';
 	return packageXML;
 }
+
+function buildTable(tableId, cols, fields){
+	$('#'+tableId+'> tbody').append('THIS IS MY TABLE BODY');
+};
