@@ -54,7 +54,15 @@ function buildTable(tableId, cols, fields){
 			+ '<option value=""></option>'
 
 			
-			
+			for(var j = 0; j < fields.length; j++){
+				if(field[j].updateable){
+					if(fields[j].name == cols[i] || fields[j].label){
+						tableRow += '<option class="slds-p-around_xx-small" data-type="' + field[j].type+ '" text="' + field[j].label + '(' + field[j].type+ ')" value="' + field[j].name + '" selected />';
+					} else {
+						tableRow += '<option class="slds-p-around_xx-small" data-type="' + field[j].type+ '" text="' + field[j].label + '(' + field[j].type+ ')" value="' + field[j].name + '" />';
+					}
+				}
+			}
 			
 			
 		tableRow += '</select>'
