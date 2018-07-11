@@ -46,7 +46,20 @@ function buildTable(tableId, cols, fields){
 			+ '<td data-label="Column Name" data-index="0">'
 			+ '<div class="slds-truncate" title="' + cols[i] + '">' + cols[i] + '</div>'
 			+ '</td>'
-			+ '<td></td>'
+			+ '<td>'
+			+ '<td data-label="Map To" data-index="2">'
+			+ '<div class="slds-form-element">'
+			+ '<div class="slds-form-element__control">'
+			+ '<div class="slds-select_container">'
+			+ '<select class="slds-select" data-index="' + cols[i] + '">'
+			+ '<option value=""></option>'
+
+			
+			
+			
+			
+		tableRow += '</select>'
+			+ '</td>'
 			+ '</tr>';
 			
 		$('#'+tableId+' tbody').append(tableRow);
