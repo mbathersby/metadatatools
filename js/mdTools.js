@@ -112,7 +112,7 @@ function constructPackage() {
 	$('uploadStatus').html('Building deployment package...');
 
 	var fileColumns = csvFile.meta.fields;
-	var fileRows = csvFile.data.pop();
+	var fileRows = csvFile.data;
 	var sObjectType = selectedObj;
 	var colMap = columnToFieldMap();
 
@@ -126,9 +126,14 @@ function constructPackage() {
 	+ 'xmlns:xsd="http://www.w3.org/2001/XMLSchema">\n'; */
 
 	for (var i = 0; i < fileRows.length; i++) {
-		var fileRow = fileRows[i];
+
+		var fileRow = csvFile.data[i];
 		var colList = Object.values(colMap);
 		colMap = swapMap(colMap);
+		
+		console.log(fileRow);
+		console.log(colList);
+		console.log(colMap);
 
 		var rowElements = [];
 
