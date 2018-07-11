@@ -39,7 +39,7 @@ var packageXml = function (){
 	return packageXML;
 }
 
-function buildTable(tableId, cols, fields){
+function buildTable(tableId, cols, fields, sample){
 	
 	$('#'+tableId+' tbody').html('');
 	
@@ -47,6 +47,9 @@ function buildTable(tableId, cols, fields){
 		var tableRow = '<tr data-index="' + i + '">'
 			+ '<td data-label="Column Name" data-index="0">'
 			+ '<div class="slds-truncate" title="' + cols[i] + '">' + cols[i] + '</div>'
+			+ '</td>'
+			+ '<td data-label="Sample Data" data-index="0">'
+			+ '<div class="slds-truncate" title="' + sample[cols[i]] + '">' + sample[cols[i]] + '</div>'
 			+ '</td>'
 			+ '<td data-label="Map To" data-index="2">'
 			+ '<div class="slds-form-element">'
