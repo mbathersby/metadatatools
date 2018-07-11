@@ -223,7 +223,7 @@
 				$('#overlay').addClass('slds-backdrop_open');
 				$('#spinner').removeClass('slds-hide');
 				
-				console.log('connecting...');
+				console.log('Connecting to ' + jsforce.browser.connection.instanceUrl);
 				$('#noLoginContainer').addClass('slds-hide');
 				var userQuery = 'select Name, Username from User where Id = \'' + conn.userInfo.id + '\' limit 1';
 				
@@ -270,6 +270,8 @@
 				
 				reader.onload = function(){
 					csvFile = Papa.parse(reader.result, {header:true});
+					console.log('CSV File Data');
+					console.log(csvFile);
 					$("#rowCount").html(csvFile.data.length);
 				};
 				
@@ -279,6 +281,7 @@
 			
 			$('#object-select').change(function(){
 				selectedObj = $('#object-select').val();
+				console.log('Selected Object: ', selectedObj);
 			});
 		</script>
 		
