@@ -216,6 +216,10 @@
 				
 				
 			jsforce.browser.on('connect', function(conn) {
+			
+				$('#overlay').addClass('slds-backdrop_open');
+				$('#spinner').removeClass('slds-hide');
+				
 				console.log('connecting...');
 				$('#noLoginContainer').addClass('slds-hide');
 				var userQuery = 'select Name, Username from User where Id = \'' + conn.userInfo.id + '\' limit 1';
