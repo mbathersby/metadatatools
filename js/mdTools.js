@@ -148,7 +148,7 @@ function constructPackage() {
 
 			console.log(fieldName + " : " + fieldValue);
 
-			if (fieldName == "DeveloperName") {
+			if (fieldName == 'DeveloperName' || fieldName == 'QualifiedApiName') {
 				rowElements.unshift('\t<label>' + fieldValue + '</label>\n');
 				developerName = fieldValue;
 			} else {
