@@ -190,6 +190,8 @@
 								<dd class="slds-item_detail slds-truncate" title="File Name" id="file-size"></dd>
 								<dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">Last Modified:</dt>
 								<dd class="slds-item_detail slds-truncate" title="File Name" id="last-modified"></dd>
+								<dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">Total Rows:</dt>
+								<dd class="slds-item_detail slds-truncate" title="File Name" id="rowCount"></dd>
 							</dl>
 						</div>
 					</article>
@@ -266,7 +268,8 @@
 				var reader = new FileReader();
 				
 				reader.onload = function(){
-					csvFile = reader.result;
+					csvFile = Papa.parse(reader.result, {header:true});
+					$("#rowCount").html(csvFile.data.length);
 				};
 				
 				reader.readAsText(file);
