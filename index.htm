@@ -210,6 +210,7 @@
 
 			var mdObjs = [];
 			var csvFile;
+			var selectedObj;
 
 			if(!jsforce.browser.isLoggedIn()){
 				$('#noLoginContainer').removeClass('slds-hide');
@@ -274,6 +275,10 @@
 				
 				reader.readAsText(file);
 				
+			});
+			
+			$('#object-select').change(function(){
+				selectedObj = $('#object-select').val();
 			});
 		</script>
 		
