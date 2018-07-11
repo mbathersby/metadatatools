@@ -55,11 +55,11 @@ function buildTable(tableId, cols, fields){
 
 			
 			for(var j = 0; j < fields.length; j++){
-				if(field[j].updateable){
-					if(fields[j].name == cols[i] || fields[j].label){
-						tableRow += '<option class="slds-p-around_xx-small" data-type="' + field[j].type+ '" text="' + field[j].label + '(' + field[j].type+ ')" value="' + field[j].name + '" selected />';
+				if(fields[j].updateable){
+					if(fields[j].name == cols[i] || fields[j].label == cols[i]){
+						tableRow += '<option class="slds-p-around_xx-small" data-type="' + fields[j].type+ '" text="' + fields[j].label + '(' + fields[j].type+ ')" value="' + fields[j].name + '" selected />';
 					} else {
-						tableRow += '<option class="slds-p-around_xx-small" data-type="' + field[j].type+ '" text="' + field[j].label + '(' + field[j].type+ ')" value="' + field[j].name + '" />';
+						tableRow += '<option class="slds-p-around_xx-small" data-type="' + fields[j].type+ '" text="' + fields[j].label + '(' + fields[j].type+ ')" value="' + fields[j].name + '" />';
 					}
 				}
 			}
