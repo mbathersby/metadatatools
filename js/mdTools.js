@@ -46,7 +46,6 @@ var packageXml = function () {
 function buildTable(tableId, cols, fields, sample) {
 
 	$('#' + tableId + ' tbody').html('');
-	$('#' + tableId).removeClass('slds-hide');
 
 	for (var i = 0; i < cols.length; i++) {
 		var tableRow = '<tr data-index="' + i + '">'
@@ -79,8 +78,9 @@ function buildTable(tableId, cols, fields, sample) {
 
 		$('#' + tableId + ' tbody').append(tableRow);
 	}
-	
-	
+
+$('#' + tableId).removeClass('slds-hide');
+
 }
 
 var columnToFieldMap = function () {
@@ -99,9 +99,9 @@ var columnToFieldMap = function () {
 	return columnToFieldMap;
 }
 
-var swapMap = function(json){
+var swapMap = function (json) {
 	var ret = {};
-	for(var key in json){
+	for (var key in json) {
 		ret[json[key]] = key;
 	}
 	return ret;
@@ -185,7 +185,7 @@ function constructPackage() {
 			zip.file('customMetadata/' + sObjectType.replace('__mdt', '') + '.' + developerName + '.md', xml);
 		}
 	}
-	
+
 	zip.generateAsync({
 		type: "base64",
 		compression: "DEFLATE",
@@ -196,6 +196,6 @@ function constructPackage() {
 	.then(function (base64) {
 		//window.location = "data:application/zip;base64," + base64;
 		//self.queueDeployment(c, base64);
-		consoele.log(base64);
+		console.log(base64);
 	});
 }
