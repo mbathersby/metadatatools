@@ -55,7 +55,7 @@ function buildTable(tableId, cols, fields, sample){
 			+ '<div class="slds-form-element">'
 			+ '<div class="slds-form-element__control">'
 			+ '<div class="slds-select_container">'
-			+ '<select class="slds-select" data-index="' + cols[i] + '">'
+			+ '<select class="slds-select mappingSelect" data-index="' + cols[i] + '">'
 			+ '<option value=""></option>'
 
 			
@@ -81,7 +81,7 @@ function buildTable(tableId, cols, fields, sample){
 var columnToFieldMap = function(){
 	var columnToFieldMap = {};
 	
-	var selectInputs = $("#mappingTable #slds-select");
+	var selectInputs = $("#mappingSelect");
 	
 	var i;
 	for(i=0; i < selectInputs.length; i++){
