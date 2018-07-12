@@ -68,44 +68,44 @@
 				</h2>
 				<!--button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
 					<svg class="slds-button__icon" aria-hidden="true">
-						<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+					<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
 					</svg>
 					<span class="slds-assistive-text">Close</span>
 				</button-->
 			</div>
 			
 			<div id="menu" class="slds-dropdown-trigger slds-dropdown-trigger_click slds-notify__close" style="top: 7px; right: 7px; position: fixed;">
-			  <button class="slds-button slds-button_icon slds-button_icon-border-inverse slds-button_icon-x-small" aria-haspopup="true" title="Show More">
-				<svg class="slds-button__icon" aria-hidden="true">
-				  <use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
-				</svg>
-				<span class="slds-assistive-text">Show More</span>
-			  </button>
-			  <div class="slds-dropdown slds-dropdown_right slds-text-body_regular">
-				<ul class="slds-dropdown__list" role="menu" aria-label="Show More">
-				  <!--li class="slds-dropdown__item" role="presentation">
-					<a href="javascript:void(0);" role="menuitem" tabindex="0">
-					  <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
-					</a>
-				  </li>
-				  <li class="slds-dropdown__item" role="presentation">
-					<a href="javascript:void(0);" role="menuitem" tabindex="-1">
-					  <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
-					</a>
-				  </li>
-				  <li class="slds-dropdown__item" role="presentation">
-					<a href="javascript:void(0);" role="menuitem" tabindex="-1">
-					  <span class="slds-truncate" title="Menu Item Three">Menu Item Three</span>
-					</a>
-				  </li>
-				  <li class="slds-has-divider_top-space" role="separator"></li-->
-				  <li class="slds-dropdown__item" role="presentation">
-					<a href="javascript:void(0);" role="menuitem" tabindex="-1">
-					  <span class="slds-truncate" title="Menu Item Four">Logout</span>
-					</a>
-				  </li>
-				</ul>
-			  </div>
+				<button class="slds-button slds-button_icon slds-button_icon-border-inverse slds-button_icon-x-small" aria-haspopup="true" title="Show More">
+					<svg class="slds-button__icon" aria-hidden="true">
+						<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+					</svg>
+					<span class="slds-assistive-text">Show More</span>
+				</button>
+				<div class="slds-dropdown slds-dropdown_right slds-text-body_regular">
+					<ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+						<!--li class="slds-dropdown__item" role="presentation">
+							<a href="javascript:void(0);" role="menuitem" tabindex="0">
+							<span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+							</a>
+							</li>
+							<li class="slds-dropdown__item" role="presentation">
+							<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+							<span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+							</a>
+							</li>
+							<li class="slds-dropdown__item" role="presentation">
+							<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+							<span class="slds-truncate" title="Menu Item Three">Menu Item Three</span>
+							</a>
+							</li>
+						<li class="slds-has-divider_top-space" role="separator"></li-->
+						<li class="slds-dropdown__item" role="presentation">
+							<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+								<span class="slds-truncate" title="Menu Item Four">Logout</span>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 			
 			<div class="slds-page-header slds-m-bottom_medium slds-p-around_x-medium">
@@ -284,19 +284,27 @@
 				<!--div class="slds-button-group" role="group">
 					<button class="slds-button slds-button_neutral">Edit</button>
 					<button class="slds-button slds-button_neutral">Save</button>
+					</div>
+				<lightning:buttonGroup-->
+			</div>
+			
+			<section id="prompt" role="alertdialog" tabindex="-1" aria-labelledby="prompt-heading-id" aria-describedby="prompt-message-wrapper" class="slds-modal slds-modal_prompt" aria-modal="true">
+				<div class="slds-modal__container">
+					<header class="slds-modal__header slds-theme_error slds-theme_alert-texture">
+						<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+							<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#close" />
+							</svg>
+							<span class="slds-assistive-text">Close</span>
+						</button>
+						<h2 class="slds-text-heading_medium" id="prompt-heading-id">Deployment In Progress</h2>
+					</header>
+					<div class="slds-modal__content slds-p-around_medium" id="prompt-message-wrapper">
+						<div id="deployStatus"></div>
+						<div id="deployState"></div>
+					</div>
 				</div>
-                <lightning:buttonGroup>
-                    
-                    <lightning:button variant="base" label="Reset" iconName="utility:refresh" iconPosition="left"  onclick="{! c.resetAll }"
-                                      class="slds-m-vertical_small slds-button_outline-brand" />
-                    
-                    <aura:if isTrue="{! and(!empty(v.selectedObj), !empty(v.fileColumns)) }">
-                        <lightning:button variant="brand" label="Deploy" iconName="utility:upload" iconPosition="right" onclick="{! c.finalise }"
-                                          class="slds-m-vertical_small" />
-                    </aura:if>
-                    
-                </lightning:buttonGroup-->
-            </div>
+			</section>
 			
 		</div>
 		

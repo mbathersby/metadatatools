@@ -115,8 +115,11 @@ var swapMap = function (json) {
 }
 
 function deploy() {
-	$('uploadStatus').html('Building deployment package...');
-
+	
+	$('deployStatus').html('Constructing deployment package...');
+	$('#prompt').addClass('slds-fade-in-open');
+	$('#overlay').addClass('slds-backdrop_open');
+	
 	var fileColumns = csvFile.meta.fields;
 	var fileRows = csvFile.data;
 	fileRows.pop();
@@ -132,7 +135,7 @@ function deploy() {
 
 		var fileRow = csvFile.data[i];
 
-		console.log('Processing CSV row ' + i);
+		$('deployState').html('Processing row ' + i + ' of ' + csvFile.data.length);
 
 		var rowElements = [];
 
