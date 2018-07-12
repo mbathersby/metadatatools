@@ -116,6 +116,8 @@ function constructPackage() {
 	var sObjectType = selectedObj;
 	var colMap = swapMap(columnToFieldMap());
 	var colList = Object.values(colMap);
+	
+	console.log(colL
 
 	var zip = new JSZip();
 	zip.file('package.xml', packageXml());
@@ -136,7 +138,7 @@ function constructPackage() {
 			var fieldValue = fileRow[fieldName];
 			var fieldType = "TEXT";
 
-			console.log('[' + i + ':' + j + '] ' + fieldName + " = " + fieldValue);
+			console.log('[' + i + ':' + j + '] ' + colMap[fieldName] + " = " + fieldValue);
 
 			if (fieldName == 'DeveloperName' || fieldName == 'QualifiedApiName') {
 				rowElements.unshift('\t<label>' + fieldValue + '</label>\n');
