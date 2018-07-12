@@ -114,7 +114,7 @@ function constructPackage() {
 	var fileColumns = csvFile.meta.fields;
 	var fileRows = csvFile.data;
 	var sObjectType = selectedObj;
-	var colMap = columnToFieldMap();
+	var colMap = swapMap(columnToFieldMap());
 	var colList = Object.values(colMap);
 
 	var zip = new JSZip();
