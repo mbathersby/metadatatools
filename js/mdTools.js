@@ -140,7 +140,7 @@ function constructPackage() {
 			var fieldValue = fileRow[colMap[fieldName]];
 			var fieldType = "TEXT";
 
-			if (colMap[fieldName] != null && colMap[fieldName] != '') {
+			//if (colMap[fieldName] != null && colMap[fieldName] != '') {
 
 				console.log('[' + i + ':' + j + '] ' + fieldName + " = " + fieldValue);
 
@@ -171,7 +171,7 @@ function constructPackage() {
 
 				}
 
-			}
+			//}
 		}
 		var xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
 			 + '<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" '
