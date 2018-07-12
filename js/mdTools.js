@@ -233,7 +233,12 @@ function deployZip() {
 			.then(function(reqStatus){
 				console.log(reqStatus);
 				$('#deployStatus').html('Deployment ' + reqStatus.status);
-				$('#deployState').html(reqStatus.state);
+				
+				if(reqStatus.stateDetail != null){
+					$('#deployState').html(reqStatus.stateDetail);
+				} else {
+					$('#deployState').html('');
+				}
 				
 				if(reqStatus.done){
 					clearInterval(poll);
