@@ -12,6 +12,10 @@ function init() {
 	});
 }
 
+$('#menu').on('click', function(){
+	this.toggleClass('slds-is-open');
+});
+
 function login(instance) {
 	jsforce.browser.config.loginUrl = 'https://' + instance + '.salesforce.com';
 	jsforce.browser.login();
