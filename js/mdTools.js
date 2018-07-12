@@ -119,7 +119,7 @@ function deploy() {
 
 	var fileColumns = csvFile.meta.fields;
 	var fileRows = csvFile.data;
-	//fileRows.pop();
+	fileRows.pop();
 
 	var sObjectType = selectedObj;
 	var colList = Object.values(columnToFieldMap());
@@ -147,7 +147,6 @@ function deploy() {
 
 			if (fieldName != null && fieldName != '') {
 
-				console.log('[' + i + ':' + j + '] ' + fieldName + " = " + fieldValue);
 
 				if (fieldName == 'DeveloperName' || fieldName == 'QualifiedApiName') {
 					developerName = fieldValue.replace(' ', '_');
@@ -168,7 +167,6 @@ function deploy() {
 						rowElements.push(
 							'\t<values>\n'
 							 + '\t\t<field>' + fieldName + '</field>\n'
-							//'\t\t<value xsi:type="xsd:' + fieldTypeMap()[fieldType.toUpperCase()] + '">' + fieldValue + '</value>\n'
 							 + '\t\t<value>' + fieldValue + '</value>\n'
 							 + '\t</values>\n');
 
@@ -202,7 +200,6 @@ function deploy() {
 		}
 	})
 	.then(function (base64) {
-		//window.location = "data:application/zip;base64," + base64;
 		zipBlob = base64;
 		
 		deployZip();
