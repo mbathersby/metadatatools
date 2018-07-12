@@ -114,7 +114,8 @@ function constructPackage() {
 	var fileColumns = csvFile.meta.fields;
 	var fileRows = csvFile.data;
 	var sObjectType = selectedObj;
-	var colMap = columnToFieldMap();
+	var colMap= swapMap(columnToFieldMap());
+	var colList = Object.values(colMap);
 
 	var zip = new JSZip();
 	zip.file('package.xml', packageXml());
@@ -126,10 +127,12 @@ function constructPackage() {
 	+ 'xmlns:xsd="http://www.w3.org/2001/XMLSchema">\n'; */
 
 	for (var i = 0; i < csvFile.data.length; i++) {
+	
+		console.log('Row Loop ', i);
 
 		var fileRow = csvFile.data[i];
-		var colList = Object.values(colMap);
-		colMap = swapMap(colMap);
+		
+		//colMap = swapMap(columnToFieldMap());
 		
 		console.log(fileRow);
 
@@ -141,9 +144,11 @@ function constructPackage() {
 
 		// loop through fieldMap
 		for (var j = 0; j < colList.length; j++) {
+		
+			console.log('Row: ' + i + '; Col: ' + j);
 
 			var fieldName = colList[j];
-			var fieldValue = fileRow[colMap[fieldName]];
+			var fieldValue = fileRow[fieldName];
 			var fieldType = "TEXT";
 
 			console.log(fieldName + " : " + fieldValue);
@@ -153,7 +158,7 @@ function constructPackage() {
 				developerName = fieldValue;
 			} else {
 
-				if (fieldValue == "") {
+				if (fieldValue == null) {
 					rowElements.push(
 						'\t<values>\n'
 						 + '\t\t<field>' + fieldName + '</field>\n'
@@ -164,9 +169,9 @@ function constructPackage() {
 					rowElements.push(
 						'\t<values>\n'
 						 + '\t\t<field>' + fieldName + '</field>\n'
-				+ '\t\t<value xsi:type="xsd:' + fieldTypeMap()[fieldType] + '">' + fieldValue + '</value>\n'
-						 //+ '\t\t<value>' + fieldValue + '</value>\n'
-						 + '\t</values>\n');
+						//'\t\t<value xsi:type="xsd:' + fieldTypeMap()[fieldType.toUpperCase()] + '">' + fieldValue + '</value>\n'
+						+ '\t\t<value>' + fieldValue + '</value>\n'
+						+ '\t</values>\n');
 
 				}
 
