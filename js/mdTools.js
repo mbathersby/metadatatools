@@ -81,7 +81,7 @@ function buildTable(tableId, cols, fields, sample) {
 		$('#' + tableId + ' tbody').append(tableRow);
 	}
 
-$('#' + tableId).removeClass('slds-hide');
+	$('#' + tableId).removeClass('slds-hide');
 
 }
 
@@ -115,7 +115,7 @@ function constructPackage() {
 	var fileColumns = csvFile.meta.fields;
 	var fileRows = csvFile.data;
 	fileRows.pop();
-	
+
 	var sObjectType = selectedObj;
 	var colList = Object.values(columnToFieldMap());
 	var colMap = swapMap(columnToFieldMap());
@@ -124,9 +124,9 @@ function constructPackage() {
 	zip.file('package.xml', packageXml());
 
 	for (var i = 0; i < csvFile.data.length; i++) {
-	
+
 		var fileRow = csvFile.data[i];
-				
+
 		console.log(fileRow);
 
 		var rowElements = [];
@@ -136,41 +136,43 @@ function constructPackage() {
 
 		for (var j = 0; j < colList.length; j++) {
 
-			var fieldName = colList[j];
-			var fieldValue = fileRow[colMap[fieldName]];
-			var fieldType = "TEXT";
+			if (colList[j] != null && colList[j] != '') {
 
-			console.log('[' + i + ':' + j + '] ' + fieldName + " = " + fieldValue);
+				var fieldName = colList[j];
+				var fieldValue = fileRow[colMap[fieldName]];
+				var fieldType = "TEXT";
 
-			if (fieldName == 'DeveloperName' || fieldName == 'QualifiedApiName') {
-				developerName = fieldValue;
-				fullName = selectedObj.name.replace('__mdt', '') + '.' + developerName;
-				
-				rowElements.unshift('\t<fullName>' + fullName + '</fullName>\n');
-				rowElements.unshift('\t<label>' + developerName + '</label>\n');
-			} else {
+				console.log('[' + i + ':' + j + '] ' + fieldName + " = " + fieldValue);
 
-				if (fieldValue == null) {
-					rowElements.push(
-						'\t<values>\n'
-						 + '\t\t<field>' + fieldName + '</field>\n'
-						 + '\t\t<value xsi:nil="true"/>\n'
-						 + '\t</values>\n');
+				if (fieldName == 'DeveloperName' || fieldName == 'QualifiedApiName') {
+					developerName = fieldValue;
+					fullName = selectedObj.name.replace('__mdt', '') + '.' + developerName;
+
+					rowElements.unshift('\t<fullName>' + fullName + '</fullName>\n');
+					rowElements.unshift('\t<label>' + developerName + '</label>\n');
 				} else {
 
-					rowElements.push(
-						'\t<values>\n'
-						 + '\t\t<field>' + fieldName + '</field>\n'
-						//'\t\t<value xsi:type="xsd:' + fieldTypeMap()[fieldType.toUpperCase()] + '">' + fieldValue + '</value>\n'
-						+ '\t\t<value>' + fieldValue + '</value>\n'
-						+ '\t</values>\n');
+					if (fieldValue == null || fieldValue == '') {
+						rowElements.push(
+							'\t<values>\n'
+							 + '\t\t<field>' + fieldName + '</field>\n'
+							 + '\t\t<value xsi:nil="true"/>\n'
+							 + '\t</values>\n');
+					} else {
+
+						rowElements.push(
+							'\t<values>\n'
+							 + '\t\t<field>' + fieldName + '</field>\n'
+							//'\t\t<value xsi:type="xsd:' + fieldTypeMap()[fieldType.toUpperCase()] + '">' + fieldValue + '</value>\n'
+							 + '\t\t<value>' + fieldValue + '</value>\n'
+							 + '\t</values>\n');
+
+					}
 
 				}
 
 			}
-
 		}
-
 		var xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
 			 + '<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" '
 			 + 'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
@@ -202,6 +204,8 @@ function constructPackage() {
 	})
 }
 
-function deployZip(){
-	var deployId = jsforce.browser.deploy(zipBlob, {singlePackage:true});
+function deployZip() {
+	var deployId = jsforce.browser.connection.metadata.deploy(zipBlob, {
+			singlePackage: true
+		});
 }
