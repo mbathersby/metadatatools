@@ -13,7 +13,7 @@ function init() {
 }
 
 $('#menu').click(function(){
-	this.toggleClass('slds-is-open');
+	$( this ).toggleClass('slds-is-open');
 });
 
 function login(instance) {
