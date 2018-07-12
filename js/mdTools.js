@@ -225,10 +225,7 @@ function deployZip() {
 		console.log(deployReq);
 		$('#deployStatus').html('Deployment ' + deployReq.state);
 		$('#deployState').html('');
-		resolve(deployReq.id);
-	})
-	
-	.then(function(reqId){
+		
 		
 		var poll = setInterval(function(){
 			
@@ -244,6 +241,5 @@ function deployZip() {
 			});
 			
 		}, 5000);
-		
 	});
 }
