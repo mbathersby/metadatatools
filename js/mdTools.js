@@ -229,7 +229,7 @@ function deployZip() {
 		
 		var poll = setInterval(function(){
 			
-			jsforce.browser.connection.metadata.checkDeployStatus(reqId, true)
+			jsforce.browser.connection.metadata.checkDeployStatus(deployReq.id, true)
 			.then(function(reqStatus){
 				console.log(reqStatus);
 				$('#deployStatus').html('Deployment ' + reqStatus.status);
