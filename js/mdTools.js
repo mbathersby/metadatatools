@@ -12,8 +12,8 @@ function init() {
 	});
 }
 
-$('#menu').click(function(){
-	$( this ).toggleClass('slds-is-open');
+$( '#menu' ).on( 'click', function( event ) {
+  $( this ).toggleClass( 'slds-is-open' );
 });
 
 function login(instance) {
