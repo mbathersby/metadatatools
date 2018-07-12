@@ -132,7 +132,7 @@ function deploy() {
 
 		var fileRow = csvFile.data[i];
 
-		console.log(fileRow);
+		console.log('Processing CSV row ' + i);
 
 		var rowElements = [];
 

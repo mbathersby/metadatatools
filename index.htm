@@ -371,7 +371,7 @@
 					csvFile = Papa.parse(reader.result, {header:true});
 					console.log('CSV File Data');
 					console.log(csvFile);
-					$("#rowCount").html(csvFile.data.length);
+					$("#rowCount").html(csvFile.data.length - 1);
 					
 					if($('#object-select').val() != null){
 						buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
