@@ -228,17 +228,17 @@ function deployZip() {
 		resolve(deployReq.id);
 	})
 	
-	.then(function(resp){
+	.then(function(reqId){
 		
 		var poll = setInterval(function(){
 			
-			jsforce.browser.connection.metadata.checkDeployStatus(resp, true)
-			.then(function(resp){
-				console.log(resp);
-				$('#deployStatus').html('Deployment ' + resp.status);
-				$('#deployState').html(resp.state);
+			jsforce.browser.connection.metadata.checkDeployStatus(reqId, true)
+			.then(function(reqStatus){
+				console.log(reqStatus);
+				$('#deployStatus').html('Deployment ' + reqStatus.status);
+				$('#deployState').html(reqStatus.state);
 				
-				if(resp.done){
+				if(reqStatus.done){
 					clearInterval(poll);
 				}
 			});
