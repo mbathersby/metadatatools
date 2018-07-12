@@ -145,7 +145,7 @@ function constructPackage() {
 				console.log('[' + i + ':' + j + '] ' + fieldName + " = " + fieldValue);
 
 				if (fieldName == 'DeveloperName' || fieldName == 'QualifiedApiName') {
-					developerName = fieldValue;
+					developerName = fieldValue.replace(' ', '_');
 					fullName = selectedObj.name.replace('__mdt', '') + '.' + developerName;
 
 					rowElements.unshift('\t<fullName>' + fullName + '</fullName>\n');
