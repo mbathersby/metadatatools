@@ -279,6 +279,25 @@
 				</div>
 			</div>
 			
+			<div class="slds-docked-form-footer">
+				<button class="slds-button slds-button_neutral" onclick="deploy();">Deploy</button>
+				<!--div class="slds-button-group" role="group">
+					<button class="slds-button slds-button_neutral">Edit</button>
+					<button class="slds-button slds-button_neutral">Save</button>
+				</div>
+                <lightning:buttonGroup>
+                    
+                    <lightning:button variant="base" label="Reset" iconName="utility:refresh" iconPosition="left"  onclick="{! c.resetAll }"
+                                      class="slds-m-vertical_small slds-button_outline-brand" />
+                    
+                    <aura:if isTrue="{! and(!empty(v.selectedObj), !empty(v.fileColumns)) }">
+                        <lightning:button variant="brand" label="Deploy" iconName="utility:upload" iconPosition="right" onclick="{! c.finalise }"
+                                          class="slds-m-vertical_small" />
+                    </aura:if>
+                    
+                </lightning:buttonGroup-->
+            </div>
+			
 		</div>
 		
 		<script>

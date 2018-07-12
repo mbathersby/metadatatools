@@ -113,7 +113,7 @@ var swapMap = function (json) {
 	return ret;
 }
 
-function constructPackage() {
+function deploy() {
 	$('uploadStatus').html('Building deployment package...');
 
 	var fileColumns = csvFile.meta.fields;
@@ -202,14 +202,14 @@ function constructPackage() {
 	})
 	.then(function (base64) {
 		window.location = "data:application/zip;base64," + base64;
-		//self.queueDeployment(c, base64);
-		console.log(base64);
 		zipBlob = base64;
+		
+		deployZip();
 	})
 }
 
 function deployZip() {
 	var deployId = jsforce.browser.connection.metadata.deploy(zipBlob, {
-			singlePackage: true
-		});
+		singlePackage: true
+	});
 }
