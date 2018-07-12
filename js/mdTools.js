@@ -114,7 +114,7 @@ function constructPackage() {
 	var fileColumns = csvFile.meta.fields;
 	var fileRows = csvFile.data;
 	var sObjectType = selectedObj;
-	var colMap= swapMap(columnToFieldMap());
+	var colMap = columnToFieldMap();
 	var colList = Object.values(colMap);
 
 	var zip = new JSZip();
@@ -131,14 +131,12 @@ function constructPackage() {
 		var developerName = '';
 
 		for (var j = 0; j < colList.length; j++) {
-		
-			console.log('Row: ' + i + '; Col: ' + j);
 
 			var fieldName = colList[j];
 			var fieldValue = fileRow[fieldName];
 			var fieldType = "TEXT";
 
-			console.log(fieldName + " : " + fieldValue);
+			console.log('[' + i + ':' + j + '] ' + fieldName + " = " + fieldValue);
 
 			if (fieldName == 'DeveloperName' || fieldName == 'QualifiedApiName') {
 				rowElements.unshift('\t<label>' + fieldValue + '</label>\n');
