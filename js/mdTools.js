@@ -114,6 +114,8 @@ function constructPackage() {
 
 	var fileColumns = csvFile.meta.fields;
 	var fileRows = csvFile.data;
+	fileRows.pop();
+	
 	var sObjectType = selectedObj;
 	var colList = Object.values(columnToFieldMap());
 	var colMap = swapMap(columnToFieldMap());
@@ -197,5 +199,9 @@ function constructPackage() {
 		//self.queueDeployment(c, base64);
 		console.log(base64);
 		zipBlob = base64;
-	});
+	})
+}
+
+function deployZip(){
+	var deployId = jsforce.browser.deploy(zipBlob, {singlePackage:true, );
 }
