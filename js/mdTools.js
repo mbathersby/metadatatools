@@ -228,17 +228,15 @@ function deployZip() {
 		
 		
 		var poll = setInterval(function(){
+		
+			$('#deployState').html('');
 			
 			jsforce.browser.connection.metadata.checkDeployStatus(deployReq.id, true)
 			.then(function(reqStatus){
 				console.log(reqStatus);
 				$('#deployStatus').html('Deployment ' + reqStatus.status);
 				
-				if(reqStatus.stateDetail != null){
-					$('#deployState').html(reqStatus.stateDetail);
-				} else {
-					$('#deployState').html('');
-				}
+				$('#deployState').html(reqStatus.stateDetail);
 				
 				if(reqStatus.done){
 					clearInterval(poll);
