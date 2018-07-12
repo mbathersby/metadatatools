@@ -195,7 +195,7 @@ function constructPackage() {
 		}
 	})
 	.then(function (base64) {
-		//window.location = "data:application/zip;base64," + base64;
+		window.location = "data:application/zip;base64," + base64;
 		//self.queueDeployment(c, base64);
 		console.log(base64);
 		zipBlob = base64;
@@ -203,5 +203,5 @@ function constructPackage() {
 }
 
 function deployZip(){
-	var deployId = jsforce.browser.deploy(zipBlob, {singlePackage:true, );
+	var deployId = jsforce.browser.deploy(zipBlob, {singlePackage:true});
 }
