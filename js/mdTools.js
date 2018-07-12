@@ -114,10 +114,8 @@ function constructPackage() {
 	var fileColumns = csvFile.meta.fields;
 	var fileRows = csvFile.data;
 	var sObjectType = selectedObj;
+	var colList = Object.values(columnToFieldMap());
 	var colMap = swapMap(columnToFieldMap());
-	var colList = Object.values(colMap);
-	
-	console.log(colL
 
 	var zip = new JSZip();
 	zip.file('package.xml', packageXml());
@@ -138,7 +136,7 @@ function constructPackage() {
 			var fieldValue = fileRow[fieldName];
 			var fieldType = "TEXT";
 
-			console.log('[' + i + ':' + j + '] ' + colMap[fieldName] + " = " + fieldValue);
+			console.log('[' + i + ':' + j + '] ' + fieldName + " = " + fieldValue);
 
 			if (fieldName == 'DeveloperName' || fieldName == 'QualifiedApiName') {
 				rowElements.unshift('\t<label>' + fieldValue + '</label>\n');
