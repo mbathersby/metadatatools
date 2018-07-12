@@ -140,7 +140,7 @@ function constructPackage() {
 			var fieldValue = fileRow[colMap[fieldName]];
 			var fieldType = "TEXT";
 
-			if (colMap[fieldName] != null && colMap[fieldName] != '') {
+			if (fieldName != null && fieldName != '') {
 
 				console.log('[' + i + ':' + j + '] ' + fieldName + " = " + fieldValue);
 

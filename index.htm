@@ -20,7 +20,7 @@
 		
 	</head>
 	<body>
-	
+		
 		<div role="status" id="spinner" class="slds-spinner slds-spinner_medium slds-spinner_inverse slds-hide">
 			<span class="slds-assistive-text">Loading</span>
 			<div class="slds-spinner__dot-a"></div>
@@ -66,8 +66,47 @@
 				<h2>Logged in as <span id="userFullname"></span> <span id="userUsername"></span>.
 					<a onclick="logout();">Log out</a>
 				</h2>
+				<!--button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
+					<svg class="slds-button__icon" aria-hidden="true">
+						<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+					</svg>
+					<span class="slds-assistive-text">Close</span>
+				</button-->
+				<div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+				  <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="Show More">
+					<svg class="slds-button__icon" aria-hidden="true">
+					  <use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+					</svg>
+					<span class="slds-assistive-text">Show More</span>
+				  </button>
+				  <div class="slds-dropdown slds-dropdown_left">
+					<ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+					  <li class="slds-dropdown__item" role="presentation">
+						<a href="javascript:void(0);" role="menuitem" tabindex="0">
+						  <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+						</a>
+					  </li>
+					  <li class="slds-dropdown__item" role="presentation">
+						<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+						  <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+						</a>
+					  </li>
+					  <li class="slds-dropdown__item" role="presentation">
+						<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+						  <span class="slds-truncate" title="Menu Item Three">Menu Item Three</span>
+						</a>
+					  </li>
+					  <li class="slds-has-divider_top-space" role="separator"></li>
+					  <li class="slds-dropdown__item" role="presentation">
+						<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+						  <span class="slds-truncate" title="Menu Item Four">Menu Item Four</span>
+						</a>
+					  </li>
+					</ul>
+				  </div>
+				</div>
 			</div>
-
+			
 			
 			<div class="slds-page-header slds-m-bottom_medium slds-p-around_x-medium">
 				<div class="slds-grid">
@@ -200,7 +239,7 @@
 					
 				</div>
 				<div class="slds-col slds-size_2-of-3">
-
+					
 					<div class="slds-hide" id="mappingTable">
 						<article class="slds-card">
 							<div class="slds-card__header slds-grid">
@@ -236,27 +275,27 @@
 							</div>
 						</article>
 					</div>
-
+					
 				</div>
 			</div>
 			
 		</div>
 		
 		<script>
-		
+			
 			/*var mdObjs;
-			var csvFile;
-			var selectedObj;
+				var csvFile;
+				var selectedObj;
 			var userInfo;*/
-		
+			
 			$(document).ready(this, init());
-
+			
 			if(!jsforce.browser.isLoggedIn()){
 				$('#noLoginContainer').removeClass('slds-hide');
 			} 
-				
-			jsforce.browser.on('connect', function(conn) {
 			
+			jsforce.browser.on('connect', function(conn) {
+				
 				$('#overlay').addClass('slds-backdrop_open');
 				$('#spinner').removeClass('slds-hide');
 				
@@ -268,7 +307,7 @@
 					userInfo = res.records[0];
 					$('#userFullname').html(userInfo.Name);
 					$('#userUsername').html(' (' + userInfo.Username + ')');
-				}).then(function(res){
+					}).then(function(res){
 					conn.describeGlobal(function(err, res) {
 						if (err) { return console.error(err); }
 						
@@ -286,7 +325,7 @@
 							}
 						}
 					});
-				}).then(function(){
+					}).then(function(){
 					$('#overlay').removeClass('slds-backdrop_open');
 					$('#spinner').addClass('slds-hide');
 					$('#container').removeClass('slds-hide');
