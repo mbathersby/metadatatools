@@ -136,11 +136,11 @@ function constructPackage() {
 
 		for (var j = 0; j < colList.length; j++) {
 
-			if (colMap[fieldName] != null && colMap[fieldName] != '') {
+			var fieldName = colList[j];
+			var fieldValue = fileRow[colMap[fieldName]];
+			var fieldType = "TEXT";
 
-				var fieldName = colList[j];
-				var fieldValue = fileRow[colMap[fieldName]];
-				var fieldType = "TEXT";
+			if (colMap[fieldName] != null && colMap[fieldName] != '') {
 
 				console.log('[' + i + ':' + j + '] ' + fieldName + " = " + fieldValue);
 
