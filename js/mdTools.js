@@ -114,7 +114,7 @@ function constructPackage() {
 
 	var fileColumns = csvFile.meta.fields;
 	var fileRows = csvFile.data;
-	fileRows.pop();
+	//fileRows.pop();
 
 	var sObjectType = selectedObj;
 	var colList = Object.values(columnToFieldMap());
