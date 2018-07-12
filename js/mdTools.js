@@ -2,6 +2,7 @@ var mdObjs;
 var csvFile;
 var selectedObj;
 var userInfo;
+var zipBlob;
 
 function init() {
 	jsforce.browser.init({
@@ -129,6 +130,7 @@ function constructPackage() {
 		var rowElements = [];
 
 		var developerName = '';
+		var fullName = '';
 
 		for (var j = 0; j < colList.length; j++) {
 
@@ -139,8 +141,11 @@ function constructPackage() {
 			console.log('[' + i + ':' + j + '] ' + fieldName + " = " + fieldValue);
 
 			if (fieldName == 'DeveloperName' || fieldName == 'QualifiedApiName') {
-				rowElements.unshift('\t<label>' + fieldValue + '</label>\n');
 				developerName = fieldValue;
+				fullName = selectedObj.name.replace('__mdt', '') + '.' + developerName;
+				
+				rowElements.unshift('\t<fullName>' + fullName + '</fullName>\n');
+				rowElements.unshift('\t<label>' + developerName + '</label>\n');
 			} else {
 
 				if (fieldValue == null) {
@@ -176,7 +181,7 @@ function constructPackage() {
 		xml += '</CustomMetadata>';
 
 		if (developerName != '') {
-			zip.file('customMetadata/' + selectedObj.name.replace('__mdt', '') + '.' + developerName + '.md', xml);
+			zip.file('customMetadata/' + fullName + '.md', xml);
 		}
 	}
 
@@ -191,5 +196,6 @@ function constructPackage() {
 		//window.location = "data:application/zip;base64," + base64;
 		//self.queueDeployment(c, base64);
 		console.log(base64);
+		zipBlob = base64;
 	});
 }
