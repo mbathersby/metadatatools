@@ -116,7 +116,7 @@ var swapMap = function (json) {
 
 function deploy() {
 	
-	$('deployStatus').html('Constructing deployment package...');
+	$('#deployStatus').html('Constructing deployment package...');
 	$('#prompt').addClass('slds-fade-in-open');
 	$('#overlay').addClass('slds-backdrop_open');
 	
@@ -135,7 +135,7 @@ function deploy() {
 
 		var fileRow = csvFile.data[i];
 
-		$('deployState').html('Processing row ' + i + ' of ' + csvFile.data.length);
+		$('#deployState').html('Processing row ' + i + ' of ' + csvFile.data.length);
 
 		var rowElements = [];
 
@@ -215,5 +215,7 @@ function deployZip() {
 	}).then(function(resp){
 		deployReq =  resp;
 		console.log(deployReq);
+		$('#deployStatus').html('Deployment ' + deployReq.state);
+		$('#deployState').html('');
 	});
 }
