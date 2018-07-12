@@ -3,6 +3,7 @@ var csvFile;
 var selectedObj;
 var userInfo;
 var zipBlob;
+var deployReq;
 
 function init() {
 	jsforce.browser.init({
@@ -201,7 +202,7 @@ function deploy() {
 		}
 	})
 	.then(function (base64) {
-		window.location = "data:application/zip;base64," + base64;
+		//window.location = "data:application/zip;base64," + base64;
 		zipBlob = base64;
 		
 		deployZip();
@@ -209,7 +210,10 @@ function deploy() {
 }
 
 function deployZip() {
-	var deployId = jsforce.browser.connection.metadata.deploy(zipBlob, {
+	jsforce.browser.connection.metadata.deploy(zipBlob, {
 		singlePackage: true
+	}).then(function(resp){
+		deployReq =  resp;
+		console.log(deployReq);
 	});
 }
