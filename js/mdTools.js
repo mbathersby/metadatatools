@@ -133,7 +133,7 @@ function constructPackage() {
 		for (var j = 0; j < colList.length; j++) {
 
 			var fieldName = colList[j];
-			var fieldValue = fileRow[fieldName];
+			var fieldValue = fileRow[colMap[fieldName]];
 			var fieldType = "TEXT";
 
 			console.log('[' + i + ':' + j + '] ' + fieldName + " = " + fieldValue);
