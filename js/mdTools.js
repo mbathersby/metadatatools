@@ -194,6 +194,9 @@ function deploy() {
 			zip.file('customMetadata/' + fullName + '.md', xml);
 		}
 	}
+	
+	$('#deployStatus').html('Generating package zip...');
+	$('#deployState').html('');
 
 	zip.generateAsync({
 		type: "base64",
@@ -204,12 +207,15 @@ function deploy() {
 	})
 	.then(function (base64) {
 		zipBlob = base64;
-		
 		deployZip();
 	})
 }
 
 function deployZip() {
+	
+	$('#deployStatus').html('Sending request to server...');
+	$('#deployState').html('');
+	
 	jsforce.browser.connection.metadata.deploy(zipBlob, {
 		singlePackage: true
 	})
