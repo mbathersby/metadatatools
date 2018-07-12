@@ -212,10 +212,32 @@ function deploy() {
 function deployZip() {
 	jsforce.browser.connection.metadata.deploy(zipBlob, {
 		singlePackage: true
-	}).then(function(resp){
+	})
+	
+	.then(function(resp){
 		deployReq =  resp;
 		console.log(deployReq);
 		$('#deployStatus').html('Deployment ' + deployReq.state);
 		$('#deployState').html('');
+		resolve(deployReq.id);
+	})
+	
+	.then(function(resp){
+		
+		var poll = setInterval(function(){
+			
+			checkDeployStatus(resp, true)
+			.then(function(resp){
+				console.log(resp);
+				$('#deployStatus').html('Deployment ' + resp.status);
+				$('#deployState').html(resp.state);
+				
+				if(resp.done){
+					clearInterval(poll);
+				}
+			});
+			
+		}, 5000);
+		
 	});
 }
