@@ -12,7 +12,7 @@ function init() {
 	});
 }
 
-$('#menu').on('click', function(){
+$('#menu').click(function(){
 	this.toggleClass('slds-is-open');
 });
 
