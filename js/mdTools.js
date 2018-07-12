@@ -120,29 +120,16 @@ function constructPackage() {
 	var zip = new JSZip();
 	zip.file('package.xml', packageXml());
 
-	/*var developerName;
-	var xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
-	+ '<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" '
-	+ 'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
-	+ 'xmlns:xsd="http://www.w3.org/2001/XMLSchema">\n'; */
-
 	for (var i = 0; i < csvFile.data.length; i++) {
 	
-		console.log('Row Loop ', i);
-
 		var fileRow = csvFile.data[i];
-		
-		//colMap = swapMap(columnToFieldMap());
-		
+				
 		console.log(fileRow);
 
 		var rowElements = [];
 
 		var developerName = '';
 
-		//console.log(rowData);
-
-		// loop through fieldMap
 		for (var j = 0; j < colList.length; j++) {
 		
 			console.log('Row: ' + i + '; Col: ' + j);
