@@ -3,7 +3,7 @@
 		<div class="slds-context-bar__primary">
 			<div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
 				<span class="slds-context-bar__label-action slds-context-bar__app-name">
-					<span class="slds-truncate" title="App Name">Salesforce Metadata Toolkit</span>
+					<span class="slds-truncate" title="App Name">Metadata Toolkit</span>
 				</span>
 			</div>
 		</div>
@@ -12,17 +12,17 @@
 				<li class="slds-context-bar__item slds-is-active">
 					<a href="javascript:void(0);" class="slds-context-bar__label-action" title="Home">
 						<span class="slds-assistive-text">Current Page:</span>
-						<span class="slds-truncate" title="Home">Home</span>
+						<span class="slds-truncate" title="Home">Dashboard</span>
 					</a>
 				</li>
 				<li class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_hover">
 					<a href="javascript:void(0);" class="slds-context-bar__label-action" title="Menu Item">
-						<span class="slds-truncate" title="Menu Item">Menu Item</span>
+						<span class="slds-truncate" title="Menu Item">Custom Metadata Tools</span>
 					</a>
 					<div class="slds-context-bar__icon-action slds-p-left_none">
 						<button class="slds-button slds-button_icon slds-button_icon slds-context-bar__button" aria-haspopup="true" title="Open menu item submenu">
 							<svg class="slds-button__icon" aria-hidden="true">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevrondown" />
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#chevrondown" />
 							</svg>
 							<span class="slds-assistive-text">Open menu item submenu</span>
 						</button>
@@ -33,7 +33,7 @@
 								<a href="javascript:void(0);" role="menuitem" tabindex="-1">
 									<span class="slds-truncate" title="Main action">
 										<svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-right_x-small" aria-hidden="true">
-											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#add" />
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#add" />
 										</svg>Main action</span>
 								</a>
 							</li>
