@@ -288,12 +288,12 @@
 				<lightning:buttonGroup-->
 			</div>
 			
-			<section id="prompt" role="alertdialog" tabindex="-1" aria-labelledby="prompt-heading-id" aria-describedby="prompt-message-wrapper" class="slds-modal slds-modal_prompt" aria-modal="true">
+			<section id="prompt" role="alertdialog" tabindex="-1" aria-labelledby="prompt-heading-id" aria-describedby="prompt-message-wrapper" class="slds-modal" aria-modal="true">
 				<div class="slds-modal__container">
-					<header class="slds-modal__header slds-theme_warning slds-theme_alert-texture">
-						<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick="$('#prompt').addClass('slds-hide');">
-							<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#close" />
+					<header style="border-bottom: none;" class="slds-modal__header slds-theme_warning slds-theme_alert-texture">
+						<button class="slds-button slds-button_icon slds-modal__close" title="Close" onclick="$('#prompt').addClass('slds-hide');">
+							<svg style="fill: #ffffff;" class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+								<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#close" />
 							</svg>
 							<span class="slds-assistive-text">Close</span>
 						</button>
