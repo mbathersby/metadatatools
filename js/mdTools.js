@@ -290,7 +290,14 @@ function deployZip() {
 				$('#deployState').html(reqStatus.stateDetail);
 				
 				if(reqStatus.done){
+					$('#uploadStatusCloseBtn').removeClass('slds-hide');
 					clearInterval(poll);
+					
+					$('#deployState').html(
+						'Components Deployed: ' + reqStatus.numberComponentsDeployed + '<br/>'
+						+ 'Component Errors: ' + reqStatus.numberComponentErrors
+					
+					);
 				}
 			});
 			
