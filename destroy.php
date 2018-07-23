@@ -1,5 +1,15 @@
 <?php include 'header.php'; ?>
 
+		<!-- delete options
+			
+			ALL from single object
+			OR
+			From CSV Upload
+			OR
+			Select from list
+			
+			-->
+
 		<div class="slds-page-header slds-m-bottom_medium slds-p-around_x-medium">
 			<div class="slds-grid">
 				<div class="slds-col slds-has-flexi-truncate">

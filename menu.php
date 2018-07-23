@@ -2,7 +2,7 @@
 		<div class="slds-context-bar__primary">
 			<div class="slds-context-bar__item slds-context-bar__dropdown-trigger slds-dropdown-trigger slds-dropdown-trigger_click slds-no-hover">
 				<span class="slds-context-bar__label-action slds-context-bar__app-name">
-					<span class="slds-truncate" title="App Name">Metadata Toolkit</span>
+					<span title="App Name">Salesforce Metadata Toolkit</span>
 				</span>
 			</div>
 		</div>
@@ -28,12 +28,12 @@
 					<div class="slds-dropdown slds-dropdown_right">
 						<ul class="slds-dropdown__list" role="menu">
 							<li class="slds-dropdown__item" role="presentation">
-								<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+								<a href="/create.php" role="menuitem" tabindex="-1">
 									<span class="slds-truncate" title="Menu Item One">Quick Create</span>
 								</a>
 							</li>
 							<li class="slds-dropdown__item" role="presentation">
-								<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+								<a href="/delete.php" role="menuitem" tabindex="-1">
 									<span class="slds-truncate" title="Menu Item Two">Delete</span>
 								</a>
 							</li>
@@ -65,6 +65,11 @@
 							</li>
 						</ul>
 					</div>
+				</li>
+				<li class="slds-context-bar__item">
+					<a href="index.php" class="slds-context-bar__label-action" title="Package Builder">
+						<span class="slds-truncate" title="Home">Package Builder</span>
+					</a>
 				</li>
 				
 			</ul>

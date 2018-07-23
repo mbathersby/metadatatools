@@ -172,7 +172,7 @@
 		</div>
 		
 		<div class="slds-docked-form-footer">
-			<button id="deployBtn" class="slds-button slds-button_neutral" onclick="deploy();" disabled>Deploy</button>
+			<button id="deployBtn" class="slds-button slds-button_brand" onclick="deploy();" disabled>Deploy</button>
 			<!--div class="slds-button-group" role="group">
 				<button class="slds-button slds-button_neutral">Edit</button>
 				<button class="slds-button slds-button_neutral">Save</button>
@@ -200,7 +200,14 @@
 		
 		<script>
 			$('#file-upload-input').change(function(){
+			
+				// reset mapping table and deploy button
+				$('#mappingTable').addClass('slds-hide');
+				$('#deployBtn').addAttr('disabled');
+				
+				$('#file-size').html('Calculating...');
 				$('#file-info').removeClass('slds-hide');
+				
 				var file = $(this)[0].files[0];
 				
 				$("[name='fileName']").html(file.name);
