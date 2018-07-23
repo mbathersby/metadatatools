@@ -1,4 +1,4 @@
-< ?php include 'header.php'; ?>
+<?php include 'header.php'; ?>
 
 	<div id="container" class="slds slds-hide">
 			
@@ -254,4 +254,4 @@
 			
 		</div>
 
-< ?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?>
