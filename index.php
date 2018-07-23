@@ -253,5 +253,47 @@
 			</section>
 			
 		</div>
+		
+		<script>
+			$('#file-upload-input').change(function(){
+				$('#file-info').removeClass('slds-hide');
+				var file = $(this)[0].files[0];
+				
+				$("[name='fileName']").html(file.name);
+				$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
+				
+				$('#last-modified').html(moment(file.lastModified).format('lll'));
+				
+				var reader = new FileReader();
+				
+				reader.onload = function(){
+					csvFile = Papa.parse(reader.result, {header:true});
+					console.log('CSV File Data');
+					console.log(csvFile);
+					$("#rowCount").html(csvFile.data.length - 1);
+					
+					if($('#object-select').val() != null){
+						buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
+					}
+				};
+				
+				reader.readAsText(file);
+				
+			});
+			
+			$('#object-select').change(function(){
+				var conn = jsforce.browser.connection;
+				
+				conn.sobject($(this).val()).describe(function(err, res) {
+					selectedObj = res;
+					console.log('Selected Object: ', selectedObj);
+					
+					if(csvFile != null){
+						buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
+					}	
+				});
+				
+			});
+		</script>
 
 <?php include 'footer.php'; ?>
