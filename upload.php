@@ -172,7 +172,7 @@
 		</div>
 		
 		<div class="slds-docked-form-footer">
-			<button class="slds-button slds-button_neutral" onclick="deploy();" disabled>Deploy</button>
+			<button id="deployBtn" class="slds-button slds-button_neutral" onclick="deploy();" disabled>Deploy</button>
 			<!--div class="slds-button-group" role="group">
 				<button class="slds-button slds-button_neutral">Edit</button>
 				<button class="slds-button slds-button_neutral">Save</button>
@@ -222,6 +222,7 @@
 					
 					if($('#object-select').val() != null){
 						buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
+						$('#deployBtn').removeAttr('disabled');
 					}
 				};
 				
@@ -238,6 +239,7 @@
 					
 					if(csvFile != null){
 						buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
+						$('#deployBtn').removeAttr('disabled');
 					}	
 				});
 				

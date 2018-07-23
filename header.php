@@ -34,12 +34,6 @@
 					<h2 class="slds-text-heading_small">Error:</h2>
 					<p id="toastMessage"></p>
 				</div>
-				<button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
-					<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
-						<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#close" />
-					</svg>
-					<span class="slds-assistive-text">Close</span>
-				</button>
 			</div>
 		</div>
 		
