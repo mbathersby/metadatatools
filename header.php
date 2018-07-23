@@ -84,16 +84,6 @@
 							<span class="slds-truncate" title="Custom Metadata Uploader">Custom Metadata Uploader</span>
 						</a>
 					</li>
-					<!--li class="slds-dropdown__item" role="presentation">
-					<a href="javascript:void(0);" role="menuitem" tabindex="-1">
-					<span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
-					</a>
-					</li>
-					<li class="slds-dropdown__item" role="presentation">
-					<a href="javascript:void(0);" role="menuitem" tabindex="-1">
-					<span class="slds-truncate" title="Menu Item Three">Menu Item Three</span>
-					</a>
-					</li-->
 					<li class="slds-has-divider_top-space" role="separator"></li>
 					<li class="slds-dropdown__item" role="presentation">
 						<a href="javascript:logout();" role="menuitem" tabindex="-1">
