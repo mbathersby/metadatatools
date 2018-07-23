@@ -80,6 +80,12 @@
 			<div id="menu-dropdown" class="slds-dropdown slds-dropdown_right slds-text-body_regular">
 				<ul class="slds-dropdown__list" role="menu" aria-label="Show More">
 					<li class="slds-dropdown__item" role="presentation">
+						<a href="index.php" role="menuitem" tabindex="0">
+							<span class="slds-truncate" title="Dashboard">Dashboard</span>
+						</a>
+					</li>
+					<li class="slds-has-divider_top-space" role="separator"></li>
+					<li class="slds-dropdown__item" role="presentation">
 						<a href="upload.php" role="menuitem" tabindex="0">
 							<span class="slds-truncate" title="Custom Metadata Uploader">Custom Metadata Uploader</span>
 						</a>

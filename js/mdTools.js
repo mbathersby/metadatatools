@@ -11,9 +11,11 @@ function init() {
 		$( '#menu' ).toggleClass( 'slds-is-open' );
 	});
 	
-	$( '#menu-dropdown' ).focusout(function() {
-		$( '#menu' ).removeClass( 'slds-is-open' );
-	}); 
+	$( document ).click(function( event ) {
+		if (!$( event.target ).closest( '#menu' ).length) {
+			$( '#menu' ).removeClass( 'slds-is-open' );
+		}
+	});
 	
 	jsforce.browser.init({
 		clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
