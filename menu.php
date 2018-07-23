@@ -63,6 +63,11 @@
 									<span class="slds-truncate" title="Menu Item Two">Destroy</span>
 								</a>
 							</li>
+							<li class="slds-dropdown__item" role="presentation">
+								<a href="/export.php" role="menuitem" tabindex="-1">
+									<span class="slds-truncate" title="Menu Item Two">Export</span>
+								</a>
+							</li>
 						</ul>
 					</div>
 				</li>
