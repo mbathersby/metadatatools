@@ -199,7 +199,7 @@
 		</section>
 		
 		<script>
-			$('#file-upload-input').change(function(){
+			/*$('#file-upload-input').change(function(){
 				$('#file-info').removeClass('slds-hide');
 				var file = $(this)[0].files[0];
 				
@@ -237,7 +237,7 @@
 					}	
 				});
 				
-			});
+			});*/
 		</script>
 
 <?php include 'footer.php'; ?>
