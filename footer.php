@@ -1,9 +1,6 @@
+		</div>
+		
 		<script>
-			
-			/*var mdObjs;
-				var csvFile;
-				var selectedObj;
-			var userInfo;*/
 			
 			$(document).ready(this, init());
 			

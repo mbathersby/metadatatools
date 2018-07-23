@@ -55,3 +55,57 @@
 			</div>
 		</section>
 	</div>
+	
+	<div id="container" class="slds slds-hide">
+	
+		<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+			<span class="slds-assistive-text">info</span>
+			<span class="slds-icon_container slds-icon-utility-user slds-m-right_x-small" title="Description of icon when needed">
+				<svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+					<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#user"></use>
+				</svg>
+			</span>
+			<h2>Logged in as <span id="userFullname"></span> <span id="userUsername"></span>.
+				<a onclick="logout();">Log out</a>
+			</h2>
+			<!--button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
+				<svg class="slds-button__icon" aria-hidden="true">
+				<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+				</svg>
+				<span class="slds-assistive-text">Close</span>
+			</button-->
+		</div>
+		
+		<div id="menu" class="slds-dropdown-trigger slds-dropdown-trigger_click slds-notify__close" style="top: 7px; right: 7px; position: fixed;">
+			<button class="slds-button slds-button_icon slds-button_icon-border-inverse slds-button_icon-x-small" aria-haspopup="true" title="Show More">
+				<svg class="slds-button__icon" aria-hidden="true">
+					<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+				</svg>
+				<span class="slds-assistive-text">Show More</span>
+			</button>
+			<div class="slds-dropdown slds-dropdown_right slds-text-body_regular">
+				<ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+					<!--li class="slds-dropdown__item" role="presentation">
+						<a href="javascript:void(0);" role="menuitem" tabindex="0">
+						<span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+						</a>
+						</li>
+						<li class="slds-dropdown__item" role="presentation">
+						<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+						<span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+						</a>
+						</li>
+						<li class="slds-dropdown__item" role="presentation">
+						<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+						<span class="slds-truncate" title="Menu Item Three">Menu Item Three</span>
+						</a>
+						</li>
+					<li class="slds-has-divider_top-space" role="separator"></li-->
+					<li class="slds-dropdown__item" role="presentation">
+						<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+							<span class="slds-truncate" title="Menu Item Four">Logout</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
