@@ -92,7 +92,7 @@
 					</li>
 					<li class="slds-dropdown__item" role="presentation">
 						<a href="delete.php" role="menuitem" tabindex="0">
-							<span class="slds-truncate" title="Delete Custom Metadata">Delete All Custom Metadata</span>
+							<span class="slds-truncate" title="Delete Custom Metadata">Delete Custom Metadata</span>
 						</a>
 					</li>
 					<li class="slds-has-divider_top-space" role="separator"></li>
