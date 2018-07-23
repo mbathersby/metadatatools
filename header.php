@@ -22,8 +22,8 @@
 <body>
 	
 	<script>
-		$('#menu').click(function(){
-			$( this ).toggleClass('slds-is-open');
+		$('#menu button').click(function(){
+			$( '#menu' ).toggleClass('slds-is-open');
 		});
 	</script>
 
