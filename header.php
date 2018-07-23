@@ -77,7 +77,7 @@
 				</svg>
 				<span class="slds-assistive-text">Show More</span>
 			</button>
-			<div class="slds-dropdown slds-dropdown_right slds-text-body_regular">
+			<div id="menu-dropdown" class="slds-dropdown slds-dropdown_right slds-text-body_regular">
 				<ul class="slds-dropdown__list" role="menu" aria-label="Show More">
 					<li class="slds-dropdown__item" role="presentation">
 						<a href="upload.php" role="menuitem" tabindex="0">

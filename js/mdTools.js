@@ -11,7 +11,7 @@ function init() {
 		$( '#menu' ).toggleClass( 'slds-is-open' );
 	});
 	
-	$( '#menu .slds-dropdown' ).focusout(function() {
+	$( '#menu-dropdown' ).focusout(function() {
 		$( '#menu' ).removeClass( 'slds-is-open' );
 	}); 
 	
