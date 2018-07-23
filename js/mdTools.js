@@ -12,7 +12,7 @@ function init() {
 	});
 	
 	$( '#menu' ).focusout(function() {
-		$( '#menu' ).removeClass( 'slds-is-open' );
+		//$( '#menu .slds-dropdown' ).removeClass( 'slds-is-open' );
 	}); 
 	
 	jsforce.browser.init({
