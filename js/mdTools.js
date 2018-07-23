@@ -65,10 +65,14 @@ function showToast(msg, duration){
 	$('#errorToast #toastMessage').html(msg);
 	$('#errorToast').removeClass('slds-hide');
 	
-	setTimeout(function(){
-		$('#errorToast').addClass('slds-hide'),
+	function hideToast() {
+		$('#errorToast').addClass('slds-hide')
+	}
+	
+	setTimeout(
+		hideToast,
 		duration
-	});
+	);
 	
 }
 

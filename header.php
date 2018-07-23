@@ -23,11 +23,11 @@
 		
 		<div class="slds-brand-band slds-brand-band_large"></div>
 		
-		<div class="slds-notify_container slds-is-relative slds-hide" id="errorToast">
+		<div class="slds-notify_container slds-hide" id="errorToast">
 			<div class="slds-notify slds-notify_toast slds-theme_error" role="alert">
 				<span class="slds-icon_container slds-icon-utility-error slds-m-right_small slds-no-flex slds-align-top">
 					<svg class="slds-icon slds-icon_small" aria-hidden="true">
-						<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#error" />
+						<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#error" />
 					</svg>
 				</span>
 				<div class="slds-notify__content">
