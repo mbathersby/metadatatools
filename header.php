@@ -20,6 +20,8 @@
 		
 	</head>
 	<body>
+	
+		<div class="slds-brand-band slds-brand-band_large"></div>
 		
 		<div role="status" id="spinner" class="slds-spinner slds-spinner_medium slds-spinner_inverse slds-hide">
 			<span class="slds-assistive-text">Loading</span>

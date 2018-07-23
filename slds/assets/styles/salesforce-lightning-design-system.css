@@ -8301,7 +8301,7 @@ a.slds-button--inverse:focus {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url("/assets/images/themes/oneSalesforce/banner-brand-default.png"), linear-gradient(to top, rgba(221, 219, 218, 0) 0, #e8e8e8);
+  background-image: url("/slds/assets/images/themes/oneSalesforce/banner-brand-default.png"), linear-gradient(to top, rgba(221, 219, 218, 0) 0, #e8e8e8);
   background-repeat: repeat-x;
   background-position: top left; }
 
