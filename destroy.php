@@ -12,7 +12,7 @@
 							</span>
 						</div>
 						<div class="slds-media__body">
-							<h1 class="slds-page-header__title slds-truncate" title="Custom Metadata Uploader">Delete something...</h1>
+							<h1 class="slds-page-header__title slds-truncate" title="Destroy Custom Metadata">Destroy Custom Metadata</h1>
 						</div>
 					</div>
 				</div>

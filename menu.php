@@ -59,8 +59,8 @@
 								</a>
 							</li>
 							<li class="slds-dropdown__item" role="presentation">
-								<a href="/delete.php" role="menuitem" tabindex="-1">
-									<span class="slds-truncate" title="Menu Item Two">Delete</span>
+								<a href="/destroy.php" role="menuitem" tabindex="-1">
+									<span class="slds-truncate" title="Menu Item Two">Destroy</span>
 								</a>
 							</li>
 						</ul>
