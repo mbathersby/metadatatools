@@ -60,6 +60,18 @@ var fieldTypeMap = function () {
 	return typeMap;
 }
 
+function showToast(msg, duration){
+	
+	$('#errorToast #toastMessage').html(msg);
+	$('#errorToast').removeClass('slds-hide');
+	
+	setTimeout(function(){
+		$('#errorToast').addClass('slds-hide'),
+		duration
+	});
+	
+}
+
 var packageXml = function () {
 	var packageXML = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
 		 + '\t<Package xmlns="http://soap.sforce.com/2006/04/metadata">\n'
