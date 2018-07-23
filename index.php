@@ -1,1 +1,257 @@
-<?php include_once("index.htm"); ?>
+< ?php include 'header.php'; ?>
+
+	<div id="container" class="slds slds-hide">
+			
+			<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+				<span class="slds-assistive-text">info</span>
+				<span class="slds-icon_container slds-icon-utility-user slds-m-right_x-small" title="Description of icon when needed">
+					<svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+						<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#user"></use>
+					</svg>
+				</span>
+				<h2>Logged in as <span id="userFullname"></span> <span id="userUsername"></span>.
+					<a onclick="logout();">Log out</a>
+				</h2>
+				<!--button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
+					<svg class="slds-button__icon" aria-hidden="true">
+					<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+					</svg>
+					<span class="slds-assistive-text">Close</span>
+				</button-->
+			</div>
+			
+			<div id="menu" class="slds-dropdown-trigger slds-dropdown-trigger_click slds-notify__close" style="top: 7px; right: 7px; position: fixed;">
+				<button class="slds-button slds-button_icon slds-button_icon-border-inverse slds-button_icon-x-small" aria-haspopup="true" title="Show More">
+					<svg class="slds-button__icon" aria-hidden="true">
+						<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+					</svg>
+					<span class="slds-assistive-text">Show More</span>
+				</button>
+				<div class="slds-dropdown slds-dropdown_right slds-text-body_regular">
+					<ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+						<!--li class="slds-dropdown__item" role="presentation">
+							<a href="javascript:void(0);" role="menuitem" tabindex="0">
+							<span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+							</a>
+							</li>
+							<li class="slds-dropdown__item" role="presentation">
+							<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+							<span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+							</a>
+							</li>
+							<li class="slds-dropdown__item" role="presentation">
+							<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+							<span class="slds-truncate" title="Menu Item Three">Menu Item Three</span>
+							</a>
+							</li>
+						<li class="slds-has-divider_top-space" role="separator"></li-->
+						<li class="slds-dropdown__item" role="presentation">
+							<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+								<span class="slds-truncate" title="Menu Item Four">Logout</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="slds-page-header slds-m-bottom_medium slds-p-around_x-medium">
+				<div class="slds-grid">
+					<div class="slds-col slds-has-flexi-truncate">
+						<div class="slds-media slds-no-space slds-grow">
+							<div class="slds-media__figure">
+								<span class="slds-icon_container slds-icon-standard-orders" title="Description of icon when needed">
+									<svg class="slds-icon slds-icon_small" aria-hidden="true">
+										<use xlink:href="slds/assets/icons/standard-sprite/svg/symbols.svg#orders"></use>
+									</svg>
+								</span>
+							</div>
+							<div class="slds-media__body">
+								<h1 class="slds-page-header__title slds-truncate" title="Custom Metadata Uploader">Salesforce Custom Metadata Uploader</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="slds-grid slds-gutters slds-m-around_x-small">
+				<div class="slds-col slds-size_1-of-3">
+					
+					<article class="slds-card">
+						<div class="slds-card__header slds-grid">
+							<header class="slds-media slds-media_center slds-has-flexi-truncate">
+								<div class="slds-media__figure">
+									<span class="slds-icon_container slds-icon-standard-entity" title="entity">
+										<svg class="slds-icon slds-icon_small" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/standard-sprite/svg/symbols.svg#entity"></use>
+										</svg>
+									</span>
+								</div>
+								<div class="slds-media__body">
+									<h2 class="slds-card__header-title">
+										<a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+											<span class="slds-text-heading_small">Select Metadata Object</span>
+										</a>
+									</h2>
+								</div>
+							</header>
+						</div>
+						
+						<div class="slds-card__body">
+							<div class="slds-form-element slds-m-around_medium">
+								<label class="slds-form-element__label" for="select-01">Custom Metadata Objects</label>
+								<div class="slds-form-element__control">
+									<div class="slds-select_container">
+										<select class="slds-select" id="object-select">
+											<option value="" disabled selected>Please select</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</article>
+					
+					<article class="slds-card">
+						<div class="slds-card__header slds-grid">
+							<header class="slds-media slds-media_center slds-has-flexi-truncate">
+								<div class="slds-media__figure">
+									<span class="slds-icon_container slds-icon-doctype-csv" title="csv">
+										<svg class="slds-icon slds-icon_small" aria-hidden="true">
+											<use xlink:href="slds/assets/icons/doctype-sprite/svg/symbols.svg#csv"></use>
+										</svg>
+									</span>
+								</div>
+								<div class="slds-media__body">
+									<h2 class="slds-card__header-title">
+										<a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+											<span class="slds-text-heading_small">Select CSV File</span>
+										</a>
+									</h2>
+								</div>
+							</header>
+						</div>
+						<div class="slds-card__body">
+							<div class="slds-form-element slds-m-around_medium">
+								<div class="slds-form-element__control">
+									<div class="slds-file-selector slds-file-selector_files">
+										<div class="slds-file-selector__dropzone">
+											<input type="file" class="slds-file-selector__input slds-assistive-text" accept=".csv" id="file-upload-input" aria-labelledby="file-selector-primary-label file-selector-secondary-label" />
+											<label class="slds-file-selector__body" for="file-upload-input" id="file-selector-secondary-label">
+												<span class="slds-file-selector__button slds-button slds-button_neutral">
+													<svg class="slds-button__icon slds-button__icon_left" aria-hidden="true" >
+														<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#upload" />
+													</svg>Upload Files</span>
+													<span name="fileName" class="slds-file-selector__text slds-medium-show">No File Selected</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+					
+					<article class="slds-card slds-hide" id="file-info">
+						<div class="slds-card__header slds-grid">
+							<header class="slds-media slds-media_center slds-has-flexi-truncate">
+								<div class="slds-media__figure">
+									<span class="slds-icon_container slds-icon-standard-account" title="account">
+										<svg class="slds-icon slds-icon_small" aria-hidden="true">
+											<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/standard-sprite/svg/symbols.svg#account"></use>
+										</svg>
+									</span>
+								</div>
+								<div class="slds-media__body">
+									<h2 class="slds-card__header-title">
+										<a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+											<span class="slds-text-heading_small">File Information</span>
+										</a>
+									</h2>
+								</div>
+							</header>
+						</div>
+						<div class="slds-card__body slds-p-horizontal_medium">
+							<dl class="slds-list_horizontal slds-wrap">
+								<dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">File Name:</dt>
+								<dd class="slds-item_detail slds-truncate" title="File Name" name="fileName"></dd>
+								<dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">File Size:</dt>
+								<dd class="slds-item_detail slds-truncate" title="File Name" id="file-size"></dd>
+								<dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">Last Modified:</dt>
+								<dd class="slds-item_detail slds-truncate" title="File Name" id="last-modified"></dd>
+								<dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">Total Rows:</dt>
+								<dd class="slds-item_detail slds-truncate" title="File Name" id="rowCount"></dd>
+							</dl>
+						</div>
+					</article>
+					
+				</div>
+				<div class="slds-col slds-size_2-of-3">
+					
+					<div class="slds-hide" id="mappingTable">
+						<article class="slds-card">
+							<div class="slds-card__header slds-grid">
+								<header class="slds-media slds-media_center slds-has-flexi-truncate">
+									<div class="slds-media__body">
+										<h2 class="slds-card__header-title">
+											<a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+												<span class="slds-text-heading_small">Map CSV Columns</span>
+											</a>
+										</h2>
+									</div>
+								</header>
+							</div>
+							<div class="slds-card__body slds-p-horizontal_medium">
+								
+								<table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered">
+									<thead>
+										<tr class="slds-text-title_caps">
+											<th scope="col slds-size_1-of-3">
+												<div class="slds-truncate" title="Column Name">CSV Column Name</div>
+											</th>
+											<th scope="col slds-size_1-of-3">
+												<div class="slds-truncate" title="Map To">Sample Data</div>
+											</th>
+											<th scope="col slds-size_1-of-3">
+												<div class="slds-truncate" title="Map To">Map To Field</div>
+											</th>
+										</tr>
+									</thead>
+									<tbody id="mappingTableBody"></tbody>
+								</table>
+								
+							</div>
+						</article>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="slds-docked-form-footer">
+				<button class="slds-button slds-button_neutral" onclick="deploy();">Deploy</button>
+				<!--div class="slds-button-group" role="group">
+					<button class="slds-button slds-button_neutral">Edit</button>
+					<button class="slds-button slds-button_neutral">Save</button>
+					</div>
+				<lightning:buttonGroup-->
+			</div>
+			
+			<section id="prompt" role="alertdialog" tabindex="-1" aria-labelledby="prompt-heading-id" aria-describedby="prompt-message-wrapper" class="slds-modal slds-modal_prompt" aria-modal="true">
+				<div class="slds-modal__container">
+					<header class="slds-modal__header slds-theme_warning slds-theme_alert-texture">
+						<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+							<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#close" />
+							</svg>
+							<span class="slds-assistive-text">Close</span>
+						</button>
+						<h2 class="slds-text-heading_medium" id="prompt-heading-id">Deployment In Progress</h2>
+					</header>
+					<div class="slds-modal__content slds-p-around_medium slds-text-align_center" id="prompt-message-wrapper">
+						<div id="deployStatus"></div>
+						<div id="deployState"></div>
+					</div>
+				</div>
+			</section>
+			
+		</div>
+
+< ?php include 'footer.php'; ?>
