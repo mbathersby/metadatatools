@@ -32,7 +32,7 @@
 				</span>
 				<div class="slds-notify__content">
 					<h2 class="slds-text-heading_small">Error:</h2>
-					<p id="toastMessage"></p>
+					<p id="toastMessage" style="white-space : pre-line !important;"></p>
 				</div>
 			</div>
 		</div>
