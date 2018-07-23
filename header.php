@@ -66,18 +66,18 @@
 				</svg>
 			</span>
 			<h2>Logged in as <span id="userFullname"></span> <span id="userUsername"></span>.
-				<a onclick="logout();">Log out</a>
+				<!--a onclick="logout();">Log out</a-->
 			</h2>
 		</div>
 		
-		<div id="menu" class="slds-dropdown-trigger slds-dropdown-trigger_click" style="top: 7px; right: 7px; position: fixed;">
+		<div id="menu" class="slds-dropdown-trigger slds-dropdown-trigger_click" style="top: 7px; left: 7px; position: fixed;">
 			<button class="slds-button slds-button_icon slds-button_icon-border-inverse slds-button_icon-x-small" aria-haspopup="true" title="Show More">
 				<svg class="slds-button__icon" aria-hidden="true">
 					<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
 				</svg>
 				<span class="slds-assistive-text">Show More</span>
 			</button>
-			<div id="menu-dropdown" class="slds-dropdown slds-dropdown_right slds-text-body_regular">
+			<div id="menu-dropdown" class="slds-dropdown slds-dropdown_left slds-text-body_regular">
 				<ul class="slds-dropdown__list" role="menu" aria-label="Show More">
 					<li class="slds-dropdown__item" role="presentation">
 						<a href="index.php" role="menuitem" tabindex="0">
