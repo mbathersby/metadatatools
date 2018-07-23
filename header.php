@@ -87,7 +87,12 @@
 					<li class="slds-has-divider_top-space" role="separator"></li>
 					<li class="slds-dropdown__item" role="presentation">
 						<a href="upload.php" role="menuitem" tabindex="0">
-							<span class="slds-truncate" title="Custom Metadata Uploader">Custom Metadata Uploader</span>
+							<span class="slds-truncate" title="Upload Custom Metadata">Upload Custom Metadata</span>
+						</a>
+					</li>
+					<li class="slds-dropdown__item" role="presentation">
+						<a href="delete.php" role="menuitem" tabindex="0">
+							<span class="slds-truncate" title="Delete Custom Metadata">Delete All Custom Metadata</span>
 						</a>
 					</li>
 					<li class="slds-has-divider_top-space" role="separator"></li>
