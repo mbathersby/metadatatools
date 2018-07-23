@@ -9,9 +9,8 @@
 		<nav class="slds-context-bar__secondary" role="navigation">
 			<ul class="slds-grid">
 			
-				<li class="slds-context-bar__item slds-is-active">
-					<a href="javascript:void(0);" class="slds-context-bar__label-action" title="Home">
-						<span class="slds-assistive-text">Current Page:</span>
+				<li class="slds-context-bar__item">
+					<a href="index.php" class="slds-context-bar__label-action" title="Dashboard">
 						<span class="slds-truncate" title="Home">Dashboard</span>
 					</a>
 				</li>
@@ -55,12 +54,12 @@
 					<div class="slds-dropdown slds-dropdown_right">
 						<ul class="slds-dropdown__list" role="menu">
 							<li class="slds-dropdown__item" role="presentation">
-								<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+								<a href="/upload.php" role="menuitem" tabindex="-1">
 									<span class="slds-truncate" title="Menu Item One">Upload</span>
 								</a>
 							</li>
 							<li class="slds-dropdown__item" role="presentation">
-								<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+								<a href="/delete.php" role="menuitem" tabindex="-1">
 									<span class="slds-truncate" title="Menu Item Two">Delete</span>
 								</a>
 							</li>

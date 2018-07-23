@@ -7,7 +7,9 @@ var deployReq;
 
 function init() {
 	
-	$( '#menu button' ).click(function(){
+	setNavigation();
+	
+	/*$( '#menu button' ).click(function(){
 		$( '#menu' ).toggleClass( 'slds-is-open' );
 	});
 	
@@ -15,7 +17,7 @@ function init() {
 		if (!$( event.target ).closest( '#menu' ).length) {
 			$( '#menu' ).removeClass( 'slds-is-open' );
 		}
-	});
+	});*/
 	
 	jsforce.browser.init({
 		clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
@@ -24,9 +26,18 @@ function init() {
 	});
 }
 
-$( '#menu' ).on( 'click', function( event ) {
-  $( this ).toggleClass( 'slds-is-open' );
-});
+function setNavigation() {
+    var path = window.location.pathname;
+    path = path.replace(/\/$/, "");
+    path = decodeURIComponent(path);
+
+    $(".slds-dropdown__item a").each(function () {
+        var href = $(this).attr('href');
+        if (path.substring(0, href.length) === href) {
+            $(this).closest('.slds-context-bar__item').addClass('slds-is-active');
+        }
+    });
+}
 
 function login(instance) {
 	jsforce.browser.config.loginUrl = 'https://' + instance + '.salesforce.com';
