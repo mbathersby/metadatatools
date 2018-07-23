@@ -217,10 +217,10 @@
 					$("#rowCount").html(csvFile.data.length - 1);
 					
 					if((csvFile.data.length - 1) > 10000){
-						showToast('You cannot depploy more than 10,000 items at a time.', 5000);
+						showToast('You cannot deploy more than 10,000 items at a time. Please split your CSV into mutiple files of 10,000 rows or less and deploy each file separately.', 5000);
 					}
 					
-					if($('#object-select').val() != null){
+					else if($('#object-select').val() != null){
 						buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
 						$('#deployBtn').removeAttr('disabled');
 					}
