@@ -70,7 +70,7 @@
 			</h2>
 		</div>
 		
-		<? php include 'menu.php' ?>
+		<?php include 'menu.php'; ?>
 		
 		<!--div id="menu" class="slds-dropdown-trigger slds-dropdown-trigger_click" style="top: 7px; left: 7px; position: fixed;">
 			<button class="slds-button slds-button_icon slds-button_icon-border-inverse slds-button_icon-x-small" aria-haspopup="true" title="Show More">
