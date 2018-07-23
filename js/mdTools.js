@@ -7,9 +7,13 @@ var deployReq;
 
 function init() {
 	
-	$('#menu button').click(function(){
-		$( '#menu' ).toggleClass('slds-is-open');
+	$( '#menu button' ).click(function(){
+		$( '#menu' ).toggleClass( 'slds-is-open' );
 	});
+	
+	$( '#menu' ).focusout(function() {
+		$( '#menu' ).removeClass( 'slds-is-open' );
+	}); 
 	
 	jsforce.browser.init({
 		clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',

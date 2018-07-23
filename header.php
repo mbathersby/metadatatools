@@ -68,12 +68,6 @@
 			<h2>Logged in as <span id="userFullname"></span> <span id="userUsername"></span>.
 				<a onclick="logout();">Log out</a>
 			</h2>
-			<!--button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
-				<svg class="slds-button__icon" aria-hidden="true">
-				<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
-				</svg>
-				<span class="slds-assistive-text">Close</span>
-			</button-->
 		</div>
 		
 		<div id="menu" class="slds-dropdown-trigger slds-dropdown-trigger_click" style="top: 7px; right: 7px; position: fixed;">
@@ -102,8 +96,8 @@
 						</li>
 					<li class="slds-has-divider_top-space" role="separator"></li-->
 					<li class="slds-dropdown__item" role="presentation">
-						<a href="javascript:void(0);" role="menuitem" tabindex="-1">
-							<span class="slds-truncate" title="Menu Item Four">Logout</span>
+						<a href="javascript:logout();" role="menuitem" tabindex="-1">
+							<span class="slds-truncate" title="Logout">Logout</span>
 						</a>
 					</li>
 				</ul>
