@@ -203,7 +203,7 @@
 			
 				// reset mapping table and deploy button
 				$('#mappingTable').addClass('slds-hide');
-				$('#deployBtn').addAttr('disabled');
+				$('#deployBtn').attr('disabled', 'true');
 				
 				$('#file-size').html('Calculating...');
 				$('#file-info').removeClass('slds-hide');

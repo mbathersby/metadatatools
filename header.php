@@ -60,7 +60,7 @@
 						<h2 class="slds-text-heading_medium" id="prompt-heading-id">Authentication Required</h2>
 					</header>
 					<div class="slds-modal__content slds-p-around_medium slds-text-align_center" id="prompt-message-wrapper">
-						<p>You must be loged in to a Salesforce Instance to use this toolkit</p>
+						<p>You must be logged in to a Salesforce Instance to use this toolkit</p>
 					</div>
 					<footer class="slds-modal__footer slds-theme_default">
 						<button class="slds-button slds-button_neutral" onclick="login('login');">Production Login</button>
