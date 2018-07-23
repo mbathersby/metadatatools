@@ -20,12 +20,6 @@
 	
 </head>
 <body>
-	
-	<script>
-		$('#menu button').click(function(){
-			$( '#menu' ).toggleClass('slds-is-open');
-		});
-	</script>
 
 	<div class="slds-brand-band slds-brand-band_large"></div>
 	
