@@ -154,6 +154,19 @@ var swapMap = function (json) {
 
 function deploy() {
 	
+	var fieldMapVals = Object.values(columnToFieldMap());
+	var apiNameMapped = false;
+	
+	fieldMapVals.forEach(function(element) {
+		if(element === 'QualifiedApiName')
+			apiNameMapped = true;
+	});
+	
+	if(!apiNameMapped){
+		showToast('Qualified API Name must be mapped', 5000);
+		return;
+	}
+	
 	$('#deployStatus').html('Constructing deployment package...');
 	$('#prompt').addClass('slds-fade-in-open');
 	$('#overlay').addClass('slds-backdrop_open');
