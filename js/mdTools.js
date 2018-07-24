@@ -284,9 +284,9 @@ function deployZip() {
 					clearInterval(poll);
 					
 					$('#deployState').html(
-						'<br/>'
+						/*'<br/>'
 						+ 'Components Deployed: ' + reqStatus.numberComponentsDeployed + '<br/>'
-						+ 'Component Errors: ' + reqStatus.
+						+ 'Component Errors: ' + reqStatus.*/
 					
 					);
 				}
