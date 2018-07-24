@@ -183,7 +183,7 @@
 <section id="prompt" role="alertdialog" tabindex="-1" aria-labelledby="prompt-heading-id" aria-describedby="prompt-message-wrapper" class="slds-modal" aria-modal="true">
 	<div class="slds-modal__container">
 		<header class="slds-modal__header slds-theme_warning slds-theme_alert-texture" style="border-bottom: none !important;">
-			<button class="slds-button slds-button_icon slds-modal__close slds-hide" id="uploadStatusCloseBtn" title="Close">
+			<button class="slds-button slds-button_icon slds-modal__close slds-hide" id="uploadStatusCloseBtn" title="Close" onclick="closePrompt();"->
 				<svg class="slds-button__icon slds-button__icon_large" aria-hidden="true" style="fill: #ffffff;">
 					<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close" />
 				</svg>

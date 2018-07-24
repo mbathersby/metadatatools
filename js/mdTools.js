@@ -9,16 +9,6 @@ function init() {
 	
 	setNavigation();
 	
-	/*$( '#menu button' ).click(function(){
-		$( '#menu' ).toggleClass( 'slds-is-open' );
-	});
-	
-	$( document ).click(function( event ) {
-		if (!$( event.target ).closest( '#menu' ).length) {
-			$( '#menu' ).removeClass( 'slds-is-open' );
-		}
-	});*/
-	
 	jsforce.browser.init({
 		clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
 		redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm',
@@ -294,8 +284,9 @@ function deployZip() {
 					clearInterval(poll);
 					
 					$('#deployState').html(
-						'Components Deployed: ' + reqStatus.numberComponentsDeployed + '<br/>'
-						+ 'Component Errors: ' + reqStatus.numberComponentErrors
+						/*'<br/>'
+						+ 'Components Deployed: ' + reqStatus.numberComponentsDeployed + '<br/>'
+						+ 'Component Errors: ' + reqStatus.*/
 					
 					);
 				}
