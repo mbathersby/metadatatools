@@ -10,6 +10,6 @@ var setBaseXml = function(){
 
     console.log(baseXml);
 
-    $("#xmlOutput").html(baseXml); 
+    $("#xmlOutput").html($.parseHTML( baseXml )); 
   
 }
