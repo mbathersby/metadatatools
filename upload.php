@@ -51,7 +51,7 @@
 					<label class="slds-form-element__label" for="select-01">Custom Metadata Objects</label>
 					<div class="slds-form-element__control">
 						<div class="slds-select_container">
-							<select class="slds-select" id="object-select" onchange="objectSelected();">
+							<select class="slds-select" id="object-select" onchange="objectSelected()">
 								<option value="" disabled selected>Please select</option>
 							</select>
 						</div>
@@ -202,7 +202,7 @@
 	</div>
 </section>
 
-<script>
+<!--script>
 	$('#file-upload-input').change(function(){
 		
 	// reset mapping table and deploy button
@@ -244,6 +244,6 @@
 	reader.readAsText(file);
 
 });
-</script>
+</script-->
 
 <?php include 'footer.php'; ?>
