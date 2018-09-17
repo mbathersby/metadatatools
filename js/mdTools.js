@@ -5,6 +5,10 @@ var userInfo;
 var zipBlob;
 var deployReq;
 
+var apiVersion = '43.0';
+var maxPackageSize = 39;
+var maxPackageRows = 10000;
+
 function init() {
 	
 	setNavigation();
