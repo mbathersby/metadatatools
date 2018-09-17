@@ -33,7 +33,7 @@ var packageXml = function () {
 	return packageXML;
 }
 
-function fileUploaded(){
+function fileSelected(){
 	//$('#file-upload-input').change(function(){
 		
 	// reset mapping table and deploy button
