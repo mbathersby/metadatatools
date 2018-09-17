@@ -2,16 +2,12 @@ $(document).ready(this, setBaseXml);
 
 var setBaseXml = function(){
   
-    var baseXml = '&#60;&#60;&#60;&#60;&#60;';
-  
-  /*?xml version="1.0" encoding="UTF-8"?>\n'
-    + '&#60;Package xmlns="http://soap.sforce.com/2006/04/metadata">\n'
-    + '\n'
-    + '&#60;version>' + apiVersion + '</version>\n'
-    + '&#60;/Package></pre>';*/
+  var xmlHead = '<?xml version="1.0" encoding="UTF-8"?>\r\t<Package xmlns="http://soap.sforce.com/2006/04/metadata;
+  var xmlFoot = '\t<version>' + apiVersion + '</version>\r</Package>;
 
-    console.log(baseXml);
+    console.log(xmlHead);
+    console.log(xmlFoot);
 
-    $('#xmlOutput').append(baseXml); 
-  
+    $('#xmlHead pre').append(xmlHead); 
+    $('#xmlFoot pre').append(xmlFoot); 
 }
