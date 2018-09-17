@@ -10,7 +10,7 @@
 			<ul class="slds-grid">
 			
 				<li class="slds-context-bar__item">
-					<a href="index.php" name="index" class="slds-context-bar__label-action" title="Dashboard">
+					<a href="/index.php" name="index" class="slds-context-bar__label-action" title="Dashboard">
 						<span class="slds-truncate" title="Home">Dashboard</span>
 					</a>
 				</li>
