@@ -54,7 +54,7 @@
 					<div class="slds-dropdown slds-dropdown_right">
 						<ul class="slds-dropdown__list" role="menu">
 							<li class="slds-dropdown__item" role="presentation">
-								<a href="/upload.php" role="menuitem" tabindex="-1">
+								<a href="/upload.php" name="upload" role="menuitem" tabindex="-1">
 									<span class="slds-truncate" title="Menu Item One">Upload</span>
 								</a>
 							</li>
@@ -72,7 +72,7 @@
 					</div>
 				</li>
 				<li class="slds-context-bar__item">
-					<a href="/builder.php" class="slds-context-bar__label-action" title="Package Builder">
+					<a href="/builder.php" name="builder" class="slds-context-bar__label-action" title="Package Builder">
 						<span class="slds-truncate" title="Home">Package Builder</span>
 					</a>
 				</li>
