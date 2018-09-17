@@ -34,7 +34,6 @@ var packageXml = function () {
 }
 
 function fileSelected(){
-	//$('#file-upload-input').change(function(){
 	
 	var fileInput = $('#file-upload-input');
 		
@@ -48,41 +47,39 @@ function fileSelected(){
 	var file = $(fileInput)[0].files[0];
 
 	$("[name='fileName']").html(file.name);
-	$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
-
+	$('#file-size').html(numeral(file.size/1024).format('0,0') + ' KB');
 	$('#last-modified').html(moment(file.lastModified).format('lll'));
-
+	
 	var reader = new FileReader();
-
+	
 	reader.onload = function(){
 		csvFile = Papa.parse(reader.result, {header:true});
 		console.log('CSV File Data');
 		console.log(csvFile);
-		$("#rowCount").html(csvFile.data.length - 1);
-
+		$("#rowCount").html(numeral(csvFile.data.length - 1).format('0,0'));
 		if((csvFile.data.length - 1) > maxPackageRows){
-			showToast('You cannot deploy more than ' + maxPackageRows + ' items at a time.\nPlease split your CSV into mutiple files of 10,000 rows or less and deploy each file separately.', 7500);
+			showToast('You cannot deploy more than ' + numeral(maxPackageRows).format('0,0') + ' items at a time.\nPlease split your CSV into mutiple files of ' + numeral(maxPackageRows).format('0,0') + ' rows or less and deploy each file separately.', 7500);
 		} 
 		
 		else if((file.size / 1024).toFixed(1) > maxPackageSize){
-			showToast('Your package cannot be more than ' + (maxPackageSize/1000) + 'MB.\nPlease split your CSV into mutiple files of ' + (maxPackageSize/1000) + 'MB or less and deploy each file separately.', 7500);
+			showToast('Your package cannot be larger than ' + numeral(maxPackageSize/1000).format('0,0') + 'MB.\nPlease split your CSV into mutiple files of ' + numeral(maxPackageSize/1000).format('0,0') + 'MB or less and deploy each file separately.', 7500);
 		}
-
 		else if($('#object-select').val() != null){
 			buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
 			$('#deployBtn').removeAttr('disabled');
 		}
 	};
-
+	
 	reader.readAsText(file);
 
 };//);
 
 function objectSelected(){
-	//$('#object-select').change(function(){
+
+	var objectSelect = $('#object-select');
 	var conn = jsforce.browser.connection;
 
-	conn.sobject($(this).val()).describe(function(err, res) {
+	conn.sobject($(objectSelect).val()).describe(function(err, res) {
 		selectedObj = res;
 		console.log('Selected Object: ', selectedObj);
 
