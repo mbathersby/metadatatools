@@ -43,7 +43,7 @@
 			</h2>
 		      </div>
 		      <div class="slds-no-flex">
-			<div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+			<div class="slds-dropdown-trigger slds-dropdown-trigger_click">
 			  <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="Show More">
 			    <svg class="slds-button__icon" aria-hidden="true">
 			      <use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
@@ -54,17 +54,12 @@
 			    <ul class="slds-dropdown__list" role="menu">
 			      <li class="slds-dropdown__item" role="presentation">
 				<a href="javascript:void(0);" role="menuitem" tabindex="0">
-				  <span class="slds-truncate" title="Action One">Action One</span>
+				  <span class="slds-truncate" title="Action One">Download</span>
 				</a>
 			      </li>
 			      <li class="slds-dropdown__item" role="presentation">
 				<a href="javascript:void(0);" role="menuitem" tabindex="-1">
-				  <span class="slds-truncate" title="Action Two">Action Two</span>
-				</a>
-			      </li>
-			      <li class="slds-dropdown__item" role="presentation">
-				<a href="javascript:void(0);" role="menuitem" tabindex="-1">
-				  <span class="slds-truncate" title="Action Three">Action Three</span>
+				  <span class="slds-truncate" title="Action Two">Reset</span>
 				</a>
 			      </li>
 			    </ul>
