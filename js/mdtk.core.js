@@ -22,7 +22,7 @@ function setNavigation() {
 
     $(".slds-dropdown__item a").each(function () {
         var attrName = $(this).attr('name');
-        if (path.substring(0, href.length).replace('.php', '') === attrName) {
+        if (path.substring(0, attrName.length).replace('.php', '') === attrName) {
             $(this).closest('.slds-context-bar__item').addClass('slds-is-active');
         }
     });
