@@ -229,7 +229,7 @@
 		$("#rowCount").html(csvFile.data.length - 1);
 
 		if((csvFile.data.length - 1) > maxPackageRows){
-			showToast('You cannot deploy more than ' + maxPackageRows + ' items at a time.\nPlease split your CSV into mutiple files of 10,000 rows or less and deploy each file separately.', 7500);
+			showToast('You cannot deploy more than ' + maxPackageRows + ' items at a time.\nPlease split your CSV into mutiple files of ' + maxPackageRows + ' rows or less and deploy each file separately.', 7500);
 		} 
 		
 		else if((file.size / 1024).toFixed(1) > maxPackageSize){
