@@ -19,4 +19,13 @@
 	</div>
 </div>
 
+<div class="slds-grid slds-gutters slds-m-around_x-small">
+	<div class="slds-col slds-size_1-of-2">
+		!!! DECRIBE LIST TO GO HERE !!!
+	</div>
+	<div class="slds-col slds-size_1-of-2">
+		!!! XML OUTPUT EXAMPLE TO GO HERE !!!
+	</div>
+</div>
+
 <?php include 'footer.php'; ?>
