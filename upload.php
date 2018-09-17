@@ -215,7 +215,7 @@
 	var file = $(this)[0].files[0];
 
 	$("[name='fileName']").html(file.name);
-	$('#file-size').html(numeral((file.size / 1024)).format('0,0.0')) + ' KB');
+	$('#file-size').html(numeral(file.size / 1024).format('0,0.0')) + ' KB');
 
 	$('#last-modified').html(moment(file.lastModified).format('lll'));
 
