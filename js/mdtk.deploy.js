@@ -33,7 +33,8 @@ var packageXml = function () {
 	return packageXML;
 }
 
-$('#file-upload-input').change(function(){
+function fileUploaded(){
+	//$('#file-upload-input').change(function(){
 		
 	// reset mapping table and deploy button
 	$('#mappingTable').addClass('slds-hide');
@@ -75,7 +76,8 @@ $('#file-upload-input').change(function(){
 
 });
 
-$('#object-select').change(function(){
+function objectSelected(){
+	//$('#object-select').change(function(){
 	var conn = jsforce.browser.connection;
 
 	conn.sobject($(this).val()).describe(function(err, res) {
