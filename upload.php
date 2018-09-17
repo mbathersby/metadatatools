@@ -1,5 +1,10 @@
 <?php include 'header.php'; ?>
 
+<script src="js/moment.js" type="text/javascript"></script>
+<script src="js/jszip.js" type="text/javascript"></script>
+<script src="js/papaparse.js" type="text/javascript"></script>
+<script src="js/mdtk.deploy.js" type="text/javascript"></script>
+
 <div class="slds-page-header slds-m-bottom_medium slds-p-around_x-medium">
 	<div class="slds-grid">
 		<div class="slds-col slds-has-flexi-truncate">
