@@ -22,10 +22,6 @@ function setNavigation() {
 
     $(".slds-context-bar__item a").each(function () {
         var href = $(this).attr('href');
-	    
-     	    console.log('PATH: ' + path);
-	    console.log('HREF: ' + href);
-	    
         if (path.substring(0, href.length) === href) {
             $(this).closest('.slds-context-bar__item').addClass('slds-is-active');
         }
