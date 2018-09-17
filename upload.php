@@ -106,7 +106,7 @@
 				<header class="slds-media slds-media_center slds-has-flexi-truncate">
 					<div class="slds-media__figure">
 						<span class="slds-icon_container slds-icon-utility-info" title="account">
-							<svg class="slds-icon slds-icon_small" aria-hidden="true">
+							<svg class="slds-icon slds-icon-text-default slds-icon_small" aria-hidden="true">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
 							</svg>
 						</span>
