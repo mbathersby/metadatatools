@@ -14,7 +14,7 @@
 		<script src="js/jsforce-api-metadata.min.js" type="text/javascript"></script>
 		<script src="js/papaparse.js" type="text/javascript"></script>
 		<script src="js/js.cookie.js" type="text/javascript"></script>
-		<script src="js/mdTools.js" type="text/javascript"></script>
+		<script src="js/mdtk.core.js" type="text/javascript"></script>
 		
 		<link rel="stylesheet" type="text/css" href="slds/assets/styles/salesforce-lightning-design-system.css" />
 		
