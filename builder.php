@@ -68,6 +68,7 @@
 		      </div>
 		    </header>
 		  </div>
+			<div class="slds-card__body slds-card__body_inner">Card Body with Padding</div>
 		</article>
 	</div>
 </div>
