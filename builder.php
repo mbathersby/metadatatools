@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
 
-<script src="js/mdtk.package.js' type="text/javascipt" />
+<script src="js/mdtk.package.js' type="text/javascript" />
 
 <div class="slds-page-header slds-m-bottom_medium slds-p-around_x-medium">
 	<div class="slds-grid">
