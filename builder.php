@@ -85,7 +85,7 @@
 </div>
 
 <script>
-	init();
+	pkgInit();
 </script>
 
 <?php include 'footer.php'; ?>
