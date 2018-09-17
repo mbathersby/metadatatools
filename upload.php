@@ -215,7 +215,7 @@
 	var file = $(this)[0].files[0];
 
 	$("[name='fileName']").html(file.name);
-	$('#file-size').html(numeral(file.size/1024).format('0,0.0') + ' KB');
+	$('#file-size').html(numeral(file.size/1024).format('0,0') + ' KB');
 
 	$('#last-modified').html(moment(file.lastModified).format('lll'));
 
@@ -232,7 +232,7 @@
 		} 
 		
 		else if((file.size / 1024).toFixed(1) > maxPackageSize){
-			showToast('Your package cannot be more than ' + numeral(maxPackageSize/1000).format('0,0.0') + 'MB.\nPlease split your CSV into mutiple files of ' + numeral(maxPackageSize/1000).format('0,0.0') + 'MB or less and deploy each file separately.', 7500);
+			showToast('Your package cannot be more than ' + numeral(maxPackageSize/1000).format('0,0') + 'MB.\nPlease split your CSV into mutiple files of ' + numeral(maxPackageSize/1000).format('0,0') + 'MB or less and deploy each file separately.', 7500);
 		}
 
 		else if($('#object-select').val() != null){
