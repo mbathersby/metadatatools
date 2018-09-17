@@ -85,7 +85,7 @@
 </div>
 
 <script>
-	setBaseXml();
+	init();
 </script>
 
 <?php include 'footer.php'; ?>
