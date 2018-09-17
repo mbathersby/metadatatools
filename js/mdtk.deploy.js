@@ -3,6 +3,8 @@ var mdObjs, csvFile, selectedObj, zipBlob, deployReq;
 var maxPackageSize = 39000;
 var maxPackageRows = 10000;
 
+var checkInterval = 5000;
+
 var fieldTypeMap = function () {
 	var typeMap = {};
 	typeMap["TEXT"] = "string";
@@ -302,6 +304,6 @@ function deployZip() {
 				}
 			});
 			
-		}, 5000);
+		}, checkInterval);
 	});
 }
