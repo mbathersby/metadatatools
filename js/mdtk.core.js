@@ -77,7 +77,7 @@ var packageXml = function () {
 		 + '\t\t\t<members>*</members>\n'
 		 + '\t\t\t<name>CustomMetadata</name>\n'
 		 + '\t\t</types>\n'
-		 + '\t<version>42.0</version>\n'
+		 + '\t<version>' + apiVersion + '</version>\n'
 		 + '</Package>';
 	return packageXML;
 }
