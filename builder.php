@@ -1,5 +1,7 @@
 <?php include 'header.php'; ?>
 
+<script src="js/mdtk.package.js' type="text/javascipt" />
+
 <div class="slds-page-header slds-m-bottom_medium slds-p-around_x-medium">
 	<div class="slds-grid">
 		<div class="slds-col slds-has-flexi-truncate">
@@ -73,7 +75,8 @@
 					</div>
 				</header>
 			</div>
-			<div class="slds-card__body slds-card__body_inner">Card Body with Padding</div>
+			<div id="xmlOutput" class="slds-card__body slds-card__body_inner">
+			</div>
 		</article>
 	</div>
 </div>
