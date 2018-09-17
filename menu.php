@@ -72,7 +72,7 @@
 					</div>
 				</li>
 				<li class="slds-context-bar__item">
-					<a href="index.php" class="slds-context-bar__label-action" title="Package Builder">
+					<a href="/builder.php" class="slds-context-bar__label-action" title="Package Builder">
 						<span class="slds-truncate" title="Home">Package Builder</span>
 					</a>
 				</li>
