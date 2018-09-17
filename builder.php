@@ -76,6 +76,9 @@
 				</header>
 			</div>
 			<div id="xmlOutput" class="slds-card__body slds-card__body_inner">
+				<div id="xmlHead"></div>
+				<div id="xmlBody"</div>
+				<div id="xmlFoot"></div>
 			</div>
 		</article>
 	</div>
