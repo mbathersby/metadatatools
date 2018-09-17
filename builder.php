@@ -25,7 +25,7 @@
 	</div>
 	<div class="slds-col slds-size_1-of-2">
 		<article class="slds-card">
-		  <div class="slds-card__header slds-grid slds-border_bottom">
+		  <div class="slds-card__header slds-grid slds-border_bottom slds-p-bottom_small">
 		    <header class="slds-media slds-media_center slds-has-flexi-truncate">
 		      <div class="slds-media__figure">
 			<span class="slds-icon_container slds-icon-doctype-xml" title="account">
