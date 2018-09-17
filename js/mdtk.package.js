@@ -12,6 +12,6 @@ var setBaseXml = function(){
 
     console.log(baseXml);
 
-    $('#xmlOutput').html(baseXml); 
+    $('#xmlOutput').append(baseXml); 
   
 }
