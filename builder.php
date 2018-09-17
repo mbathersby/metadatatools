@@ -2,6 +2,10 @@
 
 <script src="js/mdtk.package.js" type="text/javascript"></script>
 
+<script>
+	setBaseXml();
+</script>
+
 <div class="slds-page-header slds-m-bottom_medium slds-p-around_x-medium">
 	<div class="slds-grid">
 		<div class="slds-col slds-has-flexi-truncate">
