@@ -8,6 +8,6 @@ function setBaseXml(){
     + '\t<version>' + apiVersion + '</version>\n'
     + '</Package>';
 
-    $('.xmlOutput').html(baseXml); 
+    $('#xmlOutput').html(baseXml); 
   
 }
