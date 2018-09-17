@@ -1,5 +1,5 @@
 function init(){
-  setBaseXML();
+    setBaseXml();
 }
 
 function setBaseXml(){
