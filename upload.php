@@ -203,59 +203,48 @@
 	</div>
 </section>
 
-<!--script>
+<script>
 	$('#file-upload-input').change(function(){
 		
-		// reset mapping table and deploy button
-		$('#mappingTable').addClass('slds-hide');
-		$('#deployBtn').attr('disabled', 'true');
+	// reset mapping table and deploy button
+	$('#mappingTable').addClass('slds-hide');
+	$('#deployBtn').attr('disabled', 'true');
+
+	$('#file-size').html('Calculating...');
+	$('#file-info').removeClass('slds-hide');
+
+	var file = $(this)[0].files[0];
+
+	$("[name='fileName']").html(file.name);
+	$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
+
+	$('#last-modified').html(moment(file.lastModified).format('lll'));
+
+	var reader = new FileReader();
+
+	reader.onload = function(){
+		csvFile = Papa.parse(reader.result, {header:true});
+		console.log('CSV File Data');
+		console.log(csvFile);
+		$("#rowCount").html(csvFile.data.length - 1);
+
+		if((csvFile.data.length - 1) > maxPackageRows){
+			showToast('You cannot deploy more than ' + maxPackageRows + ' items at a time.\nPlease split your CSV into mutiple files of 10,000 rows or less and deploy each file separately.', 7500);
+		} 
 		
-		$('#file-size').html('Calculating...');
-		$('#file-info').removeClass('slds-hide');
-		
-		var file = $(this)[0].files[0];
-		
-		$("[name='fileName']").html(file.name);
-		$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
-		
-		$('#last-modified').html(moment(file.lastModified).format('lll'));
-		
-		var reader = new FileReader();
-		
-		reader.onload = function(){
-			csvFile = Papa.parse(reader.result, {header:true});
-			console.log('CSV File Data');
-			console.log(csvFile);
-			$("#rowCount").html(csvFile.data.length - 1);
-			
-			if((csvFile.data.length - 1) > 10000){
-				showToast('You cannot deploy more than 10,000 items at a time.\nPlease split your CSV into mutiple files of 10,000 rows or less and deploy each file separately.', 7500);
-			}
-			
-			else if($('#object-select').val() != null){
-				buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
-				$('#deployBtn').removeAttr('disabled');
-			}
-		};
-		
-		reader.readAsText(file);
-		
-	});
-	
-	$('#object-select').change(function(){
-		var conn = jsforce.browser.connection;
-		
-		conn.sobject($(this).val()).describe(function(err, res) {
-			selectedObj = res;
-			console.log('Selected Object: ', selectedObj);
-			
-			if(csvFile != null){
-				buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
-				$('#deployBtn').removeAttr('disabled');
-			}	
-		});
-		
-	});
-</script-->
+		else if((file.size / 1024).toFixed(1) > maxPackageSize){
+			showToast('Your package cannot be more than ' + (maxPackageSize/1000) + 'MB.\nPlease split your CSV into mutiple files of ' + (maxPackageSize/1000) + 'MB or less and deploy each file separately.', 7500);
+		}
+
+		else if($('#object-select').val() != null){
+			buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
+			$('#deployBtn').removeAttr('disabled');
+		}
+	};
+
+	reader.readAsText(file);
+
+});
+</script>
 
 <?php include 'footer.php'; ?>
