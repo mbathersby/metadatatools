@@ -74,7 +74,7 @@ function fileSelected(){
 
 	reader.readAsText(file);
 
-});
+};//);
 
 function objectSelected(){
 	//$('#object-select').change(function(){
@@ -90,7 +90,7 @@ function objectSelected(){
 		}	
 	});
 
-});
+}; //);
 
 function buildTable(tableId, cols, fields, sample) {
 
