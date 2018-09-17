@@ -8,6 +8,6 @@ var setBaseXml = function(){
     console.log(xmlHead);
     console.log(xmlFoot);
 
-    $('#xmlHead pre').append(xmlHead); 
-    $('#xmlFoot pre').append(xmlFoot); 
+    $('#xmlHead pre').append(String(xmlHead)); 
+    $('#xmlFoot pre').append(String(xmlFoot)); 
 }
