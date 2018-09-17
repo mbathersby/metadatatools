@@ -9,10 +9,7 @@ function setBaseXml(){
   
   var xmlFoot = '\t<version>' + apiVersion + '</version>\n'
     + '</Package>';
-
-    console.log(xmlHead);
-    console.log(xmlFoot);
-
+    
     $('#xmlHead pre').text(xmlHead); 
     $('#xmlFoot pre').text(xmlFoot); 
 }
