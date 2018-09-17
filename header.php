@@ -8,12 +8,12 @@
 		<title>Salesforce Metadata Toolkit</title>
 		
 		<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
-		<script src="js/moment.js" type="text/javascript"></script>
+		<!--script src="js/moment.js" type="text/javascript"></script>
 		<script src="js/jszip.js" type="text/javascript"></script>
 		<script src="js/jsforce-core.min.js" type="text/javascript"></script>
 		<script src="js/jsforce-api-metadata.min.js" type="text/javascript"></script>
 		<script src="js/papaparse.js" type="text/javascript"></script>
-		<script src="js/js.cookie.js" type="text/javascript"></script>
+		<script src="js/js.cookie.js" type="text/javascript"></script-->
 		<script src="js/mdtk.core.js" type="text/javascript"></script>
 		
 		<link rel="stylesheet" type="text/css" href="slds/assets/styles/salesforce-lightning-design-system.css" />
