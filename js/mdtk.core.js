@@ -21,8 +21,8 @@ function setNavigation() {
     path = decodeURIComponent(path);
 
     $(".slds-dropdown__item a").each(function () {
-        var href = $(this).attr('href');
-        if (path.substring(0, href.length) === href) {
+        var attrName = $(this).attr('name');
+        if (path.substring(0, href.length).replace('.php', '') === attrName) {
             $(this).closest('.slds-context-bar__item').addClass('slds-is-active');
         }
     });
