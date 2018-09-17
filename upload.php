@@ -105,9 +105,9 @@
 			<div class="slds-card__header slds-grid">
 				<header class="slds-media slds-media_center slds-has-flexi-truncate">
 					<div class="slds-media__figure">
-						<span class="slds-icon_container slds-icon-utility-info" title="account">
+						<span class="slds-icon_container slds-icon-utility-info-alt" title="account">
 							<svg class="slds-icon slds-icon-text-default slds-icon_small" aria-hidden="true">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#info"></use>
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#info_alt"></use>
 							</svg>
 						</span>
 					</div>
