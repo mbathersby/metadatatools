@@ -35,6 +35,8 @@ var packageXml = function () {
 
 function fileSelected(){
 	//$('#file-upload-input').change(function(){
+	
+	var fileInput = $('#file-upload-input');
 		
 	// reset mapping table and deploy button
 	$('#mappingTable').addClass('slds-hide');
@@ -43,7 +45,7 @@ function fileSelected(){
 	$('#file-size').html('Calculating...');
 	$('#file-info').removeClass('slds-hide');
 
-	var file = $(this)[0].files[0];
+	var file = $(fileInput)[0].files[0];
 
 	$("[name='fileName']").html(file.name);
 	$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
