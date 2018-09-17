@@ -1,8 +1,7 @@
-var mdObjs;
-var csvFile;
-var selectedObj;
-var zipBlob;
-var deployReq;
+var mdObjs, csvFile, selectedObj, zipBlob, deployReq;
+
+var maxPackageSize = 39000;
+var maxPackageRows = 10000;
 
 var fieldTypeMap = function () {
 	var typeMap = {};
