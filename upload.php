@@ -11,7 +11,7 @@
 			<div class="slds-media slds-no-space slds-grow">
 				<div class="slds-media__figure">
 					<span class="slds-icon_container slds-icon-standard-orders" title="Description of icon when needed">
-						<svg class="slds-icon slds-icon_small" aria-hidden="true">
+						<svg class="slds-icon slds-icon_x-small" aria-hidden="true">
 							<use xlink:href="slds/assets/icons/standard-sprite/svg/symbols.svg#orders"></use>
 						</svg>
 					</span>
