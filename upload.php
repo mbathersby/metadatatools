@@ -51,7 +51,7 @@
 					<label class="slds-form-element__label" for="select-01">Custom Metadata Objects</label>
 					<div class="slds-form-element__control">
 						<div class="slds-select_container">
-							<select class="slds-select" id="object-select">
+							<select class="slds-select" id="object-select" onchange="objectSelected();">
 								<option value="" disabled selected>Please select</option>
 							</select>
 						</div>
@@ -85,7 +85,7 @@
 					<div class="slds-form-element__control">
 						<div class="slds-file-selector slds-file-selector_files">
 							<div class="slds-file-selector__dropzone">
-								<input type="file" class="slds-file-selector__input slds-assistive-text" accept=".csv" id="file-upload-input" aria-labelledby="file-selector-primary-label file-selector-secondary-label" />
+								<input type="file" onchange="fileSelected()" class="slds-file-selector__input slds-assistive-text" accept=".csv" id="file-upload-input" aria-labelledby="file-selector-primary-label file-selector-secondary-label" />
 								<label class="slds-file-selector__body" for="file-upload-input" id="file-selector-secondary-label">
 									<span class="slds-file-selector__button slds-button slds-button_neutral">
 										<svg class="slds-button__icon slds-button__icon_left" aria-hidden="true" >
