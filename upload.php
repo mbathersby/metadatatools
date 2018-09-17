@@ -203,7 +203,7 @@
 	</div>
 </section>
 
-<script>
+<!--script>
 	$('#file-upload-input').change(function(){
 		
 		// reset mapping table and deploy button
@@ -256,6 +256,6 @@
 		});
 		
 	});
-</script>
+</script-->
 
 <?php include 'footer.php'; ?>
