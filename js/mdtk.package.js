@@ -1,4 +1,4 @@
-$(document).ready(this, setBaseXml);
+$(document).ready(this, setBaseXml());
 
 var setBaseXml = function(){
   
