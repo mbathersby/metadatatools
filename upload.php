@@ -225,7 +225,7 @@
 		csvFile = Papa.parse(reader.result, {header:true});
 		console.log('CSV File Data');
 		console.log(csvFile);
-		$("#rowCount").html(numeral(csvFile.data.length - 1).format('0,0');
+		$("#rowCount").html(numeral(csvFile.data.length - 1).format('0,0'));
 
 		if((csvFile.data.length - 1) > maxPackageRows){
 			showToast('You cannot deploy more than ' + numeral(maxPackageRows).format('0,0') + ' items at a time.\nPlease split your CSV into mutiple files of ' + numeral(maxPackageRows).format('0,0') + ' rows or less and deploy each file separately.', 7500);
