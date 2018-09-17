@@ -1,6 +1,5 @@
 <?php include 'header.php'; ?>
 
-<script src="js/moment.js" type="text/javascript"></script>
 <script src="js/jszip.js" type="text/javascript"></script>
 <script src="js/papaparse.js" type="text/javascript"></script>
 <script src="js/mdtk.deploy.js" type="text/javascript"></script>
@@ -216,7 +215,7 @@
 	var file = $(this)[0].files[0];
 
 	$("[name='fileName']").html(file.name);
-	$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
+	$('#file-size').html(numeral((file.size / 1024)).format('0,0.0')) + ' KB');
 
 	$('#last-modified').html(moment(file.lastModified).format('lll'));
 
@@ -226,14 +225,14 @@
 		csvFile = Papa.parse(reader.result, {header:true});
 		console.log('CSV File Data');
 		console.log(csvFile);
-		$("#rowCount").html(csvFile.data.length - 1);
+		$("#rowCount").html(numeral(csvFile.data.length - 1).format('0,0');
 
 		if((csvFile.data.length - 1) > maxPackageRows){
-			showToast('You cannot deploy more than ' + maxPackageRows + ' items at a time.\nPlease split your CSV into mutiple files of ' + maxPackageRows + ' rows or less and deploy each file separately.', 7500);
+			showToast('You cannot deploy more than ' + numeral(maxPackageRows).format('0,0') + ' items at a time.\nPlease split your CSV into mutiple files of ' + numeral(maxPackageRows).format('0,0') + ' rows or less and deploy each file separately.', 7500);
 		} 
 		
 		else if((file.size / 1024).toFixed(1) > maxPackageSize){
-			showToast('Your package cannot be more than ' + (maxPackageSize/1000) + 'MB.\nPlease split your CSV into mutiple files of ' + (maxPackageSize/1000) + 'MB or less and deploy each file separately.', 7500);
+			showToast('Your package cannot be more than ' + numeral(maxPackageSize/1000).format('0,0.0') + 'MB.\nPlease split your CSV into mutiple files of ' + numeral(maxPackageSize/1000).format('0,0.0') + 'MB or less and deploy each file separately.', 7500);
 		}
 
 		else if($('#object-select').val() != null){
