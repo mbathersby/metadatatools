@@ -1,4 +1,5 @@
 var userInfo;
+var apiVersion = '43.0';
 
 function init() {
 	setNavigation();
