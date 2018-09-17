@@ -20,7 +20,7 @@ function setNavigation() {
     path = path.replace(/\/$/, "");
     path = decodeURIComponent(path);
 
-    $(".slds-dropdown__item a").each(function () {
+    $(".slds-context-bar__item a").each(function () {
         var href = $(this).attr('href');
 	    
      	    console.log('PATH: ' + path);
