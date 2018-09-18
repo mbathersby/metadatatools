@@ -9,7 +9,6 @@ function pkgInit(){
 		});
 	} 
 	
-	sortPackage();
 	setBaseXml();
 	getDescribeParents();
 }
@@ -19,6 +18,8 @@ var describeChildren = {};
 
 function setBaseXml(){
 	xmlObj = JSON.parse(localStorage['mdtk.package.xml']);
+	
+	sortPackage(xmlObj);
 
 	$('#xmlHead').text(xmlObj.head);
 	
@@ -26,10 +27,6 @@ function setBaseXml(){
 	
 	if(xmlObj.body.length > 0){
 
-		xmlObj.body.sort(function(a, b) {
-    			return a.localeCompare(b);
-		});
-		
 		console.log(xmlObj.body);
 		
 		for(var i=0; i < xmlObj.body.length; i++){
@@ -104,10 +101,10 @@ function setXmlBody(){
     
 }
 
-function sortPackage(){
-	var package = JSON.parse(localStorage['mdtk.package.xml']);
+function sortPackage(obj){
+	//var package = JSON.parse(localStorage['mdtk.package.xml']);
 	
-	var original = package['body'];
+	var original = obj['body'];
 	var ordered = {};
 		
 	Object.keys(original).sort().forEach(function(key) {
