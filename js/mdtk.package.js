@@ -1,4 +1,4 @@
-var xmlObj;
+var xmlObj, xmlChildren;
 
 function pkgInit(){
 	if(localStorage['mdtk.package.xml'] == null){
@@ -94,9 +94,12 @@ function parentSelected(){
 		console.log(selected);
 		console.log(res);
 		
+		xmlChildren = res;
+		sortChildren();
+		
 		var index = 0;
 		
-		res.forEach(function(i){
+		xmlChildren.forEach(function(i){
 		
 			var tableRow = '<tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="'+ index +'">'
 			+ '<td class="slds-text-align_right" role="gridcell" style="width: 3.25rem;">'
@@ -149,6 +152,19 @@ function sortPackage(){
 	xmlObj.body = ordered;
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 }	
+
+function sortChildren(){
+	
+	var original = xmlChildren;
+	var ordered = {};
+	
+	Object.keys(original).sort().forEach(function(key) {
+		ordered[key] = original[key];
+	});
+	
+	xmlChildren = ordered;
+	//localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
+}
 
 function resetPackage(){
 	xmlObj['body'] = [];
