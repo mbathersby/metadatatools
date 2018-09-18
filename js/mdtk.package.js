@@ -27,17 +27,18 @@ function getDescribeParents(){
 		console.log(res);
 
 		for(key in res.metadataObjects){
-			var mdType = res.metadataObjects[key];
-			//if(sObj.name.includes('__mdt')){
-				mdTypes.push(mdType);
-
-				$('#metadata-select').append($("<option></option>")
-				.attr("value", mdType.xmlName)
-				.text(mdType.xmlName)
-				);
-			//}
+			mdTypes.push(res.metadataObjects[key]);
 		}
 	});
+		
+	mdTypes.sort();
+
+	for(var i=0; i < mdTypes.length; i++){
+		$('#metadata-select')
+		.append($("<option></option>")
+		.attr("value", mdType.xmlName)
+		.text(mdType.xmlName)
+	}
 }
 
 function setXmlBody(){
