@@ -13,9 +13,8 @@ function pkgInit(){
 	
 	xmlObj = JSON.parse(localStorage['mdtk.package.xml']);
 	
-	if(isTest){
-		setTestPackage();	
-	}
+	if(isTest)
+		setTestPackage();
 
 	setBaseXml();
 	getDescribeParents();
@@ -32,7 +31,7 @@ function setBaseXml(){
 	
 	if(xmlObj.body.length > 0){
 		
-		//sortPackage();
+		sortPackage();
 
 		console.log(xmlObj.body);
 		
