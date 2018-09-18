@@ -1,6 +1,6 @@
 var xmlObj;
 
-var isTest = false;
+var isTest = true;
 
 function pkgInit(){
 	if(localStorage['mdtk.package.xml'] == null){
