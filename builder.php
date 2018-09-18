@@ -33,7 +33,44 @@
 				</div>
 			</div>
 		</div>
-		<div id="objectChildren">
+		<div id="metadataTree">
+			<table aria-multiselectable="true" class="slds-table slds-table_header-hidden slds-table_edit slds-tree slds-table_tree" role="treegrid">
+			  <thead class="slds-assistive-text">
+			    <tr class="slds-line-height_reset">
+			      <th class="slds-text-title_caps slds-text-align_right" scope="col" style="width: 3.25rem;">
+				<div class="slds-truncate slds-assistive-text" id="column-group-header" title="Choose a row to select">Choose a row to select</div>
+			      </th>
+			      <th aria-label="Account Name" class="slds-text-title_caps" scope="col">
+				<div class="slds-th__action">
+				  <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+				    <span class="slds-truncate" title="Account Name">Account Name</span>
+				  </div>
+				</div>
+			      </th>
+			    </tr>
+			  </thead>
+			<tbody>
+			    <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="0">
+			      <td class="slds-text-align_right" role="gridcell" style="width: 3.25rem;">
+				<div class="slds-checkbox">
+				  <input type="checkbox" name="options" id="checkbox-089" aria-labelledby="check-button-label-089 column-group-header" value="checkbox-089" />
+				  <label class="slds-checkbox__label" for="checkbox-089" id="check-button-label-089">
+				    <span class="slds-checkbox_faux"></span>
+				    <span class="slds-form-element__label slds-assistive-text">Select item 89</span>
+				  </label>
+				</div>
+			      </td>
+			      <th class="slds-tree__item" data-label="Account Name" scope="row">
+				<button class="slds-button slds-button_icon slds-button_icon slds-button_icon-x-small slds-m-right_x-small slds-is-disabled" aria-hidden="true" tabindex="-1" title="Expand Rewis Inc">
+				  <svg class="slds-button__icon slds-button__icon_small" aria-hidden="true">
+				    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronright" />
+				  </svg>
+				  <span class="slds-assistive-text">Collapse Rewis Inc</span>
+				</button>
+				<div class="slds-truncate" title="Rewis Inc"><a href="javascript:void(0);" tabindex="-1">Rewis Inc</a></div>
+			      </th>
+			    <tr/>
+			</tbody>
 		</div>
 	</div>
 	<div class="slds-col slds-size_7-of-12">
