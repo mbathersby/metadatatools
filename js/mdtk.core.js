@@ -80,3 +80,7 @@ function showToast(msg, duration){
 	);
 	
 }
+
+function toggleMenu()(
+	$(this).closest('.slds-dropdown-trigger_click').toggleClass('slds-is-open');
+}
