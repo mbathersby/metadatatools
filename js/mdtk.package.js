@@ -88,6 +88,8 @@ function parentSelected(){
 	var selected = $('#metadata-select').val();
 	var query = [{type: selected}];
 	
+	$('#treeTable tbody').html('');
+	
 	conn.metadata.list(query, apiVersion, function(err, res){
 		console.log(selected);
 		console.log(res);
