@@ -19,16 +19,17 @@ var describeParent = {};
 var describeChildren = {};
 
 function setBaseXml(){
-	
 	sortPackage();
-
+	
 	$('#xmlHead').text(xmlObj.head);
 	
 	var xmlBodyString = '';
 	
 	if(Object.keys(xmlObj.body).length == 0){
 		$('#xmlBody').html('<br/>');
-	} else {
+	} 
+	
+	else {
 
 		for(key in xmlObj.body){
 
@@ -51,7 +52,8 @@ function setBaseXml(){
 		}
 
 		$('#xmlBody').text(xmlBodyString);
-		}
+	}
+	
 	$('#xmlFoot').text(xmlObj.foot); 
 }
 
@@ -85,6 +87,7 @@ function parentSelected(){
 	var query = [{type: selected}];
 
 	conn.metadata.list(query, apiVersion, function(err, res){
+		console.log(selected);
 		console.log(res);
 	});
 }
