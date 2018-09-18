@@ -84,11 +84,11 @@
 					</div>
 				</header>
 			</div>
-			<div id="xmlOutput" class="slds-card__body slds-card__body_inner">
+			<pre lang="xml" id="xmlOutput" class="slds-card__body slds-card__body_inner">
 				<span id="xmlHead"></span>
 				<span id="xmlBody"></span>
 				<span id="xmlFoot"></span>
-			</div>
+			</pre>
 		</article>
 	</div>
 </div>
