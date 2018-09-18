@@ -30,7 +30,9 @@ function getDescribeParents(){
 			mdTypes.push(res.metadataObjects[key]);
 		}
 		
-		mdTypes.sort();
+		mdTypes.sort(function(a, b) {
+    			a.xmlName.localeCompare(b.xmlName);
+		);
 
 		for(var i=0; i < mdTypes.length; i++){
 			$('#metadata-select')
@@ -40,6 +42,10 @@ function getDescribeParents(){
 		       );
 		}
 	});
+}
+
+function parentSelected(){
+	
 }
 
 function setXmlBody(){
