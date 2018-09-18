@@ -19,7 +19,7 @@ function setBaseXml(){
 }
 
 function getDescribeParents(){
-	conn.describeGlobal(function(err, res) {
+	conn.describe(apiVersion, function(err, res) {
 		if (err) { return console.error(err); }
 						
 		mdTypes = [];
