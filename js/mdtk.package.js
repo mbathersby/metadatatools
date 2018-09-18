@@ -19,27 +19,29 @@ function setBaseXml(){
 }
 
 function getDescribeParents(){
-	var mdTypes = [];
 	
 	conn.metadata.describe(apiVersion, function(err, res) {
 		if (err) { return console.error(err); }
+		
+		var mdTypes = [];
 	
 		console.log(res);
 
 		for(key in res.metadataObjects){
 			mdTypes.push(res.metadataObjects[key]);
 		}
-	});
 		
-	mdTypes.sort();
+		mdTypes.sort();
+		console.log(mdTypes);
 
-	for(var i=0; i < mdTypes.length; i++){
-		$('#metadata-select')
-		.append($("<option></option>")
-			.attr("value", mdType.xmlName)
-			.text(mdType.xmlName)
-	       );
-	}
+		for(var i=0; i < mdTypes.length; i++){
+			$('#metadata-select')
+			.append($("<option></option>")
+				.attr("value", mdTypes[i])
+				.text(mdTypes[i])
+		       );
+		}
+	});
 }
 
 function setXmlBody(){
