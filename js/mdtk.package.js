@@ -114,10 +114,15 @@ function sortPackage(){
 
 	var original = xmlObj.body;
 	var ordered = {};
+	
+	console.log(original);
+	console.log(Object.keys(original).sort());
 
 	Object.keys(original).sort().forEach(function(key) {
 		ordered[key] = original[key];
 	});
+	
+	console.log(ordered);
 	
 	xmlObj.body = ordered;
 	
