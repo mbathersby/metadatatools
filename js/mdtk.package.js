@@ -18,6 +18,26 @@ function setBaseXml(){
     $('#xmlFoot pre').text(xmlFoot); 
 }
 
+function getDescribeParents(){
+	conn.describeGlobal(function(err, res) {
+		if (err) { return console.error(err); }
+						
+		mdObjs = [];
+
+		for(key in res.sobjects){
+			var sObj = res.sobjects[key];
+			//if(sObj.name.includes('__mdt')){
+				mdObjs.push(sObj);
+
+				$('#metadata-select').append($("<option></option>")
+				.attr("value", sObj.name)
+				.text(sObj.label + ' (' + sObj.name + ')')
+				);
+			//}
+		}
+	});
+}
+
 function setXmlBody(){
     
 }
