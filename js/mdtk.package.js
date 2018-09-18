@@ -21,6 +21,8 @@ function setBaseXml(){
 
 	$('#xmlHead').text(xmlObj.head);
 	
+	var xmlBodyString = '';
+	
 	if(xmlObj.body.length > 0){
 		
 		console.log(xmlObj.body);
@@ -45,13 +47,13 @@ function setBaseXml(){
 				typeString += '\n\t\t<name>' + key + '</name>';
 				typeString += '\n\t</types>\n';
 
-				$('#xmlBody').append().text(typeString);
+				xmlBodyString += typeString;
 			
 			}
 		}
 	}
 	
-	//$('#xmlBody').text($('#xmlBody').text().replace(/\n$/, ""));
+	$('#xmlBody').text(xmlBodyString);
 	$('#xmlFoot').text(xmlObj.foot); 
 }
 
