@@ -8,6 +8,8 @@ function init() {
 		redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm',
 		proxyUrl: 'https://mdtk-proxy.herokuapp.com/proxy/'
 	});
+	
+	conn = jsforce.browser.connection;
 }
 
 function login(instance) {
