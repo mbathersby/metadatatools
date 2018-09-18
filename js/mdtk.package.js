@@ -26,14 +26,14 @@ function getDescribeParents(){
 		
 		console.log(res);
 
-		for(key in res){
-			var mdType = res[key];
+		for(key in res.metadataObjects){
+			var mdType = res.metadataObjects[key];
 			//if(sObj.name.includes('__mdt')){
 				mdTypes.push(mdType);
 
 				$('#metadata-select').append($("<option></option>")
-				.attr("value", mdType)
-				.text(mdType)
+				.attr("value", mdType.xmlName)
+				.text(mdType.xmlName)
 				);
 			//}
 		}
