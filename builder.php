@@ -55,7 +55,7 @@
 					</div>
 					<div class="slds-no-flex">
 						<div class="slds-dropdown-trigger slds-dropdown-trigger_click">
-							<button onclick="toggleMenu()" class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="Show More">
+							<button onclick="toggleMenu(this)" class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="Show More">
 								<svg class="slds-button__icon" aria-hidden="true">
 									<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
 								</svg>
