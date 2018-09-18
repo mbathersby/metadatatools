@@ -25,26 +25,27 @@ function setBaseXml(){
 		
 		console.log(xmlObj.body);
 		
-		for(var i=0; i <= xmlObj.body.length; i++){
+		for(var i=0; i < xmlObj.body.length; i++){
 		//for(key in xmlObj.body){
 		
 			var mdTypeObjs = xmlObj.body[i];
-			console.log(mdTypeObj);
+			console.log(mdTypeObjs);
 
 			for(key in mdTypeObjs){
 				
 				var typeString = '\t<types>';	
 				
 				var mdTypeObj = mdTypeObjs[key];
+				console.log(mdTypeObj);
 				
 				for(var j=0; j < mdTypeObj.length; j++){
-					typeString += '\n\t\t<members>' +mdTypeObj[j] + '</members>';
+					typeString += '\n\t\t<members>' + mdTypeObj[j] + '</members>';
 				}
 			
 				typeString += '\n\t\t<name>' + key + '</name>';
 				typeString += '\n\t</types>\n';
 
-				$('#xmlBody').append().text(typeString);
+				$('#xmlBody').text($('#xmlBody').append().text(typeString));
 			
 			}
 		}
