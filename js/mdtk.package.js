@@ -25,12 +25,11 @@ function setBaseXml(){
 	
 	if(xmlObj.body.length > 0){
 		
-		//sortPackage();
+		sortPackage();
 
 		console.log(xmlObj.body);
 		
 		for(var i=0; i < xmlObj.body.length; i++){
-		//for(key in xmlObj.body){
 		
 			var mdTypeObjs = xmlObj.body[i];
 			console.log(mdTypeObjs);
@@ -103,14 +102,14 @@ function setXmlBody(){
 
 function sortPackage(){
 
-	var original = xmlObj['body'];
+	var original = xmlObj.body;
 	var ordered = {};
 
 	Object.keys(original).sort().forEach(function(key) {
 		ordered[key] = original[key];
 	});
 	
-	xmlObj['body'] = ordered;
+	xmlObj.body = ordered;
 	
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 }	
