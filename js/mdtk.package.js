@@ -25,14 +25,15 @@ function getDescribeParents(){
 		
 		var mdTypes = [];
 	
-
+		console.log(res);
+		
 		for(key in res.metadataObjects){
 			mdTypes.push(res.metadataObjects[key]);
 		}
 		
 		mdTypes.sort(function(a, b) {
     			a.xmlName.localeCompare(b.xmlName);
-		);
+		});
 
 		for(var i=0; i < mdTypes.length; i++){
 			$('#metadata-select')
