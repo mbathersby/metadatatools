@@ -50,10 +50,10 @@ function setBaseXml(){
 			
 			xmlBodyString += typeString;
 			
-			$('#xmlBody').append(typeString);
+			//$('#xmlBody').append(typeString);
 		}
 		
-		//$('#xmlBody').text(xmlBodyString);
+		$('#xmlBody').text(xmlBodyString);
 	}
 	
 	$('#xmlFoot').text(xmlObj.foot); 
@@ -92,16 +92,17 @@ function parentSelected(){
 		console.log(selected);
 		console.log(res);
 		
-		var i = 0;
+		var index = 0;
 		
 		res.forEach(function(i){
-			var tableRow = '<tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="0">'
+		
+			var tableRow = '<tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="'+ index +'">'
 			+ '<td class="slds-text-align_right" role="gridcell" style="width: 3.25rem;">'
 			+ '<div class="slds-checkbox">'
-			+ '<input type="checkbox" name="options" id="checkbox-089" aria-labelledby="check-button-label-089 column-group-header" value="checkbox-089" />'
-			+ '<label class="slds-checkbox__label" for="checkbox-089" id="check-button-label-089">'
+			+ '<input type="checkbox" name="options" id="checkbox-'+ index +'" aria-labelledby="check-button-label-'+ index +' column-group-header" value="checkbox-'+ index +'" />'
+			+ '<label class="slds-checkbox__label" for="checkbox-'+ index +'" id="check-button-label-'+ index +'">'
 			+ '<span class="slds-checkbox_faux"></span>'
-			+ '<span class="slds-form-element__label slds-assistive-text">Select item 89</span>'
+			+ '<span class="slds-form-element__label slds-assistive-text">' + i.fullName + '</span>'
 			+ '</label>'
 			+ '</div>'
 			+ '</td>'
@@ -111,6 +112,8 @@ function parentSelected(){
 			+ '</tr>';
 			
 			$('#treeTable tbody').append(tableRow);
+			
+			index++;
 		});
 		
 		/*var listString = '<ul>'
