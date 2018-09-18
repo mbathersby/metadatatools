@@ -106,7 +106,7 @@ function parentSelected(){
 			var tableRow = '<tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="'+ index +'">'
 			+ '<td class="slds-text-align_right" role="gridcell" style="width: 3.25rem;">'
 			+ '<div class="slds-checkbox">'
-			+ '<input type="checkbox" onselect="rowSelected('+ index +')" name="options" id="checkbox-'+ index +'" aria-labelledby="check-button-label-'+ index +' column-group-header" value="checkbox-'+ index +'" />'
+			+ '<input type="checkbox" onclick="rowSelected('+ index +')" name="options" id="checkbox-'+ index +'" aria-labelledby="check-button-label-'+ index +' column-group-header" value="checkbox-'+ index +'" />'
 			+ '<label class="slds-checkbox__label" for="checkbox-'+ index +'" id="check-button-label-'+ index +'">'
 			+ '<span class="slds-checkbox_faux"></span>'
 			+ '<span class="slds-form-element__label slds-assistive-text">' + item.fullName + '</span>'
@@ -139,19 +139,28 @@ function parentSelected(){
 }
 
 function rowSelected(i){
+	
+	var checkbox = $('checkbox-' + i);
 	var body = xmlObj.body;
 	var childType = xmlChildren[i].type;
 	var childName = xmlChildren[i].fullName;
 	
-	if(!Object.keys(body).includes(childType)){
-		body[childType] = [];
+	if(checkbox.selected){
+
+		if(!Object.keys(body).includes(childType)){
+			body[childType] = [];
+		}
+		
+		var children = xmlBody.body[childType];
+		children.push(childName);
+		
+	} else {
+		var children = xmlBody.body[childType];
+		children.splice( list.indexOf(childName), 1 );
 	}
 	
-	var children = xmlBody.body[childType];
-	children.push(childName);
-	
 	xmlObj.body = body;
-	localStorage['mdtk.package.xml'] = JSON.stringify(body);
+	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 	
 	setBaseXml();
 }
