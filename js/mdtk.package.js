@@ -40,10 +40,12 @@ function setBaseXml(){
 					typeString += 'n\t\t<members>' + mdTypeObj[i] + '</members>';
 				}
 			
-			typeString += '\n\t\t<name>' + key + '</name>';
-			typeString += '\n\t</types>';
+				typeString += '\n\t\t<name>' + key + '</name>';
+				typeString += '\n\t</types>';
+
+				$('#xmlBody pre').append().text(typeString);
 			
-			$('#xmlBody pre').append().text(typeString);
+			}
 		}
 	}
 	
