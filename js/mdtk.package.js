@@ -46,7 +46,22 @@ function getDescribeParents(){
 }
 
 function parentSelected(){
+	var mdSelect = $('#metadata-select');
+	console.log(mdSelect.val());
 	
+	/*var query = jsforce.metadata.ListMetadataQuery($(mdSelect).textContent);
+
+	conn.metadata.list($(objectSelect).val()).describe(function(err, res) {
+		selectedObj = res;
+		console.log('Selected Object: ', selectedObj);
+		selectedObj = res;
+		console.log('Selected Object: ', selectedObj);
+
+		if(csvFile != null){
+			buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
+			$('#deployBtn').removeAttr('disabled');
+		}	
+	});*/
 }
 
 function setXmlBody(){
