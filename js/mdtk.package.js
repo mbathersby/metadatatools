@@ -20,7 +20,7 @@ var describeChildren = {};
 function setBaseXml(){
 	xmlObj = JSON.parse(localStorage['mdtk.package.xml']);
 
-	$('#xmlHead pre').text(xmlObj.head);
+	$('#xmlHead').text(xmlObj.head);
 	
 	if(xmlObj.body.length > 0){
 		
@@ -45,13 +45,13 @@ function setBaseXml(){
 				typeString += '\n\t\t<name>' + key + '</name>';
 				typeString += '\n\t</types>';
 
-				$('#xmlBody pre').append().text(typeString);
+				$('#xmlBody').append().text(typeString);
 			
 			}
 		}
 	}
 	
-	$('#xmlFoot pre').text(xmlObj.foot); 
+	$('#xmlFoot').text(xmlObj.foot); 
 }
 
 function getDescribeParents(){
