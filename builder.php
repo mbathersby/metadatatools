@@ -23,7 +23,9 @@
 
 <div class="slds-grid slds-gutters slds-m-around_x-small">
 	<div class="slds-col slds-size_5-of-12">
-		!!! DECRIBE LIST TO GO HERE !!!
+		<select class="slds-select" id="metadata-select" >
+			<option value="" disabled selected>Please select</option>
+		</select>
 	</div>
 	<div class="slds-col slds-size_7-of-12">
 		<article class="slds-card">
