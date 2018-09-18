@@ -5,8 +5,7 @@ function pkgInit(){
 		localStorage['mdtk.package.xml'] = JSON.stringify({
 			'head' : '<?xml version="1.0" encoding="UTF-8"?>\n<Package xmlns="http://soap.sforce.com/2006/04/metadata">',
 			'foot' : '<version>' + apiVersion + '</version>\n</Package>',
-			//'body' : []
-			'body' : [{'CustomObject' : ['Account', 'Contact', 'Case']}]	
+			'body' : []
 		});
 	} 
 	
