@@ -2,13 +2,13 @@
   "name": "jsforce-ajax-proxy",
   "description": "Ajax proxy server to access Salesforce APIs from browser JavaScript resides in outer domain.",
   "version": "1.0.0",
-  "main": "utils/lib/proxy.js",
+  "main": "lib/proxy.js",
   "scripts": {
-    "start": "node utils/lib/server.js"
+    "start": "node lib/server.js"
  },
   "files": [
-    "utils/lib",
-    "utils/Procfile",
+    "lib",
+    "Procfile",
     "package.json"
   ],
   "dependencies": {
