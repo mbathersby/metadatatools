@@ -1,6 +1,6 @@
 var mdObjs, csvFile, selectedObj, zipBlob, deployReq;
 
-var conn = jsforce.browser.connection;
+//var conn = jsforce.browser.connection;
 	
 var maxPackageSize = 39000;
 var maxPackageRows = 10000;
@@ -105,7 +105,7 @@ function objectSelected(){
 	var objectSelect = $('#object-select');
 	//var conn = jsforce.browser.connection;
 
-	connection.sobject($(objectSelect).val()).describe(function(err, res) {
+	conn.sobject($(objectSelect).val()).describe(function(err, res) {
 		selectedObj = res;
 		console.log('Selected Object: ', selectedObj);
 
