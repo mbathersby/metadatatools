@@ -25,20 +25,18 @@ function getDescribeParents(){
 		
 		var mdTypes = [];
 	
-		console.log(res);
 
 		for(key in res.metadataObjects){
-			mdTypes.push(res.metadataObjects[key].xmlName);
+			mdTypes.push(res.metadataObjects[key]);
 		}
 		
 		mdTypes.sort();
-		console.log(mdTypes);
 
 		for(var i=0; i < mdTypes.length; i++){
 			$('#metadata-select')
 			.append($("<option></option>")
 				.attr("value", mdTypes[i])
-				.text(mdTypes[i])
+				.text(mdTypes[i].xmlName)
 		       );
 		}
 	});
