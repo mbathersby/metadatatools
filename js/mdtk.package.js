@@ -22,16 +22,18 @@ function getDescribeParents(){
 	conn.describeGlobal(function(err, res) {
 		if (err) { return console.error(err); }
 						
-		mdObjs = [];
+		mdTypes = [];
+		
+		console.log(res);
 
-		for(key in res.sobjects){
-			var sObj = res.sobjects[key];
+		for(key in res){
+			var mdType = res[key];
 			//if(sObj.name.includes('__mdt')){
-				mdObjs.push(sObj);
+				mdTypes.push(mdType);
 
 				$('#metadata-select').append($("<option></option>")
-				.attr("value", sObj.name)
-				.text(sObj.label + ' (' + sObj.name + ')')
+				.attr("value", mdType)
+				.text(mdType)
 				);
 			//}
 		}
