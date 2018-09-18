@@ -125,7 +125,7 @@ function resetPackage(){
 }
 
 function setTestPackage(){
-	xmlObj['body'] = [{'CustomObject' : ['Account', 'Contact']}, {'ApexClass' : ['MyClass', 'MyClass_Test']}];
+	xmlObj['body'] = [{'CustomObject' : ['Opportunity', 'Document', 'Account', 'Contact']}, {'ApexClass' : ['MyClass', 'MyClass_Test']}];
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 	setBaseXml();
 }
