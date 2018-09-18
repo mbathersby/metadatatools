@@ -11,10 +11,12 @@ function pkgInit(){
 		});
 	} 
 	
+	xmlObj = JSON.parse(localStorage['mdtk.package.xml']);
+	
 	if(isTest){
 		setTestPackage();	
 	}
-	
+
 	setBaseXml();
 	getDescribeParents();
 }
@@ -23,7 +25,6 @@ var describeParent = {};
 var describeChildren = {};
 
 function setBaseXml(){
-	xmlObj = JSON.parse(localStorage['mdtk.package.xml']);
 
 	$('#xmlHead').text(xmlObj.head);
 	
