@@ -49,9 +49,11 @@ function setBaseXml(){
 			typeString += '\n\t</types>\n';
 			
 			xmlBodyString += typeString;
+			
+			$('#xmlBody').append(typeString);
 		}
 		
-		$('#xmlBody').text(xmlBodyString);
+		//$('#xmlBody').text(xmlBodyString);
 	}
 	
 	$('#xmlFoot').text(xmlObj.foot); 
@@ -108,7 +110,7 @@ function parentSelected(){
 			+ '</th>'
 			+ '</tr>';
 			
-			$('#treeTable tbody').html().append(tableRow);
+			$('#treeTable tbody').append(tableRow);
 		});
 		
 		/*var listString = '<ul>'
