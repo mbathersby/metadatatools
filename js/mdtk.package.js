@@ -145,7 +145,7 @@ function rowSelected(i){
 	var childType = xmlChildren[i].type;
 	var childName = xmlChildren[i].fullName;
 	
-	if(checkbox.selected){
+	if(checkbox.checked){
 
 		if(!Object.keys(body).includes(childType)){
 			body[childType] = [];
