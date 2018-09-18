@@ -1,9 +1,6 @@
 var xmlObj;
 
 function pkgInit(){
-	setBaseXml();
-	getDescribeParents();
-	
 	if(localStorage.mdtk_package_xml == null){
 		localStorage.mdtk_package_xml = JSON.stringify({
 			'head' : '<?xml version="1.0" encoding="UTF-8\\"?>\n<Package xmlns="http://soap.sforce.com/2006/04/metadata">',
@@ -11,6 +8,9 @@ function pkgInit(){
 			'body' : []	
 		});
 	} 
+	
+	setBaseXml();
+	getDescribeParents();
 }
 
 var describeParent = {};
