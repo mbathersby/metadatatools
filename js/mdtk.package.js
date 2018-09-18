@@ -98,3 +98,13 @@ function parentSelected(){
 function setXmlBody(){
     
 }
+
+function resetPackage(){
+	var package = JSON.parse(localStorage['mdtk.package.xml']);
+	
+	package['body'] = [];
+	
+	localStorage['mdtk.package.xml'] = JSON.stringify(package);
+	
+	setBaseXML();
+}
