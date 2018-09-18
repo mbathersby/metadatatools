@@ -103,13 +103,14 @@ function setXmlBody(){
 
 function sortPackage(){
 
+	var original = xmlObj['body'];
 	var ordered = {};
-		
-	Object.keys(xmlObj).sort().forEach(function(key) {
-		ordered[key] = xmlObj[key];
+
+	Object.keys(original).sort().forEach(function(key) {
+		ordered[key] = original[key];
 	});
 	
-	xmlObj = ordered;
+	xmlObj['body'] = ordered;
 	
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 }	
