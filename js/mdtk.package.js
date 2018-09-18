@@ -7,7 +7,7 @@ function pkgInit(){
 		localStorage['mdtk.package.xml'] = JSON.stringify({
 			'head' : '<?xml version="1.0" encoding="UTF-8"?>\n<Package xmlns="http://soap.sforce.com/2006/04/metadata">',
 			'foot' : '<version>' + apiVersion + '</version>\n</Package>',
-			'body' : []
+			'body' : {}
 		});
 	} 
 	
@@ -29,18 +29,18 @@ function setBaseXml(){
 	
 	var xmlBodyString = '';
 	
-	if(xmlObj.body.length > 0){
+	if(xmlObj.body != null){
 		
 		sortPackage();
 
 		console.log(xmlObj.body);
 		
-		for(var i=0; i < xmlObj.body.length; i++){
+		//for(var i=0; i < xmlObj.body.length; i++){
 		
-			var mdTypeObjs = xmlObj.body[i];
-			console.log(mdTypeObjs);
+			//var mdTypeObjs = xmlObj.body[i];
+			//console.log(mdTypeObjs);
 
-			for(key in mdTypeObjs){
+			for(key in xmlObj.body){
 				
 				var typeString = '\t<types>';	
 				
@@ -61,7 +61,7 @@ function setBaseXml(){
 				xmlBodyString += typeString;
 			
 			}
-		}
+		//}
 	}
 	
 	$('#xmlBody').text(xmlBodyString);
@@ -138,7 +138,7 @@ function resetPackage(){
 }
 
 function setTestPackage(){
-	xmlObj['body'] = [{'CustomObject' : ['Opportunity', 'Document', 'Account', 'Contact']}, {'ApexClass' : ['MyClass', 'MyClass_Test']}];
+	xmlObj['body'] = {'CustomObject' : ['Opportunity', 'Document', 'Account', 'Contact'], 'ApexClass' : ['MyClass', 'MyClass_Test']};
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 	setBaseXml();
 }
