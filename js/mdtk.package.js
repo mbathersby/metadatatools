@@ -90,14 +90,14 @@ function parentSelected(){
 		console.log(selected);
 		console.log(res);
 
-		$('#objectChildren').append().html('<ul>');
+		//$('#objectChildren').append().html('<ul>');
 		
 		res.forEach(function(i){
 			console.log(i);
-			$('#objectChildren').append().html('<li>' + i + '</li>');
+			$('#objectChildren').append().html(i.FullName + '<br/>');
 		});
 			
-		$('#objectChildren').append().html('</ul>');
+		//$('#objectChildren').append().html('</ul>');
 	});
 }
 
