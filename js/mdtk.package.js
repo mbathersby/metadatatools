@@ -37,7 +37,7 @@ function setBaseXml(){
 
 		var typeString = '\t<types>';	
 
-		var mdTypeObj = mdTypeObjs[key];
+		var mdTypeObj = xmlObj.body[key];
 		console.log(mdTypeObj);
 
 		mdTypeObj.sort(function(a, b) {
