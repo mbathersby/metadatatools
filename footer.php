@@ -10,14 +10,16 @@
 			
 			jsforce.browser.on('connect', function(conn) {
 				
+				connection = conn;
+				
 				$('#overlay').addClass('slds-backdrop_open');
 				$('#spinner').removeClass('slds-hide');
 				
-				console.log('Connecting to ' + conn.instanceUrl);
+				console.log('Connecting to ' + connection.instanceUrl);
 				$('#noLoginContainer').addClass('slds-hide');
-				var userQuery = 'select Name, Username from User where Id = \'' + conn.userInfo.id + '\' limit 1';
+				var userQuery = 'select Name, Username from User where Id = \'' + connection.userInfo.id + '\' limit 1';
 				
-				conn.query(userQuery, function(err, res){
+				connection.query(userQuery, function(err, res){
 					userInfo = res.records[0];
 					$('#userFullname').html(userInfo.Name);
 					$('#userUsername').html(' (' + userInfo.Username + ')');
