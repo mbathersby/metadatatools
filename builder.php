@@ -61,7 +61,7 @@
 								</svg>
 								<span class="slds-assistive-text">Show More</span>
 							</button>
-							<div class="slds-dropdown slds-dropdown_actions slds-dropdown_right">
+							<div class="slds-dropdown slds-dropdown_actions slds-dropdown_right slds-is-open">
 								<ul class="slds-dropdown__list" role="menu">
 									<li class="slds-dropdown__item" role="presentation">
 										<a href="javascript:void(0);" role="menuitem" tabindex="-1">
