@@ -1,37 +1,34 @@
-var mdObjs;
-var csvFile;
-var selectedObj;
-var userInfo;
-var zipBlob;
-var deployReq;
+var mdObjs, csvFile, selectedObj, zipBlob, deployReq;
 
-function init() {
+//var conn = jsforce.browser.connection;
 	
-	setNavigation();
-	
-	jsforce.browser.init({
-		clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
-		redirectUri: 'https://metadatatoolkit.herokuapp.com/authorize.htm',
-		proxyUrl: 'https://mdtk-proxy.herokuapp.com/proxy/'
-	});
+var maxPackageSize = 39000;
+var maxPackageRows = 10000;
+
+var checkInterval = 5000;
+
+function deployInit(){
+	getCustomMetadataDescribes();
 }
 
-function setNavigation() {
-    var path = window.location.pathname;
-    path = path.replace(/\/$/, "");
-    path = decodeURIComponent(path);
+function getCustomMetadataDescribes(){
+	conn.describeGlobal(function(err, res) {
+		if (err) { return console.error(err); }
+						
+		mdObjs = [];
 
-    $(".slds-dropdown__item a").each(function () {
-        var href = $(this).attr('href');
-        if (path.substring(0, href.length) === href) {
-            $(this).closest('.slds-context-bar__item').addClass('slds-is-active');
-        }
-    });
-}
+		for(key in res.sobjects){
+			var sObj = res.sobjects[key];
+			if(sObj.name.includes('__mdt')){
+				mdObjs.push(sObj);
 
-function login(instance) {
-	jsforce.browser.config.loginUrl = 'https://' + instance + '.salesforce.com';
-	jsforce.browser.login();
+				$('#object-select').append($("<option></option>")
+				.attr("value", sObj.name)
+				.text(sObj.label + ' (' + sObj.name + ')')
+				);
+			}
+		}
+	});	
 }
 
 var fieldTypeMap = function () {
@@ -50,22 +47,6 @@ var fieldTypeMap = function () {
 	return typeMap;
 }
 
-function showToast(msg, duration){
-	
-	$('#errorToast #toastMessage').html(msg);
-	$('#errorToast').removeClass('slds-hide');
-	
-	function hideToast() {
-		$('#errorToast').addClass('slds-hide')
-	}
-	
-	setTimeout(
-		hideToast,
-		duration
-	);
-	
-}
-
 var packageXml = function () {
 	var packageXML = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
 		 + '\t<Package xmlns="http://soap.sforce.com/2006/04/metadata">\n'
@@ -73,10 +54,68 @@ var packageXml = function () {
 		 + '\t\t\t<members>*</members>\n'
 		 + '\t\t\t<name>CustomMetadata</name>\n'
 		 + '\t\t</types>\n'
-		 + '\t<version>42.0</version>\n'
+		 + '\t<version>' + apiVersion + '</version>\n'
 		 + '</Package>';
 	return packageXML;
 }
+
+function fileSelected(){
+	
+	var fileInput = $('#file-upload-input');
+		
+	// reset mapping table and deploy button
+	$('#mappingTable').addClass('slds-hide');
+	$('#deployBtn').attr('disabled', 'true');
+
+	$('#file-size').html('Calculating...');
+	$('#file-info').removeClass('slds-hide');
+
+	var file = $(fileInput)[0].files[0];
+
+	$("[name='fileName']").html(file.name);
+	$('#file-size').html(numeral(file.size/1024).format('0,0') + ' KB');
+	$('#last-modified').html(moment(file.lastModified).format('lll'));
+	
+	var reader = new FileReader();
+	
+	reader.onload = function(){
+		csvFile = Papa.parse(reader.result, {header:true});
+		console.log('CSV File Data');
+		console.log(csvFile);
+		$("#rowCount").html(numeral(csvFile.data.length - 1).format('0,0'));
+		if((csvFile.data.length - 1) > maxPackageRows){
+			showToast('You cannot deploy more than ' + numeral(maxPackageRows).format('0,0') + ' items at a time.\nPlease split your CSV into mutiple files of ' + numeral(maxPackageRows).format('0,0') + ' rows or less and deploy each file separately.', 7500);
+		} 
+		
+		else if((file.size / 1024).toFixed(1) > maxPackageSize){
+			showToast('Your package cannot be larger than ' + numeral(maxPackageSize/1000).format('0,0') + 'MB.\nPlease split your CSV into mutiple files of ' + numeral(maxPackageSize/1000).format('0,0') + 'MB or less and deploy each file separately.', 7500);
+		}
+		else if($('#object-select').val() != null){
+			buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
+			$('#deployBtn').removeAttr('disabled');
+		}
+	};
+	
+	reader.readAsText(file);
+
+};//);
+
+function objectSelected(){
+
+	var objectSelect = $('#object-select');
+	//var conn = jsforce.browser.connection;
+
+	conn.sobject($(objectSelect).val()).describe(function(err, res) {
+		selectedObj = res;
+		console.log('Selected Object: ', selectedObj);
+
+		if(csvFile != null){
+			buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
+			$('#deployBtn').removeAttr('disabled');
+		}	
+	});
+
+}; //);
 
 function buildTable(tableId, cols, fields, sample) {
 
@@ -257,7 +296,7 @@ function deployZip() {
 	$('#deployStatus').html('Sending request to server...');
 	$('#deployState').html('');
 	
-	jsforce.browser.connection.metadata.deploy(zipBlob, {
+	connection.metadata.deploy(zipBlob, {
 		singlePackage: true
 	})
 	
@@ -272,7 +311,7 @@ function deployZip() {
 		
 			$('#deployState').html('');
 			
-			jsforce.browser.connection.metadata.checkDeployStatus(deployReq.id, true)
+			connection.metadata.checkDeployStatus(deployReq.id, true)
 			.then(function(reqStatus){
 				console.log(reqStatus);
 				$('#deployStatus').html('Deployment ' + reqStatus.status);
@@ -292,6 +331,6 @@ function deployZip() {
 				}
 			});
 			
-		}, 5000);
+		}, checkInterval);
 	});
 }

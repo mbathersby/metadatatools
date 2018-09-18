@@ -1,12 +1,16 @@
 <?php include 'header.php'; ?>
 
+<script src="js/jszip.js" type="text/javascript"></script>
+<script src="js/papaparse.js" type="text/javascript"></script>
+<script src="js/mdtk.deploy.js" type="text/javascript"></script>
+
 <div class="slds-page-header slds-m-bottom_medium slds-p-around_x-medium">
 	<div class="slds-grid">
 		<div class="slds-col slds-has-flexi-truncate">
 			<div class="slds-media slds-no-space slds-grow">
 				<div class="slds-media__figure">
 					<span class="slds-icon_container slds-icon-standard-orders" title="Description of icon when needed">
-						<svg class="slds-icon slds-icon_small" aria-hidden="true">
+						<svg class="slds-icon slds-icon_x-small" aria-hidden="true">
 							<use xlink:href="slds/assets/icons/standard-sprite/svg/symbols.svg#orders"></use>
 						</svg>
 					</span>
@@ -47,7 +51,7 @@
 					<label class="slds-form-element__label" for="select-01">Custom Metadata Objects</label>
 					<div class="slds-form-element__control">
 						<div class="slds-select_container">
-							<select class="slds-select" id="object-select">
+							<select class="slds-select" id="object-select" onchange="objectSelected()">
 								<option value="" disabled selected>Please select</option>
 							</select>
 						</div>
@@ -81,7 +85,7 @@
 					<div class="slds-form-element__control">
 						<div class="slds-file-selector slds-file-selector_files">
 							<div class="slds-file-selector__dropzone">
-								<input type="file" class="slds-file-selector__input slds-assistive-text" accept=".csv" id="file-upload-input" aria-labelledby="file-selector-primary-label file-selector-secondary-label" />
+								<input type="file" onchange="fileSelected()" class="slds-file-selector__input slds-assistive-text" accept=".csv" id="file-upload-input" aria-labelledby="file-selector-primary-label file-selector-secondary-label" />
 								<label class="slds-file-selector__body" for="file-upload-input" id="file-selector-secondary-label">
 									<span class="slds-file-selector__button slds-button slds-button_neutral">
 										<svg class="slds-button__icon slds-button__icon_left" aria-hidden="true" >
@@ -100,9 +104,9 @@
 			<div class="slds-card__header slds-grid">
 				<header class="slds-media slds-media_center slds-has-flexi-truncate">
 					<div class="slds-media__figure">
-						<span class="slds-icon_container slds-icon-standard-account" title="account">
-							<svg class="slds-icon slds-icon_small" aria-hidden="true">
-								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/standard-sprite/svg/symbols.svg#account"></use>
+						<span class="slds-icon_container slds-icon-utility-info-alt" title="account">
+							<svg class="slds-icon slds-icon-text-default slds-icon_small" aria-hidden="true">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#info_alt"></use>
 							</svg>
 						</span>
 					</div>
@@ -199,58 +203,7 @@
 </section>
 
 <script>
-	$('#file-upload-input').change(function(){
-		
-		// reset mapping table and deploy button
-		$('#mappingTable').addClass('slds-hide');
-		$('#deployBtn').attr('disabled', 'true');
-		
-		$('#file-size').html('Calculating...');
-		$('#file-info').removeClass('slds-hide');
-		
-		var file = $(this)[0].files[0];
-		
-		$("[name='fileName']").html(file.name);
-		$('#file-size').html((file.size / 1024).toFixed(1) + ' KB');
-		
-		$('#last-modified').html(moment(file.lastModified).format('lll'));
-		
-		var reader = new FileReader();
-		
-		reader.onload = function(){
-			csvFile = Papa.parse(reader.result, {header:true});
-			console.log('CSV File Data');
-			console.log(csvFile);
-			$("#rowCount").html(csvFile.data.length - 1);
-			
-			if((csvFile.data.length - 1) > 10000){
-				showToast('You cannot deploy more than 10,000 items at a time.\nPlease split your CSV into mutiple files of 10,000 rows or less and deploy each file separately.', 7500);
-			}
-			
-			else if($('#object-select').val() != null){
-				buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
-				$('#deployBtn').removeAttr('disabled');
-			}
-		};
-		
-		reader.readAsText(file);
-		
-	});
-	
-	$('#object-select').change(function(){
-		var conn = jsforce.browser.connection;
-		
-		conn.sobject($(this).val()).describe(function(err, res) {
-			selectedObj = res;
-			console.log('Selected Object: ', selectedObj);
-			
-			if(csvFile != null){
-				buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
-				$('#deployBtn').removeAttr('disabled');
-			}	
-		});
-		
-	});
+	deployInit();
 </script>
 
 <?php include 'footer.php'; ?>
