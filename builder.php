@@ -36,7 +36,7 @@
 			</div>
 			<div id="metadataTree">
 				
-				<table id="treeTable" aria-multiselectable="true" class="slds-table slds-table_header-hidden slds-table_edit slds-tree slds-table_tree" role="treegrid">
+				<table id="treeTable" aria-multiselectable="true" class="slds-table slds-table_header-hidden slds-table_bordered slds-table_edit slds-tree slds-table_tree" role="treegrid">
 					<thead class="slds-assistive-text">
 						<tr class="slds-line-height_reset">
 							<th class="slds-text-title_caps slds-text-align_right" scope="col" style="width: 3.25rem;">
