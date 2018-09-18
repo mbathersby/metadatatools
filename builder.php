@@ -54,14 +54,14 @@
 						</h2>
 					</div>
 					<div class="slds-no-flex">
-						<div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+						<div class="slds-dropdown-trigger slds-dropdown-trigger_click  slds-is-open">
 							<button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="Show More">
 								<svg class="slds-button__icon" aria-hidden="true">
 									<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
 								</svg>
 								<span class="slds-assistive-text">Show More</span>
 							</button>
-							<div class="slds-dropdown slds-dropdown_actions slds-dropdown_right slds-is-open">
+							<div class="slds-dropdown slds-dropdown_actions slds-dropdown_right">
 								<ul class="slds-dropdown__list" role="menu">
 									<li class="slds-dropdown__item" role="presentation">
 										<a href="javascript:void(0);" role="menuitem" tabindex="-1">
