@@ -20,6 +20,24 @@ function setBaseXml(){
 	xmlObj = JSON.parse(localStorage['mdtk.package.xml']);
 
 	$('#xmlHead pre').text(xmlObj.head);
+	
+	if(xmlObj.body.length > 0){
+		
+		for(key in xmlObj.body){
+		
+			var typeString = '\n\t<types>';	
+			
+			for(var i=0; i < xmlObj.body[key].length){
+				typeString += '\n\t\t<members>' + xmlObj.body[key][i] + '</members>';
+			}
+			
+			typeString += '\n\t\t<name>' + key + '</name>';
+			typeString += '\n\t</types>';
+			
+			$('#xmlBody pre').append(String(typeString));
+		}
+	}
+	
 	$('#xmlFoot pre').text(xmlObj.foot); 
 }
 
