@@ -89,6 +89,8 @@ function parentSelected(){
 	conn.metadata.list(query, apiVersion, function(err, res){
 		console.log(selected);
 		console.log(res);
+		
+		$('#objectChildren').text(JSON.stringify(res));
 	});
 }
 
