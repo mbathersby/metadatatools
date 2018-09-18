@@ -38,7 +38,7 @@ function getDescribeParents(){
 		for(var i=0; i < mdTypes.length; i++){
 			$('#metadata-select')
 			.append($("<option></option>")
-				.attr("value", mdTypes[i])
+				.attr("value", mdTypes[i].xmlName)
 				.text(mdTypes[i].xmlName)
 		       );
 		}
@@ -47,7 +47,7 @@ function getDescribeParents(){
 
 function parentSelected(){
 	var selected = $('#metadata-select').val();
-	console.log(selected.xmlName);
+	console.log(selected);
 	
 	/*var query = jsforce.metadata.ListMetadataQuery($(mdSelect).textContent);
 
