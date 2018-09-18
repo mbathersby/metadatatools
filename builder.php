@@ -23,9 +23,16 @@
 
 <div class="slds-grid slds-gutters slds-m-around_x-small">
 	<div class="slds-col slds-size_5-of-12">
-		<select class="slds-select" id="metadata-select" >
-			<option value="" disabled selected>Please select</option>
-		</select>
+		<div class="slds-form-element slds-m-around_medium">
+			<label class="slds-form-element__label" for="select-01">Metadata Types</label>
+			<div class="slds-form-element__control">
+				<div class="slds-select_container">
+					<select class="slds-select" id="metadata-select">
+						<option value="" disabled selected>Please select</option>
+					</select>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="slds-col slds-size_7-of-12">
 		<article class="slds-card">
