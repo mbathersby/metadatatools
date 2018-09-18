@@ -19,7 +19,7 @@ function setBaseXml(){
 }
 
 function getDescribeParents(){
-	mdTypes = [];
+	var mdTypes = [];
 	
 	conn.metadata.describe(apiVersion, function(err, res) {
 		if (err) { return console.error(err); }
