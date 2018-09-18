@@ -91,7 +91,8 @@ function parentSelected(){
 		console.log(res);
 
 		res.forEach(function(i){
-			$('#objectChildren').append().text(res[i].fullName);
+			console.log(i);
+			//$('#objectChildren').append().text(res[i].fullName);
 		});
 	});
 }
