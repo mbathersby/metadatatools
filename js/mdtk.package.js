@@ -50,7 +50,7 @@ function setBaseXml(){
 		}
 	}
 	
-	$('#xmlBody').text($('#xmlBody').text().replace(/\n$/, ""));
+	//$('#xmlBody').text($('#xmlBody').text().replace(/\n$/, ""));
 	$('#xmlFoot').text(xmlObj.foot); 
 }
 
