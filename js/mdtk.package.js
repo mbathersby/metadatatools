@@ -49,9 +49,9 @@ function parentSelected(){
 	var selected = $('#metadata-select').val();
 	console.log(selected);
 	
-	var query = {type: selected};
+	var query = [{type: selected}];
 
-	conn.metadata.list(query, apiVersion, function(res){
+	conn.metadata.list(query, apiVersion, function(err, res){
 		console.log(res);
 	});
 }
