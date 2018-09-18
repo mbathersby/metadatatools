@@ -147,6 +147,8 @@ function rowSelected(i){
 	var childName = xmlChildren[i].fullName;
 	
 	console.log(row);
+	console.log(row.checked);
+	console.log($(row).prop('checked'));
 	
 	if($(row).prop('checked')){
 
