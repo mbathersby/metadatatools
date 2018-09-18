@@ -8,18 +8,19 @@
 				$('#noLoginContainer').removeClass('slds-hide');
 			} 
 			
-			jsforce.browser.on('connect', function(conn) {
+			jsforce.browser.on('connect', function(connection) {
 				
-				connection = jsforce.browser.connection;
+				conn = jsforce.browser.connection;
 				
 				$('#overlay').addClass('slds-backdrop_open');
 				$('#spinner').removeClass('slds-hide');
 				
-				console.log('Connecting to ' + connection.instanceUrl);
+				console.log('Connecting to ' + conn.instanceUrl);
 				$('#noLoginContainer').addClass('slds-hide');
-				var userQuery = 'select Name, Username from User where Id = \'' + connection.userInfo.id + '\' limit 1';
 				
-				connection.query(userQuery, function(err, res){
+				var userQuery = 'select Name, Username from User where Id = \'' + conn.userInfo.id + '\' limit 1';
+				
+				conn.query(userQuery, function(err, res){
 					userInfo = res.records[0];
 					$('#userFullname').html(userInfo.Name);
 					$('#userUsername').html(' (' + userInfo.Username + ')');
