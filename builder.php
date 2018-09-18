@@ -69,7 +69,7 @@
 				</button>
 				<div class="slds-truncate" title="Rewis Inc"><a href="javascript:void(0);" tabindex="-1">Rewis Inc</a></div>
 			      </th>
-			    <tr/>
+			    </tr>
 			</tbody>
 		</div>
 	</div>
