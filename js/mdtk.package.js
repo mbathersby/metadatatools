@@ -33,7 +33,6 @@ function getDescribeParents(){
 		
 		mdTypes.sort(function(a, b) {
     			return a.xmlName.localeCompare(b.xmlName);
-			//(a.xmlName > b.xmlName) - (a.xmlName < b.xmlName);
 		});
 
 		for(var i=0; i < mdTypes.length; i++){
