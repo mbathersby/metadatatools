@@ -27,6 +27,7 @@ function setBaseXml(){
 		for(key in xmlObj.body){
 		
 			var mdTypeObj = xmlObj.body[key];
+			console.log(key);
 			console.log(mdTypeObj);
 			
 			var typeString = '\n\t<types>';	
