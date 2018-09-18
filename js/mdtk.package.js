@@ -46,8 +46,8 @@ function getDescribeParents(){
 }
 
 function parentSelected(){
-	var mdSelect = $('#metadata-select');
-	console.log(mdSelect.val());
+	var selected = $('#metadata-select').val();
+	console.log(selected);
 	
 	/*var query = jsforce.metadata.ListMetadataQuery($(mdSelect).textContent);
 
