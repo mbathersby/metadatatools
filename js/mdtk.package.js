@@ -112,6 +112,8 @@ function setXmlBody(){
 
 function sortPackage(){
 
+	console.log('Sorting package');
+	
 	var original = xmlObj.body;
 	var ordered = {};
 	
