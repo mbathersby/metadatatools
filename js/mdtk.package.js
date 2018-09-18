@@ -36,8 +36,9 @@ function getDescribeParents(){
 	for(var i=0; i < mdTypes.length; i++){
 		$('#metadata-select')
 		.append($("<option></option>")
-		.attr("value", mdType.xmlName)
-		.text(mdType.xmlName)
+			.attr("value", mdType.xmlName)
+			.text(mdType.xmlName)
+	       );
 	}
 }
 
