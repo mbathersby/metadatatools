@@ -106,5 +106,5 @@ function resetPackage(){
 	
 	localStorage['mdtk.package.xml'] = JSON.stringify(package);
 	
-	setBaseXML();
+	setBaseXml();
 }
