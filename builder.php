@@ -27,7 +27,7 @@
 			<label class="slds-form-element__label" for="select-01">Metadata Types</label>
 			<div class="slds-form-element__control">
 				<div class="slds-select_container">
-					<select class="slds-select" id="metadata-select">
+					<select class="slds-select" id="metadata-select" onSelect="parentSelected()">
 						<option value="" disabled selected>Please select</option>
 					</select>
 				</div>
