@@ -47,7 +47,7 @@ function getDescribeParents(){
 
 function parentSelected(){
 	var selected = $('#metadata-select').val();
-	console.log(selected);
+	console.log(selected.xmlName);
 	
 	/*var query = jsforce.metadata.ListMetadataQuery($(mdSelect).textContent);
 
