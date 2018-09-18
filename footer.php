@@ -10,7 +10,7 @@
 			
 			jsforce.browser.on('connect', function(connection) {
 				
-				conn = jsforce.browser.connection;
+				conn = connection;
 				
 				$('#overlay').addClass('slds-backdrop_open');
 				$('#spinner').removeClass('slds-hide');
