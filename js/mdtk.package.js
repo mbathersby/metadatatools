@@ -48,9 +48,9 @@ function setBaseXml(){
 				var mdTypeObj = mdTypeObjs[key];
 				console.log(mdTypeObj);
 				
-				/*mdTypeObj.sort(function(a, b) {
+				mdTypeObj.sort(function(a, b) {
 					return a.localeCompare(b);
-				});*/
+				});
 				
 				for(var j=0; j < mdTypeObj.length; j++){
 					typeString += '\n\t\t<members>' + mdTypeObj[j] + '</members>';
