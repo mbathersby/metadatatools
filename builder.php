@@ -33,6 +33,8 @@
 				</div>
 			</div>
 		</div>
+		<div id="objectChildren">
+		</div>
 	</div>
 	<div class="slds-col slds-size_7-of-12">
 		<article class="slds-card">
