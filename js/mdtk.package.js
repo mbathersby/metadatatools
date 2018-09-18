@@ -1,21 +1,23 @@
 function pkgInit(){
-    setBaseXml();
-    getDescribeParents();
+	setBaseXml();
+	getDescribeParents();
+	
+	if(localStorage['mdtk.package.selected'] == null){
+		localStorage['mdtk.package.selected'] = {
+			'head' : '<?xml version="1.0" encoding="UTF-8"?>\n<Package xmlns="http://soap.sforce.com/2006/04/metadata">',
+			'foot' : '<version>' + apiVersion + '</version>\n</Package>',
+			'body' : []	
+		};
+	}
 }
-
-var xmlHead = '<?xml version="1.0" encoding="UTF-8"?>\n'
-    + '<Package xmlns="http://soap.sforce.com/2006/04/metadata">';
-
-var xmlFoot = '<version>' + apiVersion + '</version>\n'
-    + '</Package>';
 
 var describeParent = {};
 var describeChildren = {};
 var xmlBodyObj = {};
 
 function setBaseXml(){
-    $('#xmlHead pre').text(xmlHead); 
-    $('#xmlFoot pre').text(xmlFoot); 
+    $('#xmlHead pre').text(localStorage['head']); 
+    $('#xmlFoot pre').text(localStorage['foot']); 
 }
 
 function getDescribeParents(){
