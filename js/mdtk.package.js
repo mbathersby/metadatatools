@@ -49,7 +49,7 @@ function parentSelected(){
 	var selected = $('#metadata-select').val();
 	console.log(selected);
 	
-	var query = jsforce.metadata.ListMetadataQuery(selected);
+	var query = {type: selected};
 
 	conn.metadata.list(query, apiVersion, function(res){
 		console.log(res);
