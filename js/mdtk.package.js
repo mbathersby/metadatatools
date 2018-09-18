@@ -24,6 +24,8 @@ function setBaseXml(){
 	
 	if(xmlObj.body.length > 0){
 		
+		console.log(xmlObj.body);
+		
 		for(key in xmlObj.body){
 		
 			var mdTypeObj = xmlObj.body[key];
