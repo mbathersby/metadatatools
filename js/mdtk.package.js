@@ -27,7 +27,7 @@ function setBaseXml(){
 	var xmlBodyString = '';
 	
 	if(xmlObj.body == {}){
-		$('#xmlBody').text(' ');
+		$('#xmlBody').html('<br/><br/>');
 	} else {
 
 		for(key in xmlObj.body){
