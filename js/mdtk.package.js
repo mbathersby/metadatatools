@@ -18,14 +18,14 @@ var describeChildren = {};
 
 function setBaseXml(){
 	xmlObj = JSON.parse(localStorage['mdtk.package.xml']);
-	
-	sortPackage(xmlObj);
 
 	$('#xmlHead').text(xmlObj.head);
 	
 	var xmlBodyString = '';
 	
 	if(xmlObj.body.length > 0){
+		
+		sortPackage(xmlObj);
 
 		console.log(xmlObj.body);
 		
