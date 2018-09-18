@@ -28,7 +28,7 @@ function getDescribeParents(){
 		console.log(res);
 
 		for(key in res.metadataObjects){
-			mdTypes.push(res.metadataObjects[key]);
+			mdTypes.push(res.metadataObjects[key].xmlName);
 		}
 		
 		mdTypes.sort();
