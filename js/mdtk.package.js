@@ -25,7 +25,7 @@ function setBaseXml(){
 	
 	if(xmlObj.body.length > 0){
 		
-		sortPackage(xmlObj);
+		sortPackage();
 
 		console.log(xmlObj.body);
 		
@@ -101,37 +101,27 @@ function setXmlBody(){
     
 }
 
-function sortPackage(obj){
-	//var package = JSON.parse(localStorage['mdtk.package.xml']);
-	
-	var original = obj['body'];
+function sortPackage(){
+
 	var ordered = {};
 		
-	Object.keys(original).sort().forEach(function(key) {
-		ordered[key] = original[key];
+	Object.keys(xmlObj).sort().forEach(function(key) {
+		ordered[key] = xmlObj[key];
 	});
 	
-	obj['body'] = ordered;
+	xmlObj = ordered;
 	
-	localStorage['mdtk.package.xml'] = JSON.stringify(obj);
+	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 }	
 
 function resetPackage(){
-	var package = JSON.parse(localStorage['mdtk.package.xml']);
-	
-	package['body'] = [];
-	
-	localStorage['mdtk.package.xml'] = JSON.stringify(package);
-	
+	xmlObj['body'] = [];
+	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 	setBaseXml();
 }
 
 function setTestPackage(){
-	var package = JSON.parse(localStorage['mdtk.package.xml']);
-	
-	package['body'] = [{'CustomObject' : ['Account', 'Contact']}, {'ApexClass' : ['MyClass', 'MyClass_Test']}];
-	
-	localStorage['mdtk.package.xml'] = JSON.stringify(package);
-	
+	xmlObj['body'] = [{'CustomObject' : ['Account', 'Contact']}, {'ApexClass' : ['MyClass', 'MyClass_Test']}];
+	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 	setBaseXml();
 }
