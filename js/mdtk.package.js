@@ -37,7 +37,7 @@ function setBaseXml(){
 			for(key in mdTypeObj){
 				
 				for(var j=0; i < mdTypeObj.length; j++){
-					typeString += 'n\t\t<members>' + mdTypeObj[i] + '</members>';
+					typeString += 'n\t\t<members>' + mdTypeObj[j] + '</members>';
 				}
 			
 				typeString += '\n\t\t<name>' + key + '</name>';
