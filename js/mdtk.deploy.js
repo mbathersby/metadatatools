@@ -5,6 +5,30 @@ var maxPackageRows = 10000;
 
 var checkInterval = 5000;
 
+function deployInit(){
+	getCustomMetadataDescribes();
+}
+
+function getCustomMetadataDescribes(){
+	conn.describeGlobal(function(err, res) {
+		if (err) { return console.error(err); }
+						
+		mdObjs = [];
+
+		for(key in res.sobjects){
+			var sObj = res.sobjects[key];
+			if(sObj.name.includes('__mdt')){
+				mdObjs.push(sObj);
+
+				$('#object-select').append($("<option></option>")
+				.attr("value", sObj.name)
+				.text(sObj.label + ' (' + sObj.name + ')')
+				);
+			}
+		}
+	});	
+}
+
 var fieldTypeMap = function () {
 	var typeMap = {};
 	typeMap["TEXT"] = "string";
