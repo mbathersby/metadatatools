@@ -92,10 +92,12 @@ function parentSelected(){
 	
 	conn.metadata.list(query, apiVersion, function(err, res){
 		console.log(selected);
-		console.log(res);
 		
 		xmlChildren = res;
 		sortChildren();
+		
+		console.log(res);
+		console.log(xmlChildren);
 		
 		var index = 0;
 		
