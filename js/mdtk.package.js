@@ -1,3 +1,5 @@
+var xmlObj = {};
+
 function pkgInit(){
 	setBaseXml();
 	getDescribeParents();
@@ -10,16 +12,15 @@ function pkgInit(){
 		});
 	} 
 	
-	xmlObj = JSON.parse(['mdtk.package.selected']);
+	xmlObj = JSON.parse(localStorage['mdtk.package.selected']);
 }
 
 var describeParent = {};
 var describeChildren = {};
-var xmlObj = {};
 
 function setBaseXml(){
-    $('#xmlHead pre').text(localStorage['head']); 
-    $('#xmlFoot pre').text(localStorage['foot']); 
+    $('#xmlHead pre').text(xmlObj['head']);
+    $('#xmlFoot pre').text(xmlObj['foot']); 
 }
 
 function getDescribeParents(){
