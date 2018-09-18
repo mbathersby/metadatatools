@@ -45,7 +45,7 @@ function setBaseXml(){
 				typeString += '\n\t\t<name>' + key + '</name>';
 				typeString += '\n\t</types>\n';
 
-				$('#xmlBody').text($('#xmlBody').append().text(typeString));
+				$('#xmlBody').append().text(typeString);
 			
 			}
 		}
