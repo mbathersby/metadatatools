@@ -94,14 +94,14 @@ function parentSelected(){
 		console.log(selected);
 		
 		xmlChildren = res;
-		sortChildren();
+		//sortChildren();
 		
 		console.log(res);
 		console.log(xmlChildren);
 		
-		var index = 0;
+		//var index = 0;
 		
-		xmlChildren.forEach(function(i){
+		xmlChildren.forEach(function(item, index){
 		
 			var tableRow = '<tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="'+ index +'">'
 			+ '<td class="slds-text-align_right" role="gridcell" style="width: 3.25rem;">'
@@ -109,12 +109,12 @@ function parentSelected(){
 			+ '<input type="checkbox" name="options" id="checkbox-'+ index +'" aria-labelledby="check-button-label-'+ index +' column-group-header" value="checkbox-'+ index +'" />'
 			+ '<label class="slds-checkbox__label" for="checkbox-'+ index +'" id="check-button-label-'+ index +'">'
 			+ '<span class="slds-checkbox_faux"></span>'
-			+ '<span class="slds-form-element__label slds-assistive-text">' + i.fullName + '</span>'
+			+ '<span class="slds-form-element__label slds-assistive-text">' + item.fullName + '</span>'
 			+ '</label>'
 			+ '</div>'
 			+ '</td>'
 			+ '<th class="slds-tree__item" data-label="Account Name" scope="row">'
-			+ '<div class="slds-truncate" title="Rewis Inc"><a href="javascript:void(0);" tabindex="-1">' + i.fullName + '</a></div>'
+			+ '<div class="slds-truncate" title="Rewis Inc"><a href="javascript:void(0);" tabindex="-1">' + item.fullName + '</a></div>'
 			+ '</th>'
 			+ '</tr>';
 			
