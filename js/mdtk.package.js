@@ -89,15 +89,19 @@ function parentSelected(){
 	conn.metadata.list(query, apiVersion, function(err, res){
 		console.log(selected);
 		console.log(res);
+		
+		var listString = '<ul>'
 
 		//$('#objectChildren').append().html('<ul>');
 		
 		res.forEach(function(i){
 			console.log(i);
-			$('#objectChildren').append().html(i.fullName + '<br/>');
+			listString += '<li>' + i.fullName + '</li>'
 		});
 			
-		//$('#objectChildren').append().html('</ul>');
+		listString += '<ul>';
+		
+		$('#objectChildren').html(listString);
 	});
 }
 
