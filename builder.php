@@ -36,7 +36,7 @@
 			</div>
 			<div id="metadataTree">
 				
-				<table aria-multiselectable="true" class="slds-table slds-table_header-hidden slds-table_edit slds-tree slds-table_tree" role="treegrid">
+				<table id="treeTable" aria-multiselectable="true" class="slds-table slds-table_header-hidden slds-table_edit slds-tree slds-table_tree" role="treegrid">
 					<thead class="slds-assistive-text">
 						<tr class="slds-line-height_reset">
 							<th class="slds-text-title_caps slds-text-align_right" scope="col" style="width: 3.25rem;">
@@ -52,20 +52,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="0">
-							<td class="slds-text-align_right" role="gridcell" style="width: 3.25rem;">
-								<div class="slds-checkbox">
-									<input type="checkbox" name="options" id="checkbox-089" aria-labelledby="check-button-label-089 column-group-header" value="checkbox-089" />
-									<label class="slds-checkbox__label" for="checkbox-089" id="check-button-label-089">
-										<span class="slds-checkbox_faux"></span>
-										<span class="slds-form-element__label slds-assistive-text">Select item 89</span>
-									</label>
-								</div>
-							</td>
-							<th class="slds-tree__item" data-label="Account Name" scope="row">
-								<div class="slds-truncate" title="Rewis Inc"><a href="javascript:void(0);" tabindex="-1">Rewis Inc</a></div>
-							</th>
-						</tr>
+						
 					</tbody>
 				</table>
 				

@@ -10,7 +10,7 @@ function pkgInit(){
 	} 
 	
 	xmlObj = JSON.parse(localStorage['mdtk.package.xml']);
-
+	
 	setBaseXml();
 	getDescribeParents();
 }
@@ -30,27 +30,27 @@ function setBaseXml(){
 	} 
 	
 	else {
-
+		
 		for(key in xmlObj.body){
-
+			
 			var typeString = '\t<types>';	
-
+			
 			var mdTypeObj = xmlObj.body[key];
-
+			
 			mdTypeObj.sort(function(a, b) {
 				return a.localeCompare(b);
 			});
-
+			
 			for(var j=0; j < mdTypeObj.length; j++){
 				typeString += '\n\t\t<members>' + mdTypeObj[j] + '</members>';
 			}
-
+			
 			typeString += '\n\t\t<name>' + key + '</name>';
 			typeString += '\n\t</types>\n';
-
+			
 			xmlBodyString += typeString;
 		}
-
+		
 		$('#xmlBody').text(xmlBodyString);
 	}
 	
@@ -63,21 +63,21 @@ function getDescribeParents(){
 		if (err) { return console.error(err); }
 		
 		var mdTypes = [];
-			
+		
 		for(key in res.metadataObjects){
 			mdTypes.push(res.metadataObjects[key]);
 		}
 		
 		mdTypes.sort(function(a, b) {
-    			return a.xmlName.localeCompare(b.xmlName);
+			return a.xmlName.localeCompare(b.xmlName);
 		});
-
+		
 		for(var i=0; i < mdTypes.length; i++){
 			$('#metadata-select')
 			.append($("<option></option>")
-				.attr("value", mdTypes[i].xmlName)
-				.text(mdTypes[i].xmlName)
-		       );
+			.attr("value", mdTypes[i].xmlName)
+			.text(mdTypes[i].xmlName)
+			);
 		}
 	});
 }
@@ -85,23 +85,44 @@ function getDescribeParents(){
 function parentSelected(){
 	var selected = $('#metadata-select').val();
 	var query = [{type: selected}];
-
+	
 	conn.metadata.list(query, apiVersion, function(err, res){
 		console.log(selected);
 		console.log(res);
 		
-		var listString = '<ul>'
-
-		//$('#objectChildren').append().html('<ul>');
+		var i = 0;
 		
 		res.forEach(function(i){
+			var tableRow = '<tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="0">'
+			+ '<td class="slds-text-align_right" role="gridcell" style="width: 3.25rem;">'
+			+ '<div class="slds-checkbox">'
+			+ '<input type="checkbox" name="options" id="checkbox-089" aria-labelledby="check-button-label-089 column-group-header" value="checkbox-089" />'
+			+ '<label class="slds-checkbox__label" for="checkbox-089" id="check-button-label-089">'
+			+ '<span class="slds-checkbox_faux"></span>'
+			+ '<span class="slds-form-element__label slds-assistive-text">Select item 89</span>'
+			+ '</label>'
+			+ '</div>'
+			+ '</td>'
+			+ '<th class="slds-tree__item" data-label="Account Name" scope="row">'
+			+ '<div class="slds-truncate" title="Rewis Inc"><a href="javascript:void(0);" tabindex="-1">' + i.fullName + '</a></div>'
+			+ '</th>'
+			+ '</tr>';
+			
+			$('#treeTable tbody').html().append(tableRow);
+		});
+		
+		/*var listString = '<ul>'
+			
+			//$('#objectChildren').append().html('<ul>');
+			
+			res.forEach(function(i){
 			console.log(i);
 			listString += '<li>' + i.fullName + '</li>'
-		});
+			});
 			
-		listString += '<ul>';
-		
-		$('#objectChildren').html(listString);
+			listString += '<ul>';
+			
+		$('#objectChildren').html(listString);*/
 	});
 }
 
@@ -113,11 +134,11 @@ function sortPackage(){
 	
 	var original = xmlObj.body;
 	var ordered = {};
-
+	
 	Object.keys(original).sort().forEach(function(key) {
 		ordered[key] = original[key];
 	});
-
+	
 	xmlObj.body = ordered;
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 }	
