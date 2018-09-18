@@ -1,4 +1,6 @@
 var mdObjs, csvFile, selectedObj, zipBlob, deployReq;
+
+var conn = jsforce.browser.connection;
 	
 var maxPackageSize = 39000;
 var maxPackageRows = 10000;
