@@ -111,9 +111,9 @@ function sortPackage(obj){
 		ordered[key] = original[key];
 	});
 	
-	package['body'] = ordered;
+	obj['body'] = ordered;
 	
-	localStorage['mdtk.package.xml'] = JSON.stringify(package);
+	localStorage['mdtk.package.xml'] = JSON.stringify(obj);
 }	
 
 function resetPackage(){
