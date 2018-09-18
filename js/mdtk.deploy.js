@@ -10,7 +10,7 @@ function deployInit(){
 }
 
 function getCustomMetadataDescribes(){
-	conn.describeGlobal(function(err, res) {
+	connection.describeGlobal(function(err, res) {
 		if (err) { return console.error(err); }
 						
 		mdObjs = [];
@@ -101,9 +101,9 @@ function fileSelected(){
 function objectSelected(){
 
 	var objectSelect = $('#object-select');
-	var conn = jsforce.browser.connection;
+	//var conn = jsforce.browser.connection;
 
-	conn.sobject($(objectSelect).val()).describe(function(err, res) {
+	connection.sobject($(objectSelect).val()).describe(function(err, res) {
 		selectedObj = res;
 		console.log('Selected Object: ', selectedObj);
 
@@ -294,7 +294,7 @@ function deployZip() {
 	$('#deployStatus').html('Sending request to server...');
 	$('#deployState').html('');
 	
-	jsforce.browser.connection.metadata.deploy(zipBlob, {
+	connection.metadata.deploy(zipBlob, {
 		singlePackage: true
 	})
 	
@@ -309,7 +309,7 @@ function deployZip() {
 		
 			$('#deployState').html('');
 			
-			jsforce.browser.connection.metadata.checkDeployStatus(deployReq.id, true)
+			connection.metadata.checkDeployStatus(deployReq.id, true)
 			.then(function(reqStatus){
 				console.log(reqStatus);
 				$('#deployStatus').html('Deployment ' + reqStatus.status);
