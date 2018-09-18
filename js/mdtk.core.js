@@ -81,6 +81,6 @@ function showToast(msg, duration){
 	
 }
 
-function toggleMenu(event){
-	event.target.closest('.slds-dropdown-trigger_click').toggleClass('slds-is-open');
+function toggleMenu(){
+	this.closest('.slds-dropdown-trigger_click').toggleClass('slds-is-open');
 }
