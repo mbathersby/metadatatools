@@ -23,7 +23,7 @@
 
 <div class="slds-grid slds-gutters slds-m-around_x-small">
 	<div class="slds-col slds-size_5-of-12">
-		<div class="slds-box">
+		<div class="slds-box slds-theme_default">
 			<div class="slds-form-element slds-m-around_medium">
 				<label class="slds-form-element__label" for="select-01">Metadata Types</label>
 				<div class="slds-form-element__control">
@@ -63,12 +63,6 @@
 								</div>
 							</td>
 							<th class="slds-tree__item" data-label="Account Name" scope="row">
-								<button class="slds-button slds-button_icon slds-button_icon slds-button_icon-x-small slds-m-right_x-small slds-is-disabled" aria-hidden="true" tabindex="-1" title="Expand Rewis Inc">
-									<svg class="slds-button__icon slds-button__icon_small" aria-hidden="true">
-										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chevronright" />
-									</svg>
-									<span class="slds-assistive-text">Collapse Rewis Inc</span>
-								</button>
 								<div class="slds-truncate" title="Rewis Inc"><a href="javascript:void(0);" tabindex="-1">Rewis Inc</a></div>
 							</th>
 						</tr>
