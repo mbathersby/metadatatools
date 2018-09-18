@@ -28,7 +28,7 @@ function setBaseXml(){
 		
 			var typeString = '\n\t<types>';	
 			
-			for(var i=0; i < xmlObj.body[key].length){
+			for(var i=0; i < xmlObj.body[key].length; i++){
 				typeString += '\n\t\t<members>' + xmlObj.body[key][i] + '</members>';
 			}
 			
