@@ -85,10 +85,9 @@
 				</header>
 			</div>
 			<div id="xmlOutput" class="slds-card__body slds-card__body_inner">
-				<pre lang="xml">
-					<span id="xmlHead"></span>
-					<span id="xmlBody"></span>
-					<span id="xmlFoot"></span>
+				<pre id="xmlHead" lang="xml"></pre>
+				<pre id="xmlBody" lang="xml"></pre>
+				<pre id="xmlFoot" lang="xml"></pre>
 				</pre>
 			</div>
 		</article>
