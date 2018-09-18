@@ -26,10 +26,13 @@ function setBaseXml(){
 		
 		for(key in xmlObj.body){
 		
+			var mdTypeObj = xmlObj.body[key];
+			console.log(mdTypeObj);
+			
 			var typeString = '\n\t<types>';	
 			
-			for(var i=0; i < xmlObj.body[key].length; i++){
-				typeString += '\n\t\t<members>' + xmlObj.body[key][i] + '</members>';
+			for(var i=0; i < mdTypeObj.length; i++){
+				typeString += 'n\t\t<members>' + mdTypeObj[i] + '</members>';
 			}
 			
 			typeString += '\n\t\t<name>' + key + '</name>';
