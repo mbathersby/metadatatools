@@ -1,7 +1,5 @@
 var xmlObj;
 
-var isTest = true;
-
 function pkgInit(){
 	if(localStorage['mdtk.package.xml'] == null){
 		localStorage['mdtk.package.xml'] = JSON.stringify({
@@ -13,8 +11,7 @@ function pkgInit(){
 	
 	xmlObj = JSON.parse(localStorage['mdtk.package.xml']);
 	
-	if(isTest)
-		setTestPackage();
+	sortPackage();
 
 	setBaseXml();
 	getDescribeParents();
@@ -29,16 +26,11 @@ function setBaseXml(){
 	
 	var xmlBodyString = '';
 
-	sortPackage();
-
-	console.log(xmlObj.body);
-
 	for(key in xmlObj.body){
 
 		var typeString = '\t<types>';	
 
 		var mdTypeObj = xmlObj.body[key];
-		console.log(mdTypeObj);
 
 		mdTypeObj.sort(function(a, b) {
 			return a.localeCompare(b);
@@ -64,9 +56,7 @@ function getDescribeParents(){
 		if (err) { return console.error(err); }
 		
 		var mdTypes = [];
-	
-		console.log(res);
-		
+			
 		for(key in res.metadataObjects){
 			mdTypes.push(res.metadataObjects[key]);
 		}
@@ -87,8 +77,6 @@ function getDescribeParents(){
 
 function parentSelected(){
 	var selected = $('#metadata-select').val();
-	console.log(selected);
-	
 	var query = [{type: selected}];
 
 	conn.metadata.list(query, apiVersion, function(err, res){
@@ -101,23 +89,15 @@ function setXmlBody(){
 }
 
 function sortPackage(){
-
-	console.log('Sorting package');
 	
 	var original = xmlObj.body;
 	var ordered = {};
-	
-	console.log(original);
-	console.log(Object.keys(original).sort());
 
 	Object.keys(original).sort().forEach(function(key) {
 		ordered[key] = original[key];
 	});
-	
-	console.log(ordered);
-	
+
 	xmlObj.body = ordered;
-	
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 }	
 
