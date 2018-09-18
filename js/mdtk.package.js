@@ -140,12 +140,15 @@ function parentSelected(){
 
 function rowSelected(i){
 	
-	var checkbox = $('checkbox-' + i);
+	var row = $('checkbox-' + i);
 	var body = xmlObj.body;
+	
 	var childType = xmlChildren[i].type;
 	var childName = xmlChildren[i].fullName;
 	
-	if($(checkbox).prop('checked')){
+	console.log(row);
+	
+	if($(row).prop('checked')){
 
 		if(!Object.keys(body).includes(childType)){
 			body[childType] = [];
