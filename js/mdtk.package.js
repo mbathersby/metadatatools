@@ -49,19 +49,11 @@ function parentSelected(){
 	var selected = $('#metadata-select').val();
 	console.log(selected);
 	
-	/*var query = jsforce.metadata.ListMetadataQuery($(mdSelect).textContent);
+	var query = jsforce.metadata.ListMetadataQuery(selected);
 
-	conn.metadata.list($(objectSelect).val()).describe(function(err, res) {
-		selectedObj = res;
-		console.log('Selected Object: ', selectedObj);
-		selectedObj = res;
-		console.log('Selected Object: ', selectedObj);
-
-		if(csvFile != null){
-			buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
-			$('#deployBtn').removeAttr('disabled');
-		}	
-	});*/
+	conn.metadata.list(query, apiVersion, function(res){
+		console.log(res);
+	});
 }
 
 function setXmlBody(){
