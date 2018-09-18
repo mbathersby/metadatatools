@@ -140,7 +140,8 @@ function parentSelected(){
 
 function rowSelected(i){
 	
-	var row = $('checkbox-' + i);
+	var row = $('checkbox-' + i).prevObject[0].activeElement;
+	
 	var body = xmlObj.body;
 	
 	var childType = xmlChildren[i].type;
