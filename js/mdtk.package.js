@@ -10,8 +10,6 @@ function pkgInit(){
 	} 
 	
 	xmlObj = JSON.parse(localStorage['mdtk.package.xml']);
-	
-	sortPackage();
 
 	setBaseXml();
 	getDescribeParents();
@@ -21,6 +19,8 @@ var describeParent = {};
 var describeChildren = {};
 
 function setBaseXml(){
+	
+	sortPackage();
 
 	$('#xmlHead').text(xmlObj.head);
 	
