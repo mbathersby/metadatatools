@@ -94,7 +94,7 @@ function parentSelected(){
 		
 		res.forEach(function(i){
 			console.log(i);
-			$('#objectChildren').append().html(i.FullName + '<br/>');
+			$('#objectChildren').append().html(i.fullName + '<br/>');
 		});
 			
 		//$('#objectChildren').append().html('</ul>');
