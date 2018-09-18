@@ -1,4 +1,4 @@
-var userInfo;
+var userInfo, conn;
 var apiVersion = '43.0';
 
 function init() {
