@@ -202,48 +202,8 @@
 	</div>
 </section>
 
-<!--script>
-	$('#file-upload-input').change(function(){
-		
-	// reset mapping table and deploy button
-	$('#mappingTable').addClass('slds-hide');
-	$('#deployBtn').attr('disabled', 'true');
-
-	$('#file-size').html('Calculating...');
-	$('#file-info').removeClass('slds-hide');
-
-	var file = $(this)[0].files[0];
-
-	$("[name='fileName']").html(file.name);
-	$('#file-size').html(numeral(file.size/1024).format('0,0') + ' KB');
-
-	$('#last-modified').html(moment(file.lastModified).format('lll'));
-
-	var reader = new FileReader();
-
-	reader.onload = function(){
-		csvFile = Papa.parse(reader.result, {header:true});
-		console.log('CSV File Data');
-		console.log(csvFile);
-		$("#rowCount").html(numeral(csvFile.data.length - 1).format('0,0'));
-
-		if((csvFile.data.length - 1) > maxPackageRows){
-			showToast('You cannot deploy more than ' + numeral(maxPackageRows).format('0,0') + ' items at a time.\nPlease split your CSV into mutiple files of ' + numeral(maxPackageRows).format('0,0') + ' rows or less and deploy each file separately.', 7500);
-		} 
-		
-		else if((file.size / 1024).toFixed(1) > maxPackageSize){
-			showToast('Your package cannot be larger than ' + numeral(maxPackageSize/1000).format('0,0') + 'MB.\nPlease split your CSV into mutiple files of ' + numeral(maxPackageSize/1000).format('0,0') + 'MB or less and deploy each file separately.', 7500);
-		}
-
-		else if($('#object-select').val() != null){
-			buildTable('mappingTable', csvFile.meta.fields, selectedObj.fields, csvFile.data[0]);
-			$('#deployBtn').removeAttr('disabled');
-		}
-	};
-
-	reader.readAsText(file);
-
-});
-</script-->
+<script>
+	deployInit();
+</script>
 
 <?php include 'footer.php'; ?>
