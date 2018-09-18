@@ -74,8 +74,13 @@
 										</a>
 									</li>
 									<li class="slds-dropdown__item" role="presentation">
-										<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+										<a href="javascript:void(0);" onclick="resetPackage()" role="menuitem" tabindex="-1">
 											<span class="slds-truncate" title="Reset Package">Reset Package</span>
+										</a>
+									</li>
+									<li class="slds-dropdown__item" role="presentation">
+										<a href="javascript:void(0);" onclick="setTestPackage()" role="menuitem" tabindex="-1">
+											<span class="slds-truncate" title="Create Test Package">Create Test Package</span>
 										</a>
 									</li>
 								</ul>
