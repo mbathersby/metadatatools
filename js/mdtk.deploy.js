@@ -1,5 +1,5 @@
 var mdObjs, csvFile, selectedObj, zipBlob, deployReq;
-
+	
 var maxPackageSize = 39000;
 var maxPackageRows = 10000;
 
@@ -10,7 +10,7 @@ function deployInit(){
 }
 
 function getCustomMetadataDescribes(){
-	connection.describeGlobal(function(err, res) {
+	conn.describeGlobal(function(err, res) {
 		if (err) { return console.error(err); }
 						
 		mdObjs = [];
