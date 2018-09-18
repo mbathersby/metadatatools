@@ -25,28 +25,33 @@ function setBaseXml(){
 	$('#xmlHead').text(xmlObj.head);
 	
 	var xmlBodyString = '';
+	
+	if(xmlObj.body == {}){
+		$('#xmlBody').text('\n\n');
+	} else {
 
-	for(key in xmlObj.body){
+		for(key in xmlObj.body){
 
-		var typeString = '\t<types>';	
+			var typeString = '\t<types>';	
 
-		var mdTypeObj = xmlObj.body[key];
+			var mdTypeObj = xmlObj.body[key];
 
-		mdTypeObj.sort(function(a, b) {
-			return a.localeCompare(b);
-		});
+			mdTypeObj.sort(function(a, b) {
+				return a.localeCompare(b);
+			});
 
-		for(var j=0; j < mdTypeObj.length; j++){
-			typeString += '\n\t\t<members>' + mdTypeObj[j] + '</members>';
+			for(var j=0; j < mdTypeObj.length; j++){
+				typeString += '\n\t\t<members>' + mdTypeObj[j] + '</members>';
+			}
+
+			typeString += '\n\t\t<name>' + key + '</name>';
+			typeString += '\n\t</types>\n';
+
+			xmlBodyString += typeString;
 		}
 
-		typeString += '\n\t\t<name>' + key + '</name>';
-		typeString += '\n\t</types>\n';
-
-		xmlBodyString += typeString;
-	}
-
-	$('#xmlBody').text(xmlBodyString);
+		$('#xmlBody').text(xmlBodyString);
+		}
 	$('#xmlFoot').text(xmlObj.foot); 
 }
 
