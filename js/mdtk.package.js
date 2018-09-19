@@ -189,6 +189,8 @@ function parentSelected(){
 			$('#treeTable tbody').append(tableRow);
 			
 		});
+		
+		$('#metadataTree').removeClass('slds-hide');
 	});
 }
 
