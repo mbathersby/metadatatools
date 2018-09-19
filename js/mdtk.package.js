@@ -206,6 +206,9 @@ function sortChildren(){
 function resetPackage(){
 	$('input[id^="checkbox-"]').prop('checked', false);
 	
+	$('#metadata-select').val('');
+	$('#treeTable tbody').html('&nbsp;');
+	
 	xmlObj['body'] = [];
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 	setBaseXml();
