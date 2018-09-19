@@ -22,7 +22,9 @@
 </div>
 
 <div class="slds-grid slds-gutters slds-m-around_x-small">
+	
 	<div class="slds-col slds-size_5-of-12">
+	
 		<div class="slds-box slds-theme_default">
 			<div class="slds-form-element">
 				<label class="slds-form-element__label" for="combobox-id-12">Metadata Types</label>
@@ -44,16 +46,7 @@
 					</div>
 				</div>
 			</div>
-			<!--div class="slds-form-element slds-m-around_medium">
-				<label class="slds-form-element__label" for="select-01">Metadata Types</label>
-				<div class="slds-form-element__control">
-				<div class="slds-select_container">
-				<select class="slds-select" id="metadata-select" onchange="parentSelected()">
-				<option value="" disabled selected>Please select</option>
-				</select>
-				</div>
-				</div>
-			</div-->
+			
 			<div id="metadataTree" class="slds-hide">
 				
 				<div class="slds-form-element">
@@ -65,8 +58,7 @@
 					</div>
 				</div>
 				
-				
-				<table id="treeTable" aria-multiselectable="true" class="slds-table slds-table_header-hidden slds-table_bordered slds-table_edit slds-tree slds-table_tree slds-m-top_small slds-hide" role="treegrid">
+				<table id="treeTable" aria-multiselectable="true" class="slds-table slds-table_header-hidden slds-table_bordered slds-table_edit slds-tree slds-table_tree slds-m-top_small" role="treegrid">
 					<thead class="slds-assistive-text">
 						<tr class="slds-line-height_reset">
 							<th class="slds-text-title_caps slds-text-align_right" scope="col" style="width: 3.25rem;">

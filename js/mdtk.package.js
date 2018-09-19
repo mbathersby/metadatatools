@@ -182,6 +182,8 @@ function rowSelected(i){
 	
 	if(row.checked){
 	
+		$('checkbox-' + i).closest('tr').addClass('slds-is-selected');
+	
 		if(!Object.keys(xmlObj.body).includes(childType)){
 			xmlObj.body[childType] = [];
 		}
@@ -189,6 +191,8 @@ function rowSelected(i){
 		xmlObj.body[childType].push(childName);
 		
 	} else {
+		$('checkbox-' + i).closest('tr').addClass('slds-is-selected');
+	
 		var childIndex = xmlObj.body[childType].indexOf(childName);
 		console.log(childIndex);
 		xmlObj.body[childType].splice( childIndex, 1 );
