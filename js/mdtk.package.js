@@ -142,7 +142,7 @@ function rowSelected(i){
 	
 	var row = $('checkbox-' + i).prevObject[0].activeElement;
 	
-	var body = xmlObj.body;
+	//var body = xmlObj.body;
 	
 	var childType = xmlChildren[i].type;
 	var childName = xmlChildren[i].fullName;
@@ -154,17 +154,16 @@ function rowSelected(i){
 	if(row.checked){
 	
 		if(!Object.keys(body).includes(childType)){
-			body[childType] = [];
+			xmlObj.body[childType] = [];
 		}
 		
-		body[childType].push(childName);
+		xmlBody.body[childType].push(childName);
 		
 	} else {
-		var children = xmlBody.body[childType];
-		children.splice( list.indexOf(childName), 1 );
+		xmlObj.body[childType].splice( list.indexOf(childName), 1 );
 	}
 	
-	xmlObj.body = body;
+	//xmlObj.body = body;
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 	
 	setBaseXml();
