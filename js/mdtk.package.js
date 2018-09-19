@@ -93,8 +93,11 @@ function parentSelected(){
 	conn.metadata.list(query, apiVersion, function(err, res){
 		console.log(selected);
 		
-		xmlChildren = res;
-		sortChildren();
+		xmlChildren = res.sort(function(a, b) {
+			return a.fullName.localeCompare(b.fullName);
+		});
+		
+		//sortChildren();
 		
 		console.log(res);
 		console.log(xmlChildren);
@@ -201,6 +204,8 @@ function sortChildren(){
 }
 
 function resetPackage(){
+	$('#treeTable tbody input[type="checkbox"]').removeProp('checked');
+	
 	xmlObj['body'] = [];
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
 	setBaseXml();
