@@ -94,7 +94,7 @@ function parentSelected(){
 		console.log(selected);
 		
 		xmlChildren = res;
-		//sortChildren();
+		sortChildren();
 		
 		console.log(res);
 		console.log(xmlChildren);
@@ -160,7 +160,7 @@ function rowSelected(i){
 		xmlObj.body[childType].splice( childIndex, 1 );
 		
 		if(xmlObj.body[childType].length == 0){
-			delete [xmlObj.body[childType];
+			delete xmlObj.body[childType];
 		}
 	}
 	
