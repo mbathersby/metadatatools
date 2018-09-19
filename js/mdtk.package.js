@@ -15,6 +15,10 @@ function pkgInit(){
 	getDescribeParents();
 }
 
+jsforce.browser.on('connect', function(connection) {
+	pkgInit();
+});
+
 var describeParent = {};
 var describeChildren = {};
 
