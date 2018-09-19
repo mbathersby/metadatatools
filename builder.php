@@ -156,7 +156,7 @@
 <script>
 	jsforce.browser.on('connect', function(connection) {
 		pkgInit();
-	}
+	});
 </script>
 
 <?php include 'footer.php'; ?>

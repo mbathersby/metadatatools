@@ -17,6 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="slds/assets/styles/salesforce-lightning-design-system.css" />
 		
 	</head>
+	
 	<body>
 		
 		<div class="slds-brand-band slds-brand-band_large"></div>
@@ -40,8 +41,6 @@
 			<div class="slds-spinner__dot-a"></div>
 			<div class="slds-spinner__dot-b"></div>
 		</div>
-		
-		<div class="slds-hide" id="uploadStatus"></div>
 		
 		<div id="overlay" class="slds-backdrop slds-backdrop_open"></div>
 		
@@ -82,39 +81,4 @@
 				</h2>
 			</div>
 			
-			<?php include 'menu.php'; ?>
-			
-			<!--div id="menu" class="slds-dropdown-trigger slds-dropdown-trigger_click" style="top: 7px; left: 7px; position: fixed;">
-				<button class="slds-button slds-button_icon slds-button_icon-border-inverse slds-button_icon-x-small" aria-haspopup="true" title="Show More">
-				<svg class="slds-button__icon" aria-hidden="true">
-				<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
-				</svg>
-				<span class="slds-assistive-text">Show More</span>
-				</button>
-				<div id="menu-dropdown" class="slds-dropdown slds-dropdown_left slds-text-body_regular">
-				<ul class="slds-dropdown__list" role="menu" aria-label="Show More">
-				<li class="slds-dropdown__item" role="presentation">
-				<a href="index.php" role="menuitem" tabindex="0">
-				<span class="slds-truncate" title="Dashboard">Dashboard</span>
-				</a>
-				</li>
-				<li class="slds-has-divider_top-space" role="separator"></li>
-				<li class="slds-dropdown__item" role="presentation">
-				<a href="upload.php" role="menuitem" tabindex="0">
-				<span class="slds-truncate" title="Upload Custom Metadata">Upload Custom Metadata</span>
-				</a>
-				</li>
-				<li class="slds-dropdown__item" role="presentation">
-				<a href="delete.php" role="menuitem" tabindex="0">
-				<span class="slds-truncate" title="Delete Custom Metadata">Delete Custom Metadata</span>
-				</a>
-				</li>
-				<li class="slds-has-divider_top-space" role="separator"></li>
-				<li class="slds-dropdown__item" role="presentation">
-				<a href="javascript:logout();" role="menuitem" tabindex="-1">
-				<span class="slds-truncate" title="Logout">Logout</span>
-				</a>
-				</li>
-				</ul>
-				</div>
-			</div-->			
+			<?php include 'menu.php'; ?>		
