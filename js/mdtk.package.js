@@ -204,7 +204,7 @@ function sortChildren(){
 }
 
 function resetPackage(){
-	$('input[id^="checkbox-"]').removeProp('checked');
+	$('input[id^="checkbox-"]').prop('checked', false);
 	
 	xmlObj['body'] = [];
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
