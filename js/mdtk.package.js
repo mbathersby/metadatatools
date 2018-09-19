@@ -106,13 +106,16 @@ function searchTypes(){
 	
 		mdTypes.forEach(function(item, index){
 		
-			if(item.includes(searchTerm)){
+		console.log(item);
+		console.log(item.xmlName);
+		
+			if(item.xmlName.includes(searchTerm)){
 			
 				var optionString = '<li role="presentation" class="slds-listbox__item">'
-				  + '<div id="' + item + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">'
+				  + '<div id="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">'
 					+ '<span class="slds-media__figure slds-listbox__option-icon"></span>'
 					+ '<span class="slds-media__body">'
-					  + '<span class="slds-truncate" title="' + item + '">' + item + '</span>'
+					  + '<span class="slds-truncate" title="' + item.xmlName + '">' + item.xmlName + '</span>'
 					+ '</span>'
 				  + '</div>'
 				+ '</li>';
