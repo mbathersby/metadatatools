@@ -154,7 +154,9 @@
 <textarea id="copyArea" style="" readonly></textArea>
 
 <script>
-	pkgInit();
+	jsforce.browser.on('connect', function(connection) {
+		pkgInit();
+	}
 </script>
 
 <?php include 'footer.php'; ?>

@@ -1,6 +1,6 @@
 		</div>
 		
-		<script>
+		<!--script>
 			
 			$(document).ready(this, init());
 			
@@ -15,7 +15,6 @@
 				$('#overlay').addClass('slds-backdrop_open');
 				$('#spinner').removeClass('slds-hide');
 				
-				console.log('Connecting to ' + conn.instanceUrl);
 				$('#noLoginContainer').addClass('slds-hide');
 				
 				var userQuery = 'select Name, Username from User where Id = \'' + conn.userInfo.id + '\' limit 1';
@@ -38,7 +37,7 @@
 				window.location.reload();
 			}
 
-		</script>
+		</script-->
 		
 	</body>
 	
