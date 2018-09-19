@@ -157,7 +157,7 @@ function rowSelected(i){
 			xmlObj.body[childType] = [];
 		}
 		
-		xmlBody.body[childType].push(childName);
+		xmlObj.body[childType].push(childName);
 		
 	} else {
 		xmlObj.body[childType].splice( list.indexOf(childName), 1 );
