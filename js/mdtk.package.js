@@ -93,7 +93,7 @@ function searchTypes(){
 				var optionString = '<li role="presentation" class="slds-listbox__item">'
 				  + '<div name="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option" onclick="parentSelected()">'
 					+ '<span class="slds-media__figure slds-listbox__option-icon"></span>'
-					+ '<span class="slds-media__body" id="' + item.xmlName + '">'
+					+ '<span class="slds-media__body" title="' + item.xmlName + '">'
 					  + '<span class="slds-truncate" title="' + item.xmlName + '">' + item.xmlName + '</span>'
 					+ '</span>'
 				  + '</div>'
@@ -117,7 +117,7 @@ function searchTypes(){
 function parentSelected(){
 	console.log(event.target);
 	
-	var parentName = event.target.id; 
+	var parentName = event.target.title; 
 	console.log('Selected Parent Name: ' + parentName);
 	
 	$('#metadata-search').val(parentName);
@@ -126,6 +126,7 @@ function parentSelected(){
 	var query = [{type: parentName}];
 	
 	$('#metadataTree').addClass('slds-hide');
+	$('#treeTable tbody').html(null);
 	
 	conn.metadata.list(query, apiVersion, function(err, res){
 		
@@ -143,7 +144,7 @@ function parentSelected(){
 			if(Object.keys(xmlObj.body).includes(childType)){
 				if(xmlObj.body[childType].includes(childName)){
 					checked = 'checked';
-					rowColor = '#d8edff94';
+					rowColor = '#E7F3FD';
 				}
 			}
 			
@@ -184,7 +185,7 @@ function rowSelected(i){
 	
 	if(row.checked){
 	
-		$(row).closest('tr').css('background-color', '#d8edff94');
+		$(row).closest('tr').css('background-color', '#E7F3FD');
 	
 		if(!Object.keys(xmlObj.body).includes(childType)){
 			xmlObj.body[childType] = [];
