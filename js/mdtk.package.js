@@ -74,13 +74,28 @@ function getDescribeParents(){
 			return a.xmlName.localeCompare(b.xmlName);
 		});
 		
-		for(var i=0; i < mdTypes.length; i++){
+		mdTypes.forEach(function(item, index){
+		
+			var optionString = '<li role="presentation" class="slds-listbox__item">'
+              + '<div id="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">'
+                + '<span class="slds-media__figure slds-listbox__option-icon"></span>'
+                + '<span class="slds-media__body">'
+                  + '<span class="slds-truncate" title="' + item.xmlName + '">' + item.xmlName + '</span>'
+                + '</span>'
+              + '</div>'
+            + '</li>';
+			
+			$('#metadata-listbox').append(optionString);
+		
+		});
+		
+		/*for(var i=0; i < mdTypes.length; i++){
 			$('#metadata-select')
 			.append($("<option></option>")
 			.attr("value", mdTypes[i].xmlName)
 			.text(mdTypes[i].xmlName)
 			);
-		}
+		}*/
 	});
 }
 
