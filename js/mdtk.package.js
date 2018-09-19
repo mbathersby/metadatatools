@@ -143,7 +143,7 @@ function parentSelected(){
 			if(Object.keys(xmlObj.body).includes(childType)){
 				if(xmlObj.body[childType].includes(childName)){
 					checked = 'checked';
-					rowColor = '#d8edff';
+					rowColor = '#d8edff94';
 				}
 			}
 			
@@ -184,7 +184,7 @@ function rowSelected(i){
 	
 	if(row.checked){
 	
-		$(row).closest('tr').css('background-color', '#d8edff');
+		$(row).closest('tr').css('background-color', '#d8edff94');
 	
 		if(!Object.keys(xmlObj.body).includes(childType)){
 			xmlObj.body[childType] = [];
