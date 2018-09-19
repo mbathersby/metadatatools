@@ -99,7 +99,7 @@ function getDescribeParents(){
 	});
 }
 
-fuction searchTypes(){
+function searchTypes(){
 	var searchTerm = event.target.value;
 	
 	if(searchTerm.length > 2){
