@@ -111,9 +111,10 @@ function searchTypes(){
 			if(item.xmlName.includes(searchTerm)){
 			
 				var parentName = item.xmlName;
+				console.log(parentName);
 			
 				var optionString = '<li role="presentation" class="slds-listbox__item">'
-				  + '<div id="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option" onclick="parentSelected(' + parentName + ')">'
+				  + '<div name="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option" onclick="parentSelected()">'
 					+ '<span class="slds-media__figure slds-listbox__option-icon"></span>'
 					+ '<span class="slds-media__body">'
 					  + '<span class="slds-truncate" title="' + item.xmlName + '">' + item.xmlName + '</span>'
@@ -135,10 +136,14 @@ function searchTypes(){
 	}
 }
 
-function parentSelected(parentName){
+function parentSelected(){
+	console.log(event.target);
+	
+	var parentName = event.target.name;
 	console.log('Selected Parent Name: ' + parentName);
 	
 	$('#metadata-search').val(parentName);
+	$('#metadata-combobox').removeClass('slds-is-open');
 	
 	var query = [{type: parentName}];
 	
