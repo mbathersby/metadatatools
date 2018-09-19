@@ -151,8 +151,6 @@
 	</article>
 </div>
 
-<textarea id="copyArea" style="" readonly></textArea>
-
 <script>
 	/*jsforce.browser.on('connect', function(connection) {
 		pkgInit();

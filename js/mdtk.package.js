@@ -138,22 +138,19 @@ function parentSelected(){
 			return console.error(err); 
 		}
 		
-		mdTypes = [];
+		console.log(res);
 		
 		if(res == null){
 			showToast('There was an error retrieving metadata types', 7500);
 		} 
 		
-		if (!res.isArray()){
-			
+		else if (!res.isArray()){
 			xmlChildren = res;
 			
 		} else {
-
 			xmlChildren = res.sort(function(a, b) {
 				return a.fullName.localeCompare(b.fullName);
 			});
-			
 		}
 		
 		xmlChildren.forEach(function(item, index){
