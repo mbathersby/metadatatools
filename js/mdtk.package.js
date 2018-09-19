@@ -108,13 +108,10 @@ function searchTypes(){
 	
 		mdTypes.forEach(function(item, index){
 		
-		console.log(item);
-		console.log(item.xmlName);
-		
 			if(item.xmlName.includes(searchTerm)){
 			
 				var optionString = '<li role="presentation" class="slds-listbox__item">'
-				  + '<div id="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option" onclick="parentSelected()">'
+				  + '<div id="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option" onclick="parentSelected(' + item.xmlName + ')">'
 					+ '<span class="slds-media__figure slds-listbox__option-icon"></span>'
 					+ '<span class="slds-media__body">'
 					  + '<span class="slds-truncate" title="' + item.xmlName + '">' + item.xmlName + '</span>'
@@ -136,16 +133,15 @@ function searchTypes(){
 	}
 }
 
-function parentSelected(){
-	var selected = event.target.id;
-	$('#metadata-search').val(selected);
+function parentSelected(parent){
+	//var selected = event.target.id;
+	$('#metadata-search').val(parent);
 	
-	var query = [{type: selected}];
+	var query = [{type: parent}];
 	
-	$('#treeTable tbody').html('');
+	$('#treeTable tbody').html(null);
 	
 	conn.metadata.list(query, apiVersion, function(err, res){
-		console.log(selected);
 		
 		xmlChildren = res.sort(function(a, b) {
 			return a.fullName.localeCompare(b.fullName);
