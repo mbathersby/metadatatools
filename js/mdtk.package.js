@@ -138,15 +138,17 @@ function parentSelected(){
 			var childType = item.type;
 			var childName = item.fullName;
 			var checked = '';
+			var rowColor = '#ffffff';
 		
 			if(Object.keys(xmlObj.body).includes(childType)){
 				if(xmlObj.body[childType].includes(childName)){
 					checked = 'checked';
+					rowColor = '#d8edff';
 				}
 			}
 			
 		
-			var tableRow = '<tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="'+ index +'">'
+			var tableRow = '<tr aria-level="1" style="background-color: ' + rowColor + ';"aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="'+ index +'">'
 			+ '<td class="slds-text-align_right" role="gridcell" style="width: 3.25rem;">'
 			+ '<div class="slds-checkbox">'
 			+ '<input type="checkbox" onclick="rowSelected('+ index +')" name="options" id="checkbox-'+ index +'" aria-labelledby="check-button-label-'+ index +' column-group-header" value="checkbox-'+ index +'" ' + checked + ' />'
@@ -182,7 +184,7 @@ function rowSelected(i){
 	
 	if(row.checked){
 	
-		$(row).closest('tr').addClass('slds-is-selected');
+		$(row).closest('tr').css('background-color', '#d8edff');
 	
 		if(!Object.keys(xmlObj.body).includes(childType)){
 			xmlObj.body[childType] = [];
@@ -191,7 +193,7 @@ function rowSelected(i){
 		xmlObj.body[childType].push(childName);
 		
 	} else {
-		$(row).closest('tr').removeClass('slds-is-selected');
+		$(row).closest('tr').css('background-color', '#ffffff');
 	
 		var childIndex = xmlObj.body[childType].indexOf(childName);
 		console.log(childIndex);
