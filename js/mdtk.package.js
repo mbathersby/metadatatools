@@ -102,6 +102,8 @@ function getDescribeParents(){
 function searchTypes(){
 	var searchTerm = event.target.value;
 	
+	$('#metadata-listbox').html(null);
+	
 	if(searchTerm.length > 2){
 	
 		mdTypes.forEach(function(item, index){
@@ -130,6 +132,7 @@ function searchTypes(){
 	
 	} else {
 		$('#metadata-combobox').removeClass('slds-is-open');
+		
 	}
 }
 
