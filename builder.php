@@ -28,7 +28,7 @@
 				<label class="slds-form-element__label" for="combobox-id-12">Metadata Types</label>
 				<div class="slds-form-element__control">
 					<div class="slds-combobox_container">
-						<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+						<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" aria-expanded="false" aria-haspopup="listbox" role="combobox">
 							<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
 								<input type="text" class="slds-input slds-combobox__input" id="combobox-id-12" aria-autocomplete="list" aria-controls="listbox-id-9" autoComplete="off" role="textbox" placeholder="Search..." />
 								<span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
@@ -36,6 +36,11 @@
 										<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
 									</svg>
 								</span>
+							</div>
+							<div id="listbox-id-10" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
+								<ul class="slds-listbox slds-listbox_vertical" role="presentation" id="metadata-listbox">
+								
+								</ul>
 							</div>
 						</div>
 					</div>
