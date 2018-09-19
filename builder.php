@@ -111,7 +111,7 @@
 							<div class="slds-dropdown slds-dropdown_actions slds-dropdown_right">
 								<ul class="slds-dropdown__list" role="menu">
 									<li class="slds-dropdown__item" role="presentation">
-										<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+										<a href="javascript:void(0);" role="menuitem" tabindex="-1" onclick="copyToClipboard()">
 											<span class="slds-truncate" title="Copy to Clipboard">Copy to Clipboard</span>
 										</a>
 									</li>
@@ -144,7 +144,8 @@
 		</div>
 	</article>
 </div>
-</div>
+
+<textarea id="copyArea" style="display: none;" readonly></textArea>
 
 <script>
 	pkgInit();

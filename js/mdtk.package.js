@@ -211,7 +211,13 @@ function rowSelected(i){
 	setBaseXml();
 }
 
-function setXmlBody(){
+function copyToClipboard(){
+	
+	$('#copyArea').val($('#xmlHead').text() + $('#xmlBody').text() + $('#xmlHead').text());
+	$('#copyArea').focus();
+	$('#copyArea').select();
+	
+	document.execCommand('copy');
     
 }
 
