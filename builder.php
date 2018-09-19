@@ -39,7 +39,7 @@
 							</div>
 							<div id="listbox-id-10" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
 								<ul class="slds-listbox slds-listbox_vertical" role="presentation" id="metadata-listbox">
-								
+									
 								</ul>
 							</div>
 						</div>
@@ -56,7 +56,17 @@
 				</div>
 				</div>
 			</div-->
-			<div id="metadataTree">
+			<div id="metadataTree" class="slds-hide">
+				
+				<div class="slds-form-element">
+					<div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+						<svg class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" aria-hidden="true">
+							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#search" />
+						</svg>
+						<input id="metadata-child-search" class="slds-input" type="text" value="" />
+					</div>
+				</div>
+				
 				
 				<table id="treeTable" aria-multiselectable="true" class="slds-table slds-table_header-hidden slds-table_bordered slds-table_edit slds-tree slds-table_tree slds-m-top_small slds-hide" role="treegrid">
 					<thead class="slds-assistive-text">
@@ -79,71 +89,71 @@
 				</table>
 				
 			</div>
-			</div>
 		</div>
-		<div class="slds-col slds-size_7-of-12">
-			<article class="slds-card">
-				<div class="slds-card__header slds-grid slds-border_bottom slds-p-bottom_small">
-					<header class="slds-media slds-media_center slds-has-flexi-truncate">
-						<div class="slds-media__figure">
-							<span class="slds-icon_container slds-icon-doctype-xml" title="account">
-								<svg class="slds-icon slds-icon_small" aria-hidden="true">
-									<use xlink:href="slds/assets/icons/doctype-sprite/svg/symbols.svg#xml"></use>
+	</div>
+	<div class="slds-col slds-size_7-of-12">
+		<article class="slds-card">
+			<div class="slds-card__header slds-grid slds-border_bottom slds-p-bottom_small">
+				<header class="slds-media slds-media_center slds-has-flexi-truncate">
+					<div class="slds-media__figure">
+						<span class="slds-icon_container slds-icon-doctype-xml" title="account">
+							<svg class="slds-icon slds-icon_small" aria-hidden="true">
+								<use xlink:href="slds/assets/icons/doctype-sprite/svg/symbols.svg#xml"></use>
+							</svg>
+							<span class="slds-assistive-text">account</span>
+						</span>
+					</div>
+					<div class="slds-media__body">
+						<h2 class="slds-card__header-title">
+							<a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Package XML">
+								<span>Package XML</span>
+							</a>
+						</h2>
+					</div>
+					<div class="slds-no-flex">
+						<div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+							<button onclick="toggleMenu(this)" class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="Show More">
+								<svg class="slds-button__icon" aria-hidden="true">
+									<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
 								</svg>
-								<span class="slds-assistive-text">account</span>
-							</span>
-						</div>
-						<div class="slds-media__body">
-							<h2 class="slds-card__header-title">
-								<a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Package XML">
-									<span>Package XML</span>
-								</a>
-							</h2>
-						</div>
-						<div class="slds-no-flex">
-							<div class="slds-dropdown-trigger slds-dropdown-trigger_click">
-								<button onclick="toggleMenu(this)" class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="Show More">
-									<svg class="slds-button__icon" aria-hidden="true">
-										<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
-									</svg>
-									<span class="slds-assistive-text">Show More</span>
-								</button>
-								<div class="slds-dropdown slds-dropdown_actions slds-dropdown_right">
-									<ul class="slds-dropdown__list" role="menu">
-										<li class="slds-dropdown__item" role="presentation">
-											<a href="javascript:void(0);" role="menuitem" tabindex="-1">
-												<span class="slds-truncate" title="Copy to Clipboard">Copy to Clipboard</span>
-											</a>
-										</li>
-										<li class="slds-dropdown__item" role="presentation">
-											<a href="javascript:void(0);" role="menuitem" tabindex="0">
-												<span class="slds-truncate" title="Save to Computer">Save to Computer</span>
-											</a>
-										</li>
-										<li class="slds-dropdown__item" role="presentation">
-											<a href="javascript:void(0);" onclick="resetPackage()" role="menuitem" tabindex="-1">
-												<span class="slds-truncate" title="Reset Package">Reset Package</span>
-											</a>
-										</li>
-										<li class="slds-dropdown__item" role="presentation">
-											<a href="javascript:void(0);" onclick="setTestPackage()" role="menuitem" tabindex="-1">
-												<span class="slds-truncate" title="Create Test Package">Create Test Package</span>
-											</a>
-										</li>
-									</ul>
-								</div>
+								<span class="slds-assistive-text">Show More</span>
+							</button>
+							<div class="slds-dropdown slds-dropdown_actions slds-dropdown_right">
+								<ul class="slds-dropdown__list" role="menu">
+									<li class="slds-dropdown__item" role="presentation">
+										<a href="javascript:void(0);" role="menuitem" tabindex="-1">
+											<span class="slds-truncate" title="Copy to Clipboard">Copy to Clipboard</span>
+										</a>
+									</li>
+									<li class="slds-dropdown__item" role="presentation">
+										<a href="javascript:void(0);" role="menuitem" tabindex="0">
+											<span class="slds-truncate" title="Save to Computer">Save to Computer</span>
+										</a>
+									</li>
+									<li class="slds-dropdown__item" role="presentation">
+										<a href="javascript:void(0);" onclick="resetPackage()" role="menuitem" tabindex="-1">
+											<span class="slds-truncate" title="Reset Package">Reset Package</span>
+										</a>
+									</li>
+									<li class="slds-dropdown__item" role="presentation">
+										<a href="javascript:void(0);" onclick="setTestPackage()" role="menuitem" tabindex="-1">
+											<span class="slds-truncate" title="Create Test Package">Create Test Package</span>
+										</a>
+									</li>
+								</ul>
 							</div>
 						</div>
-					</header>
-				</div>
-				<div id="xmlOutput" class="slds-card__body slds-card__body_inner">
-					<pre id="xmlHead" style="margin: 0px 0px;"lang="xml"></pre>
-					<pre id="xmlBody" style="margin: 0px 0px;" lang="xml"></pre>
-					<pre id="xmlFoot" style="margin: 0px 0px;" lang="xml"></pre>
-				</pre>
+					</div>
+				</header>
 			</div>
-		</article>
-	</div>
+			<div id="xmlOutput" class="slds-card__body slds-card__body_inner">
+				<pre id="xmlHead" style="margin: 0px 0px;"lang="xml"></pre>
+				<pre id="xmlBody" style="margin: 0px 0px;" lang="xml"></pre>
+				<pre id="xmlFoot" style="margin: 0px 0px;" lang="xml"></pre>
+			</pre>
+		</div>
+	</article>
+</div>
 </div>
 
 <script>

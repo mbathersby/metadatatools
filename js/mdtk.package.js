@@ -73,29 +73,6 @@ function getDescribeParents(){
 		mdTypes.sort(function(a, b) {
 			return a.xmlName.localeCompare(b.xmlName);
 		});
-		
-		/*mdTypes.forEach(function(item, index){
-		
-			var optionString = '<li role="presentation" class="slds-listbox__item">'
-              + '<div id="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">'
-                + '<span class="slds-media__figure slds-listbox__option-icon"></span>'
-                + '<span class="slds-media__body">'
-                  + '<span class="slds-truncate" title="' + item.xmlName + '">' + item.xmlName + '</span>'
-                + '</span>'
-              + '</div>'
-            + '</li>';
-			
-			$('#metadata-listbox').append(optionString);
-		
-		});
-		
-		/*for(var i=0; i < mdTypes.length; i++){
-			$('#metadata-select')
-			.append($("<option></option>")
-			.attr("value", mdTypes[i].xmlName)
-			.text(mdTypes[i].xmlName)
-			);
-		}*/
 	});
 }
 
@@ -147,20 +124,13 @@ function parentSelected(){
 	
 	var query = [{type: parentName}];
 	
-	$('#treeTable tbody').html(null);
+	$('#metadataTree').addClass('slds-hide');
 	
 	conn.metadata.list(query, apiVersion, function(err, res){
 		
 		xmlChildren = res.sort(function(a, b) {
 			return a.fullName.localeCompare(b.fullName);
 		});
-		
-		//sortChildren();
-		
-		console.log(res);
-		console.log(xmlChildren);
-		
-		//var index = 0;
 		
 		xmlChildren.forEach(function(item, index){
 		
@@ -186,7 +156,7 @@ function parentSelected(){
 			+ '</div>'
 			+ '</td>'
 			+ '<th class="slds-tree__item" data-label="Account Name" scope="row">'
-			+ '<div class="slds-truncate" title="Rewis Inc"><a href="javascript:void(0);" tabindex="-1">' + item.fullName + '</a></div>'
+			+ '<div class="slds-truncate" title="' + item.fullName + '">' + item.fullName + '</div>'
 			+ '</th>'
 			+ '</tr>';
 			
@@ -194,7 +164,7 @@ function parentSelected(){
 			
 		});
 		
-		$('#treeTable').removeClass('slds-hide');
+		$('#metadataTree').removeClass('slds-hide');
 	});
 }
 
@@ -268,6 +238,7 @@ function resetPackage(){
 	
 	$('#metadata-search').val('');
 	$('#treeTable tbody').html(null);
+	$('#metadataTree').addClass('slds-hide');
 	
 	xmlObj['body'] = [];
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
