@@ -194,7 +194,7 @@ function parentSelected(){
 			
 		});
 		
-		$('#metadataTree').removeClass('slds-hide');
+		$('#treeTable').removeClass('slds-hide');
 	});
 }
 
@@ -266,8 +266,8 @@ function sortChildren(){
 function resetPackage(){
 	$('input[id^="checkbox-"]').prop('checked', false);
 	
-	$('#metadata-select').val('');
-	$('#treeTable tbody').html('&nbsp;');
+	$('#metadata-search').val('');
+	$('#treeTable tbody').html(null);
 	
 	xmlObj['body'] = [];
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
