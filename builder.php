@@ -1,5 +1,11 @@
 <?php include 'header.php'; ?>
 
+	<!--
+	TODOs:
+		- Add spinner when retrieving metadata files
+		- Save to computer function
+	-->
+
 <script src="js/mdtk.package.js" type="text/javascript"></script>
 
 <div class="slds-page-header slds-m-bottom_medium slds-p-around_x-medium">
@@ -145,7 +151,7 @@
 	</article>
 </div>
 
-<textarea id="copyArea" style="display: none;" readonly></textArea>
+<textarea id="copyArea" style="" readonly></textArea>
 
 <script>
 	pkgInit();

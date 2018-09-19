@@ -211,15 +211,16 @@ function rowSelected(i){
 	setBaseXml();
 }
 
-function copyToClipboard(){
+function copyToClipboard() {
+	const el = document.createElement('textarea');
+	el.value = $('#xmlHead').text() + '\n' + $('#xmlBody').text() + $('#xmlHead').text();
+	document.body.appendChild(el);
 	
-	$('#copyArea').val($('#xmlHead').text() + $('#xmlBody').text() + $('#xmlHead').text());
-	$('#copyArea').focus();
-	$('#copyArea').select();
+	el.select();
 	
 	document.execCommand('copy');
-    
-}
+	document.body.removeChild(el);
+};
 
 function sortPackage(){
 	
