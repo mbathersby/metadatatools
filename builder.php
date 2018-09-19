@@ -30,12 +30,10 @@
 					<div class="slds-combobox_container">
 						<div id="metadata-combobox" class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
 							<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+								<svg class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" aria-hidden="true">
+									<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#search" />
+								</svg>
 								<input type="text" onkeyup="searchTypes()" class="slds-input slds-combobox__input" id="metadata-search" aria-autocomplete="list" aria-controls="listbox-id-9" autoComplete="off" role="textbox" placeholder="Search..." />
-								<span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
-									<svg class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
-										<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
-									</svg>
-								</span>
 							</div>
 							<div id="listbox-id-10" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
 								<ul class="slds-listbox slds-listbox_vertical" role="presentation" id="metadata-listbox">

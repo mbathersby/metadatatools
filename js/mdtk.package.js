@@ -109,6 +109,7 @@ function searchTypes(){
 	
 	} else {
 		$('#metadata-combobox').removeClass('slds-is-open');
+		$('#metadataTree').addClass('slds-hide');
 		
 	}
 }
