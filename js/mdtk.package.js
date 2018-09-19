@@ -204,7 +204,7 @@ function sortChildren(){
 }
 
 function resetPackage(){
-	$('#treeTable tbody input[type="checkbox"]').removeProp('checked');
+	$('input[id^="checkbox-"]').removeProp('checked');
 	
 	xmlObj['body'] = [];
 	localStorage['mdtk.package.xml'] = JSON.stringify(xmlObj);
