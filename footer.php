@@ -1,10 +1,10 @@
 		</div>
 		
-		<!--script>
+		<script>
 			
 			$(document).ready(this, init());
 			
-			if(!jsforce.browser.isLoggedIn()){
+			/*if(!jsforce.browser.isLoggedIn()){
 				$('#noLoginContainer').removeClass('slds-hide');
 			} 
 			
@@ -35,9 +35,9 @@
 			function logout(){
 				jsforce.browser.logout();
 				window.location.reload();
-			}
+			}*/
 
-		</script-->
+		</script>
 		
 	</body>
 	
