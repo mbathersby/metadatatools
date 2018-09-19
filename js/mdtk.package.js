@@ -1,4 +1,10 @@
 var mdTypes, xmlObj, xmlChildren;
+var describeParent = {};
+var describeChildren = {};
+
+jsforce.browser.on('connect', function(connection) {
+	pkgInit();
+});
 
 function pkgInit(){
 	if(localStorage['mdtk.package.xml'] == null){
@@ -14,13 +20,6 @@ function pkgInit(){
 	setBaseXml();
 	getDescribeParents();
 }
-
-jsforce.browser.on('connect', function(connection) {
-	pkgInit();
-});
-
-var describeParent = {};
-var describeChildren = {};
 
 function setBaseXml(){
 	sortPackage();
@@ -64,9 +63,10 @@ function setBaseXml(){
 }
 
 function getDescribeParents(){
-
+	
 	conn.metadata.describe(apiVersion, function(err, res) {
 		if (err) { return console.error(err); }
+		
 		
 		mdTypes = [];
 		
@@ -86,32 +86,32 @@ function searchTypes(){
 	$('#metadata-listbox').html(null);
 	
 	if(searchTerm.length > 1){
-	
-		mdTypes.forEach(function(item, index){
 		
-			if(item.xmlName.includes(searchTerm)){
+		mdTypes.forEach(function(item, index){
 			
+			if(item.xmlName.includes(searchTerm)){
+				
 				var parentName = item.xmlName;
 				console.log(parentName);
-			
+				
 				var optionString = '<li role="presentation" class="slds-listbox__item">'
-				  + '<div name="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option" onclick="parentSelected()">'
-					+ '<span class="slds-media__figure slds-listbox__option-icon"></span>'
-					+ '<span class="slds-media__body" title="' + item.xmlName + '">'
-					  + '<span class="slds-truncate" title="' + item.xmlName + '">' + item.xmlName + '</span>'
-					+ '</span>'
-				  + '</div>'
+				+ '<div name="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option" onclick="parentSelected()">'
+				+ '<span class="slds-media__figure slds-listbox__option-icon"></span>'
+				+ '<span class="slds-media__body" title="' + item.xmlName + '">'
+				+ '<span class="slds-truncate" title="' + item.xmlName + '">' + item.xmlName + '</span>'
+				+ '</span>'
+				+ '</div>'
 				+ '</li>';
 				
 				$('#metadata-listbox').append(optionString);
-			
+				
 			}
-		
+			
 		});
 		
 		$('#metadata-combobox').addClass('slds-is-open');
-	
-	} else {
+		
+		} else {
 		$('#metadata-combobox').removeClass('slds-is-open');
 		$('#metadataTree').addClass('slds-hide');
 		
@@ -134,17 +134,35 @@ function parentSelected(){
 	
 	conn.metadata.list(query, apiVersion, function(err, res){
 		
-		xmlChildren = res.sort(function(a, b) {
-			return a.fullName.localeCompare(b.fullName);
-		});
+		if (err) { 
+			return console.error(err); 
+		}
+		
+		mdTypes = [];
+		
+		if(res == null){
+			showToast('There was an error retrieving metadata types', 7500);
+		} 
+		
+		if (!res.isArray()){
+			
+			xmlChildren = res;
+			
+		} else {
+
+			xmlChildren = res.sort(function(a, b) {
+				return a.fullName.localeCompare(b.fullName);
+			});
+			
+		}
 		
 		xmlChildren.forEach(function(item, index){
-		
+			
 			var childType = item.type;
 			var childName = item.fullName;
 			var checked = '';
 			var rowColor = '#ffffff';
-		
+			
 			if(Object.keys(xmlObj.body).includes(childType)){
 				if(xmlObj.body[childType].includes(childName)){
 					checked = 'checked';
@@ -152,7 +170,7 @@ function parentSelected(){
 				}
 			}
 			
-		
+			
 			var tableRow = '<tr aria-level="1" style="background-color: ' + rowColor + ';"aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="'+ index +'">'
 			+ '<td class="slds-text-align_right" role="gridcell" style="width: 3.25rem;">'
 			+ '<div class="slds-checkbox">'
@@ -188,18 +206,18 @@ function rowSelected(i){
 	console.log(childName);
 	
 	if(row.checked){
-	
+		
 		$(row).closest('tr').css('background-color', '#E7F3FD');
-	
+		
 		if(!Object.keys(xmlObj.body).includes(childType)){
 			xmlObj.body[childType] = [];
 		}
 		
 		xmlObj.body[childType].push(childName);
 		
-	} else {
+		} else {
 		$(row).closest('tr').css('background-color', '#ffffff');
-	
+		
 		var childIndex = xmlObj.body[childType].indexOf(childName);
 		console.log(childIndex);
 		xmlObj.body[childType].splice( childIndex, 1 );
@@ -233,7 +251,7 @@ function saveToComputer(){
 	var a = document.createElement("a");
     document.body.appendChild(a);
     a.style = "display: none";
-
+	
 	var blob = new Blob(xml, {type: 'application/xml'});
     var url = window.URL.createObjectURL(blob);
 	var fileName = 'package.xml';
