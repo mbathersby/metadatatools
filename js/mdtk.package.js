@@ -213,7 +213,7 @@ function rowSelected(i){
 
 function copyToClipboard() {
 	const el = document.createElement('textarea');
-	el.value = $('#xmlHead').text() + '\n' + $('#xmlBody').text() + $('#xmlHead').text();
+	el.value = $('#xmlHead').text() + '\n' + $('#xmlBody').text() + $('#xmlFoot').text();
 	document.body.appendChild(el);
 	
 	el.select();
