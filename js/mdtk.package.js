@@ -158,6 +158,10 @@ function rowSelected(i){
 		var childIndex = xmlObj.body[childType].indexOf(childName);
 		console.log(childIndex);
 		xmlObj.body[childType].splice( childIndex, 1 );
+		
+		if(xmlObj.body[childType].length == 0){
+			delete [xmlObj.body[childType];
+		}
 	}
 	
 	//xmlObj.body = body;
