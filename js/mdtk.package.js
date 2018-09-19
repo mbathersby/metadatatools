@@ -142,14 +142,12 @@ function rowSelected(i){
 	
 	var row = $('checkbox-' + i).prevObject[0].activeElement;
 	
-	//var body = xmlObj.body;
 	
 	var childType = xmlChildren[i].type;
 	var childName = xmlChildren[i].fullName;
 	
-	console.log(row);
-	console.log(row.checked);
-	console.log($(row).prop('checked'));
+	console.log(childType);
+	console.log(childName);
 	
 	if(row.checked){
 	
@@ -161,6 +159,7 @@ function rowSelected(i){
 		
 	} else {
 		var childIndex = xmlObj.body[childType].indexOf(childName);
+		console.log(childIndex);
 		xmlObj.body[childType].splice( childIndex, 1 );
 	}
 	
