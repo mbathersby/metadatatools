@@ -117,7 +117,7 @@ function searchTypes(){
 				  + '<div name="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option" onclick="parentSelected()">'
 					+ '<span class="slds-media__figure slds-listbox__option-icon"></span>'
 					+ '<span class="slds-media__body">'
-					  + '<span class="slds-truncate" title="' + item.xmlName + '">' + item.xmlName + '</span>'
+					  + '<span class="slds-truncate" id="' + item.xmlName + '" title="' + item.xmlName + '">' + item.xmlName + '</span>'
 					+ '</span>'
 				  + '</div>'
 				+ '</li>';
@@ -139,7 +139,7 @@ function searchTypes(){
 function parentSelected(){
 	console.log(event.target);
 	
-	var parentName = event.target.name;
+	var parentName = event.target.id;
 	console.log('Selected Parent Name: ' + parentName);
 	
 	$('#metadata-search').val(parentName);
