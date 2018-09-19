@@ -122,7 +122,11 @@ fuction searchTypes(){
 			}
 		
 		});
+		
+		$('#metadata-combobox').addClass('slds-is-open');
 	
+	} else {
+		$('#metadata-combobox').removeClass('slds-is-open');
 	}
 }
 
