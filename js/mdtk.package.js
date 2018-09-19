@@ -110,8 +110,10 @@ function searchTypes(){
 		
 			if(item.xmlName.includes(searchTerm)){
 			
+				var parentName = item.xmlName;
+			
 				var optionString = '<li role="presentation" class="slds-listbox__item">'
-				  + '<div id="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option" onclick="parentSelected(' + item.xmlName + ')">'
+				  + '<div id="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option" onclick="parentSelected(' + parentName + ')">'
 					+ '<span class="slds-media__figure slds-listbox__option-icon"></span>'
 					+ '<span class="slds-media__body">'
 					  + '<span class="slds-truncate" title="' + item.xmlName + '">' + item.xmlName + '</span>'
@@ -133,11 +135,12 @@ function searchTypes(){
 	}
 }
 
-function parentSelected(parent){
-	//var selected = event.target.id;
-	$('#metadata-search').val(parent);
+function parentSelected(parentName){
+	console.log('Selected Parent Name: ' + parentName);
 	
-	var query = [{type: parent}];
+	$('#metadata-search').val(parentName);
+	
+	var query = [{type: parentName}];
 	
 	$('#treeTable tbody').html(null);
 	
