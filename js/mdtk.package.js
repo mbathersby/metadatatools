@@ -104,7 +104,7 @@ function searchTypes(){
 	
 	$('#metadata-listbox').html(null);
 	
-	if(searchTerm.length > 2){
+	if(searchTerm.length > 1){
 	
 		mdTypes.forEach(function(item, index){
 		
@@ -114,7 +114,7 @@ function searchTypes(){
 			if(item.xmlName.includes(searchTerm)){
 			
 				var optionString = '<li role="presentation" class="slds-listbox__item">'
-				  + '<div id="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">'
+				  + '<div id="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option" onclick="parentSelected()">'
 					+ '<span class="slds-media__figure slds-listbox__option-icon"></span>'
 					+ '<span class="slds-media__body">'
 					  + '<span class="slds-truncate" title="' + item.xmlName + '">' + item.xmlName + '</span>'
@@ -137,7 +137,9 @@ function searchTypes(){
 }
 
 function parentSelected(){
-	var selected = $('#metadata-select').val();
+	var selected = event.target.id;
+	$('#metadata-search').val(selected);
+	
 	var query = [{type: selected}];
 	
 	$('#treeTable tbody').html('');
