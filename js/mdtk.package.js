@@ -152,12 +152,12 @@ function rowSelected(i){
 	console.log($(row).prop('checked'));
 	
 	if(row.checked){
-
+	
 		if(!Object.keys(body).includes(childType)){
 			body[childType] = [];
 		}
 		
-		xmlBody.body[childType].push(childName);
+		body[childType].push(childName);
 		
 	} else {
 		var children = xmlBody.body[childType];
