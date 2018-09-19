@@ -106,7 +106,7 @@ function searchTypes(){
 	
 		mdTypes.forEach(function(item, index){
 		
-			if(item.contains(searchTerm)){
+			if(item.includes(searchTerm)){
 			
 				var optionString = '<li role="presentation" class="slds-listbox__item">'
 				  + '<div id="' + item + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">'
