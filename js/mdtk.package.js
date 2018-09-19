@@ -160,7 +160,8 @@ function rowSelected(i){
 		xmlObj.body[childType].push(childName);
 		
 	} else {
-		xmlObj.body[childType].splice( list.indexOf(childName), 1 );
+		var childIndex = xmlObj.body[childType].indexOf(childName);
+		xmlObj.body[childType].splice( childIndex, 1 );
 	}
 	
 	//xmlObj.body = body;
