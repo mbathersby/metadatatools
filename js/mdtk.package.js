@@ -1,4 +1,4 @@
-var xmlObj, xmlChildren;
+var mdTypes, xmlObj, xmlChildren;
 
 function pkgInit(){
 	if(localStorage['mdtk.package.xml'] == null){
@@ -60,11 +60,11 @@ function setBaseXml(){
 }
 
 function getDescribeParents(){
-	
+
 	conn.metadata.describe(apiVersion, function(err, res) {
 		if (err) { return console.error(err); }
 		
-		var mdTypes = [];
+		mdTypes = [];
 		
 		for(key in res.metadataObjects){
 			mdTypes.push(res.metadataObjects[key]);
@@ -74,7 +74,7 @@ function getDescribeParents(){
 			return a.xmlName.localeCompare(b.xmlName);
 		});
 		
-		mdTypes.forEach(function(item, index){
+		/*mdTypes.forEach(function(item, index){
 		
 			var optionString = '<li role="presentation" class="slds-listbox__item">'
               + '<div id="' + item.xmlName + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">'
@@ -97,6 +97,33 @@ function getDescribeParents(){
 			);
 		}*/
 	});
+}
+
+fuction searchTypes(){
+	var searchTerm = event.target.value;
+	
+	if(searchTerm.length > 2){
+	
+		mdTypes.forEach(function(item, index){
+		
+			if(item.contains(searchTerm){
+			
+				var optionString = '<li role="presentation" class="slds-listbox__item">'
+				  + '<div id="' + item + '" class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">'
+					+ '<span class="slds-media__figure slds-listbox__option-icon"></span>'
+					+ '<span class="slds-media__body">'
+					  + '<span class="slds-truncate" title="' + item + '">' + item + '</span>'
+					+ '</span>'
+				  + '</div>'
+				+ '</li>';
+				
+				$('#metadata-listbox').append(optionString);
+			
+			}
+		
+		});
+	
+	}
 }
 
 function parentSelected(){

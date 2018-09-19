@@ -30,7 +30,7 @@
 					<div class="slds-combobox_container">
 						<div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open" aria-expanded="false" aria-haspopup="listbox" role="combobox">
 							<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
-								<input type="text" class="slds-input slds-combobox__input" id="combobox-id-12" aria-autocomplete="list" aria-controls="listbox-id-9" autoComplete="off" role="textbox" placeholder="Search..." />
+								<input type="text" onkeyup="searchTypes()" class="slds-input slds-combobox__input" id="combobox-id-12" aria-autocomplete="list" aria-controls="listbox-id-9" autoComplete="off" role="textbox" placeholder="Search..." />
 								<span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
 									<svg class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
 										<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
