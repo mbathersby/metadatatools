@@ -153,7 +153,7 @@ function rowSelected(i){
 	
 	if(row.checked){
 	
-		if(!Object.keys(body).includes(childType)){
+		if(!Object.keys(xmlObj.body).includes(childType)){
 			xmlObj.body[childType] = [];
 		}
 		
