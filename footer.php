@@ -2,7 +2,7 @@
 		
 		<script>
 		
-			apiVersion = "<?php echo API_VERSION; ?>"
+			apiVersion = "<?php echo API_VERSION; ?>";
 			
 			$(document).ready(this, init());
 			
