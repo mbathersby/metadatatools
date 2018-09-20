@@ -10,7 +10,7 @@ function pkgInit(){
 	if(localStorage['mdtk.package.xml'] == null){
 		localStorage['mdtk.package.xml'] = JSON.stringify({
 			'head' : '<?xml version="1.0" encoding="UTF-8"?>\n<Package xmlns="http://soap.sforce.com/2006/04/metadata">',
-			'foot' : '<version>' + API_VERSION + '</version>\n</Package>',
+			'foot' : '<version>' + CONN.version + '</version>\n</Package>',
 			'body' : {}
 		});
 	} 
@@ -64,7 +64,7 @@ function setBaseXml(){
 
 function getDescribeParents(){
 	
-	CONN.metadata.describe(API_VERSION, function(err, res) {
+	CONN.metadata.describe(CONN.version, function(err, res) {
 		if (err) { return console.error(err); }
 		
 		
@@ -133,7 +133,7 @@ function parentSelected(){
 	$('#treeTable tbody').html(null);
 	$('#treeMessage').text(null);
 	
-	CONN.metadata.list(query, API_VERSION, function(err, res){
+	CONN.metadata.list(query, CONN.version, function(err, res){
 		
 		if (err) { 
 			return console.error(err); 

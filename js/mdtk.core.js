@@ -26,8 +26,6 @@ function init() {
 jsforce.browser.on('connect', function(connection) {
 
 	CONN = jsforce.browser.connection;
-	
-	CONN.version = API_VERSION;
 
 	$('#overlay').addClass('slds-backdrop_open');
 	$('#spinner').removeClass('slds-hide');
