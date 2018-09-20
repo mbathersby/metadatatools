@@ -141,10 +141,10 @@
 									</li>
 									<li class="slds-dropdown__item slds-has-submenu" role="presentation">
 										<a role="menuitem" href="javascript:void(0);" aria-haspopup="true" aria-expanded="true" tabindex="-1">
+											<span class="slds-truncate" title="Save As">Save As</span>
 										  <svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-left_small slds-shrink-none" aria-hidden="true">
-											<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#left"></use>
+											<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#chevronright"></use>
 										  </svg>
-										  <span class="slds-truncate" title="Save As">Save As</span>
 										</a>
 										<div class="slds-dropdown slds-dropdown_submenu slds-dropdown_submenu-left">
 										  <ul class="slds-dropdown__list" role="menu" aria-label="Save As">
