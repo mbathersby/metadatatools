@@ -131,6 +131,7 @@ function parentSelected(){
 	
 	$('#metadataTree').addClass('slds-hide');
 	$('#treeTable tbody').html(null);
+	$('#treeMessage').text(null);
 	
 	CONN.metadata.list(query, API_VERSION, function(err, res){
 		
@@ -141,7 +142,7 @@ function parentSelected(){
 		console.log(res);
 		
 		if(res == null){
-			showToast('There was an error retrieving metadata types', 7500);
+			$('#treeMessage').text('No ' + parentName + ' metadata to display');
 		} 
 		
 		else if (!Array.isArray(res)){
