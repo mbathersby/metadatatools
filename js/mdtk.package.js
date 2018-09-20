@@ -246,13 +246,13 @@ function copyToClipboard() {
 
 function saveAs(fileName){
 	
-	var xml = $('#xmlHead').text() + '\n' + $('#xmlBody').text() + $('#xmlFoot').text();
+	var xml = String($('#xmlHead').text() + '\n' + $('#xmlBody').text() + $('#xmlFoot').text());
 	
 	var a = document.createElement("a");
     document.body.appendChild(a);
     a.style = "display: none";
 	
-	var blob = new Blob(xml, {type: 'application/xml'});
+	var blob = new Blob(xml, {type: 'text/plain'});
     var url = window.URL.createObjectURL(blob);
 	//var fileName = 'package.xml';
 	
