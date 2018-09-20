@@ -140,7 +140,7 @@
 										</a>
 									</li>
 									<li class="slds-dropdown__item" role="presentation">
-										<a href="javascript:void(0);" role="menuitem" tabindex="0">
+										<a href="javascript:void(0);" role="menuitem" tabindex="0" onclick="saveToComputer()">
 											<span class="slds-truncate" title="Save to Computer">Save to Computer</span>
 										</a>
 									</li>
