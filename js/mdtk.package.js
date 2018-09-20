@@ -244,7 +244,7 @@ function copyToClipboard() {
 	document.body.removeChild(el);
 }
 
-function saveToComputer(){
+function saveAs(fileName){
 	
 	var xml = $('#xmlHead').text() + '\n' + $('#xmlBody').text() + $('#xmlFoot').text();
 	
@@ -254,7 +254,7 @@ function saveToComputer(){
 	
 	var blob = new Blob(xml, {type: 'application/xml'});
     var url = window.URL.createObjectURL(blob);
-	var fileName = 'package.xml';
+	//var fileName = 'package.xml';
 	
 	a.href = url;
 	a.download = fileName;
