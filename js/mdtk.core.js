@@ -1,10 +1,16 @@
-var userInfo, conn, apiVersion;
+var USER_INFO, CONN, API_VERSION, CLIENT_ID, REDIRECT_URI, PROXY_URL;
 //var apiVersion = '43.0';
 
 $(document).ready(this, init());
 
 function init() {
 	setNavigation();
+	
+	jsforce.browser.init({
+		clientId: CLIENT_ID,
+		redirectUri: REDIRECT_URI,
+		proxyUrl: PROXY_URL
+	});
 	
 	/*jsforce.browser.init({
 		clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',

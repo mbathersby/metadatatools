@@ -1,6 +1,5 @@
 var mdObjs, csvFile, selectedObj, zipBlob, deployReq;
 
-//var conn = jsforce.browser.connection;
 	
 var maxPackageSize = 39000;
 var maxPackageRows = 10000;
@@ -12,7 +11,7 @@ function deployInit(){
 }
 
 function getCustomMetadataDescribes(){
-	conn.describeGlobal(function(err, res) {
+	CONN.describeGlobal(function(err, res) {
 		if (err) { return console.error(err); }
 						
 		mdObjs = [];
@@ -103,9 +102,8 @@ function fileSelected(){
 function objectSelected(){
 
 	var objectSelect = $('#object-select');
-	//var conn = jsforce.browser.connection;
 
-	conn.sobject($(objectSelect).val()).describe(function(err, res) {
+	CONN.sobject($(objectSelect).val()).describe(function(err, res) {
 		selectedObj = res;
 		console.log('Selected Object: ', selectedObj);
 
@@ -296,7 +294,7 @@ function deployZip() {
 	$('#deployStatus').html('Sending request to server...');
 	$('#deployState').html('');
 	
-	connection.metadata.deploy(zipBlob, {
+	CONN.metadata.deploy(zipBlob, {
 		singlePackage: true
 	})
 	
@@ -311,7 +309,7 @@ function deployZip() {
 		
 			$('#deployState').html('');
 			
-			connection.metadata.checkDeployStatus(deployReq.id, true)
+			CONN.metadata.checkDeployStatus(deployReq.id, true)
 			.then(function(reqStatus){
 				console.log(reqStatus);
 				$('#deployStatus').html('Deployment ' + reqStatus.status);
