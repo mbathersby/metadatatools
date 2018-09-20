@@ -53,6 +53,10 @@
 				</div>
 			</div>
 			
+			<div id="treeMessage">
+				&nbsp;
+			</div>
+			
 			<div id="metadataTree" class="slds-hide">
 				
 				<div class="slds-form-element">
