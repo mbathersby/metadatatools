@@ -1,5 +1,7 @@
 		</div>
 		
+		<?php include 'constants.php'; ?>
+		
 		<script>
 		
 			API_VERSION = "<?php echo API_VERSION; ?>";
@@ -12,5 +14,6 @@
 		</script>
 		
 	</body>
+
 	
 <html>	
