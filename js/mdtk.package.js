@@ -143,6 +143,7 @@ function parentSelected(){
 		
 		if(res == null){
 			$('#treeMessage').text('No ' + parentName + ' metadata to display');
+			return;
 		} 
 		
 		else if (!Array.isArray(res)){
