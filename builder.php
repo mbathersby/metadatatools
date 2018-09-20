@@ -139,11 +139,41 @@
 											<span class="slds-truncate" title="Copy to Clipboard">Copy to Clipboard</span>
 										</a>
 									</li>
-									<li class="slds-dropdown__item" role="presentation">
-										<a href="javascript:void(0);" role="menuitem" tabindex="0" onclick="saveToComputer()">
-											<span class="slds-truncate" title="Save to Computer">Save to Computer</span>
+									<li class="slds-dropdown__item slds-has-submenu" role="presentation">
+										<a role="menuitem" href="javascript:void(0);" aria-haspopup="true" aria-expanded="true" tabindex="-1">
+										  <svg class="slds-icon slds-icon_x-small slds-icon-text-default slds-m-left_small slds-shrink-none" aria-hidden="true">
+											<use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#left"></use>
+										  </svg>
+										  <span class="slds-truncate" title="Save As">Save As</span>
 										</a>
+										<div class="slds-dropdown slds-dropdown_submenu slds-dropdown_submenu-left">
+										  <ul class="slds-dropdown__list" role="menu" aria-label="Save As">
+											<li class="slds-dropdown__item" role="presentation">
+											  <a href="javascript:void(0);" role="menuitem" tabindex="0">
+												<span class="slds-truncate" title="Submenu Item One">package.xml</span>
+											  </a>
+											</li>
+											<li class="slds-dropdown__item" role="presentation">
+											  <a href="javascript:void(0);" role="menuitem" tabindex="1">
+												<span class="slds-truncate" title="Submenu Item One">destructiveChanges.xml</span>
+											  </a>
+											</li>
+											<li class="slds-dropdown__item" role="presentation">
+											  <a href="javascript:void(0);" role="menuitem" tabindex="2">
+												<span class="slds-truncate" title="Submenu Item One">destructiveChangesPre.xml</span>
+											  </a>
+											</li>
+											<li class="slds-dropdown__item" role="presentation">
+											  <a href="javascript:void(0);" role="menuitem" tabindex="3">
+												<span class="slds-truncate" title="Submenu Item One">destructiveChangesPost.xml</span>
+											  </a>
+											</li>
+										  </ul>
+										<!--a href="javascript:void(0);" role="menuitem" tabindex="0" onclick="saveToComputer()">
+											<span class="slds-truncate" title="Save to Computer">Save As</span>
+										</a-->
 									</li>
+									<li class="slds-has-divider_top-space" role="separator"></li>
 									<li class="slds-dropdown__item" role="presentation">
 										<a href="javascript:void(0);" onclick="resetPackage()" role="menuitem" tabindex="-1">
 											<span class="slds-truncate" title="Reset Package">Reset Package</span>
