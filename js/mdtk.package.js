@@ -249,17 +249,18 @@ function saveAs(fileName){
 	var xml = String($('#xmlHead').text() + '\n' + $('#xmlBody').text() + $('#xmlFoot').text());
 	
 	var a = document.createElement("a");
-    document.body.appendChild(a);
-    a.style = "display: none";
-	
-	var blob = new Blob(xml, {type: 'text/plain'});
-    var url = window.URL.createObjectURL(blob);
+	document.body.appendChild(a);
+	a.style = "display: none";
+
+	var fileBlob = new Blob([xml], {type: 'text/xml'});
+
+	var url = window.URL.createObjectURL(fileBlob);
 	//var fileName = 'package.xml';
-	
+
 	a.href = url;
 	a.download = fileName;
 	a.click();
-	
+
 	window.URL.revokeObjectURL(url);
 	
 }
