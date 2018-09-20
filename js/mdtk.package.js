@@ -131,7 +131,7 @@ function parentSelected(){
 	
 	$('#metadataTree').addClass('slds-hide');
 	$('#treeTable tbody').html(null);
-	$('#treeMessage').addClass('slds-hide');
+	$('#noMetadataMessage').addClass('slds-hide');
 	
 	CONN.metadata.list(query, CONN.version, function(err, res){
 		
@@ -143,7 +143,7 @@ function parentSelected(){
 		
 		if(res == null){
 			$('#mdType').text(parentName);
-			$('#treeMessage').removeClass('slds-hide');
+			$('#noMetadataMessage').removeClass('slds-hide');
 			return;
 		} 
 		
