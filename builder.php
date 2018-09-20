@@ -58,14 +58,14 @@
 				<div class="slds-scoped-notification slds-media slds-media_center" role="status">
 					<div class="slds-media__figure">
 						<span class="slds-icon_container slds-icon-utility-warning" title="information">
-							<svg class="slds-icon slds-icon_small slds-icon-text-warning" aria-hidden="true">
+							<svg class="slds-icon slds-icon_x-small slds-icon-text-warning" aria-hidden="true">
 								<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#warning" />
 							</svg>
 							<span class="slds-assistive-text">information</span>
 						</span>
 					</div>
 					<div class="slds-media__body">
-						<p>No metadata files found</p>
+						<p>No <span id="mdType"></span> metadata files found</p>
 					</div>
 				</div>
 				
