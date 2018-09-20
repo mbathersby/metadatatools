@@ -33,7 +33,7 @@ jsforce.browser.on('connect', function(connection) {
 	console.log('Connecting to ' + CONN.instanceUrl);
 	$('#noLoginContainer').addClass('slds-hide');
 
-	var userQuery = 'select Name, Username from User where Id = \'' + conn.userInfo.id + '\' limit 1';
+	var userQuery = 'select Name, Username from User where Id = \'' + CONN.userInfo.id + '\' limit 1';
 
 	CONN.query(userQuery, function(err, res){
 		userInfo = res.records[0];
