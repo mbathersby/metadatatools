@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<?php include 'constants.php'; ?>
+
 <html lang="en" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<head>
 		<meta charset="utf-8" />

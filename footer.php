@@ -1,6 +1,8 @@
 		</div>
 		
 		<script>
+		
+			apiVersion = "<?php echo API_VERSION; ?>"
 			
 			$(document).ready(this, init());
 			

@@ -1,16 +1,16 @@
-var userInfo, conn;
-var apiVersion = '43.0';
+var userInfo, conn, apiVersion;
+//var apiVersion = '43.0';
 
 $(document).ready(this, init());
 
 function init() {
 	setNavigation();
 	
-	jsforce.browser.init({
+	/*jsforce.browser.init({
 		clientId: '3MVG9d8..z.hDcPI8U4xIar0rbAfGvpz7BlQxnsOysVaE4_ZcC9zCoNIbxYE.mMWcvnwcZJ.darnhxzlfTWtG',
 		redirectUri: 'https://mdtk.herokuapp.com/authorize.htm',
 		proxyUrl: 'https://mdtk-proxy.herokuapp.com/proxy/'
-	});
+	});*/
 	
 	if(!jsforce.browser.isLoggedIn()){
 		$('#noLoginContainer').removeClass('slds-hide');

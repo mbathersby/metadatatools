@@ -144,7 +144,7 @@ function parentSelected(){
 			showToast('There was an error retrieving metadata types', 7500);
 		} 
 		
-		else if (!res.isArray()){
+		else if (!Array.isArray(res)){
 			xmlChildren = res;
 			
 		} else {
