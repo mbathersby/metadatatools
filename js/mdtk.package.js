@@ -64,7 +64,7 @@ function setBaseXml(){
 
 function getDescribeParents(){
 	
-	conn.metadata.describe(apiVersion, function(err, res) {
+	CONN.metadata.describe(apiVersion, function(err, res) {
 		if (err) { return console.error(err); }
 		
 		
@@ -132,7 +132,7 @@ function parentSelected(){
 	$('#metadataTree').addClass('slds-hide');
 	$('#treeTable tbody').html(null);
 	
-	conn.metadata.list(query, apiVersion, function(err, res){
+	CONN.metadata.list(query, API_VERSION, function(err, res){
 		
 		if (err) { 
 			return console.error(err); 
