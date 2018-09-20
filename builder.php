@@ -1,10 +1,10 @@
 <?php include 'header.php'; ?>
 
-	<!--
+<!--
 	TODOs:
-		- Add spinner when retrieving metadata files
-		- Save to computer function
-	-->
+	- Add spinner when retrieving metadata files
+	- Save to computer function
+-->
 
 <script src="js/mdtk.package.js" type="text/javascript"></script>
 
@@ -30,7 +30,7 @@
 <div class="slds-grid slds-gutters slds-m-around_x-small">
 	
 	<div class="slds-col slds-size_5-of-12">
-	
+		
 		<div class="slds-box slds-theme_default">
 			<div class="slds-form-element">
 				<label class="slds-form-element__label" for="combobox-id-12">Metadata Types</label>
@@ -53,8 +53,22 @@
 				</div>
 			</div>
 			
-			<div id="treeMessage">
-				&nbsp;
+			<div id="noMetadataMessage" class="slds-hide">
+				
+				<div class="slds-scoped-notification slds-media slds-media_center" role="status">
+					<div class="slds-media__figure">
+						<span class="slds-icon_container slds-icon-utility-warning" title="information">
+							<svg class="slds-icon slds-icon_small slds-icon-text-warning" aria-hidden="true">
+								<use xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#warning" />
+							</svg>
+							<span class="slds-assistive-text">information</span>
+						</span>
+					</div>
+					<div class="slds-media__body">
+						<p>No metadata files found</p>
+					</div>
+				</div>
+				
 			</div>
 			
 			<div id="metadataTree" class="slds-hide">
