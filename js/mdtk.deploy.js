@@ -8,15 +8,15 @@ var checkInterval = 5000;
 
 jsforce.browser.on('connect', function(connection) {
 	//pkgInit();
-	getCustomMetadataDescribes();
+	getCustomMetadataDescribes(connection);
 });
 
 /*function deployInit(){
 	getCustomMetadataDescribes();
 }*/
 
-function getCustomMetadataDescribes(){
-	CONN.describeGlobal(function(err, res) {
+function getCustomMetadataDescribes(connection){
+	connection.describeGlobal(function(err, res) {
 		if (err) { return console.error(err); }
 						
 		mdObjs = [];
