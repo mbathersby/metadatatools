@@ -17,6 +17,7 @@ jsforce.browser.on('connect', function(connection) {
 
 function getCustomMetadataDescribes(connection){
 	connection.describeGlobal(function(err, res) {
+		console.log(res);
 		if (err) { return console.error(err); }
 						
 		mdObjs = [];
