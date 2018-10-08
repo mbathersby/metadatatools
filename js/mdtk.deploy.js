@@ -6,9 +6,14 @@ var maxPackageRows = 10000;
 
 var checkInterval = 5000;
 
-function deployInit(){
+jsforce.browser.on('connect', function(connection) {
+	//pkgInit();
 	getCustomMetadataDescribes();
-}
+});
+
+/*function deployInit(){
+	getCustomMetadataDescribes();
+}*/
 
 function getCustomMetadataDescribes(){
 	CONN.describeGlobal(function(err, res) {
