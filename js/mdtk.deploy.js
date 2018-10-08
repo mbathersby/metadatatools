@@ -19,11 +19,16 @@ function getCustomMetadataDescribes(connection){
 	connection.describeGlobal(function(err, res) {
 		console.log(res);
 		if (err) { return console.error(err); }
-						
+		
 		mdObjs = [];
+		sObjects = res.sobjects;
+		
+		sObjects.sort(function(a, b) {
+			return a.name.localeCompare(b.name);
+		});
 
-		for(key in res.sobjects){
-			var sObj = res.sobjects[key];
+		for(key in sObjects){
+			var sObj = sObjects[key];
 			if(sObj.name.includes('__mdt')){
 				mdObjs.push(sObj);
 
