@@ -204,8 +204,8 @@
 	</div>
 </section>
 
-<script>
+<!--script>
 	deployInit();
-</script>
+</script-->
 
 <?php include 'footer.php'; ?>
