@@ -83,10 +83,9 @@
 				</div>
 				
 				<table id="treeTable" aria-multiselectable="true" class="slds-table slds-table_bordered slds-table_edit slds-tree slds-table_tree" role="treegrid">
-					<thead class="slds-assistive-text">
+					<thead>
 						<tr class="slds-line-height_reset">
 							<th class="slds-text-title_caps slds-text-align_right" scope="col" style="width: 3.25rem;">
-								<span id="column-group-header" class="slds-assistive-text">Choose a row</span>
 								<div class="slds-th__action slds-th__action_form">
 									<div class="slds-checkbox">
 										<input type="checkbox" name="options" id="checkbox-38" tabindex="-1" aria-labelledby="check-select-all-label column-group-header" value="checkbox-38" onchange="toggleSelectAll();" />
