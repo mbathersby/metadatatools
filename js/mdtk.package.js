@@ -150,7 +150,7 @@ function parentSelected(){
 		else if (!Array.isArray(res)){
 			xmlChildren = res;
 			
-		} else {
+			} else {
 			xmlChildren = res.sort(function(a, b) {
 				return a.fullName.localeCompare(b.fullName);
 			});
@@ -192,6 +192,30 @@ function parentSelected(){
 		
 		$('#metadataTree').removeClass('slds-hide');
 	});
+}
+
+function searchChildren(){
+	
+	var input, filter, table, tr, td, i, txtValue;
+	
+	input = document.getElementById("metadata-child-search");
+	filter = input.value.toUpperCase();
+	
+	table = document.getElementById("treeTable");
+	tr = table.getElementsByTagName("tr");
+	
+	for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[0];
+		if (td) {
+			txtValue = td.textContent || td.innerText;
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+				} else {
+				tr[i].style.display = "none";
+			}
+		}       
+	}
+	
 }
 
 function rowSelected(i){
@@ -251,16 +275,16 @@ function saveAs(fileName){
 	var a = document.createElement("a");
 	document.body.appendChild(a);
 	a.style = "display: none";
-
+	
 	var fileBlob = new Blob([xml], {type: 'text/xml'});
-
+	
 	var url = window.URL.createObjectURL(fileBlob);
 	//var fileName = 'package.xml';
-
+	
 	a.href = url;
 	a.download = fileName;
 	a.click();
-
+	
 	window.URL.revokeObjectURL(url);
 	
 }
