@@ -218,6 +218,14 @@ function searchChildren(){
 	
 }
 
+function toggleSelectAll(){
+	var allRows = $('#treetable tbody input:visible');
+	
+	allRows.forEach(function(item){
+		item.checked = !item.checked;
+	});
+}
+
 function rowSelected(i){
 	
 	var row = $('checkbox-' + i).prevObject[0].activeElement;
