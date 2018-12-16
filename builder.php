@@ -73,7 +73,7 @@
 			
 			<div id="metadataTree" class="slds-hide">
 				
-				<div class="slds-form-element slds-m-vertical-small">
+				<div class="slds-form-element slds-m-top_small slds-has-bottom-magnet">
 					<div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
 						<svg class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" aria-hidden="true">
 							<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#search" />
