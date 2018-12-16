@@ -82,7 +82,7 @@
 					</div>
 				</div>
 				
-				<table id="treeTable" aria-multiselectable="true" class="slds-tableslds-table_bordered slds-table_edit slds-tree slds-table_tree" role="treegrid">
+				<table id="treeTable" aria-multiselectable="true" class="slds-table slds-table_bordered slds-table_edit slds-tree slds-table_tree" role="treegrid">
 					<thead class="slds-assistive-text">
 						<tr class="slds-line-height_reset">
 							<th class="slds-text-title_caps slds-text-align_right" scope="col" style="width: 3.25rem;">
@@ -98,6 +98,7 @@
 								</div>
 							</th>
 							<th>
+								Component Name
 							</th>
 						</thead>
 						<tbody>

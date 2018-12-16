@@ -181,9 +181,9 @@ function parentSelected(){
 			+ '</label>'
 			+ '</div>'
 			+ '</td>'
-			+ '<th class="slds-tree__item" data-label="Account Name" scope="row">'
+			+ '<td class="slds-tree__item" data-label="Account Name" scope="row">'
 			+ '<div class="slds-truncate" title="' + item.fullName + '">' + item.fullName + '</div>'
-			+ '</th>'
+			+ '</td>'
 			+ '</tr>';
 			
 			$('#treeTable tbody').append(tableRow);
