@@ -1,6 +1,7 @@
 var mdTypes, xmlObj, xmlChildren;
 var describeParent = {};
 var describeChildren = {};
+var listSize = 0;
 
 jsforce.browser.on('connect', function(connection) {
 	pkgInit();
@@ -133,8 +134,6 @@ function parentSelected(){
 	$('#treeTable tbody').html(null);
 	$('#noMetadataMessage').addClass('slds-hide');
 	
-	var listSize = 0;
-	
 	CONN.metadata.list(query, CONN.version, function(err, res){
 		
 		if (err) { 
@@ -157,7 +156,7 @@ function parentSelected(){
 				return a.fullName.localeCompare(b.fullName);
 			});
 		}
-			
+		
 		
 		xmlChildren.forEach(function(item, index){
 			
@@ -174,7 +173,6 @@ function parentSelected(){
 					checkedRows++;
 				}
 			}
-			
 			
 			var tableRow = '<tr aria-level="1" style="background-color: ' + rowColor + ';"aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="'+ index +'">'
 			+ '<td class="slds-text-align_right" role="gridcell" style="width: 3.25rem;">'
@@ -251,8 +249,6 @@ function rowSelected(i){
 	console.log(childType);
 	console.log(childName);
 	
-	console.log
-	
 	if(row.checked){
 		
 		$(row).closest('tr').css('background-color', '#E7F3FD');
@@ -263,7 +259,9 @@ function rowSelected(i){
 		
 		xmlObj.body[childType].push(childName);
 		
-		} else {
+	} 
+	
+	else {
 		$(row).closest('tr').css('background-color', '#ffffff');
 		
 		var childIndex = xmlObj.body[childType].indexOf(childName);
@@ -273,6 +271,8 @@ function rowSelected(i){
 		if(xmlObj.body[childType].length == 0){
 			delete xmlObj.body[childType];
 		}
+		
+		$('#check-select-all-label').checked = false;
 	}
 	
 	//xmlObj.body = body;
