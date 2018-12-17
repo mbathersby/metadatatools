@@ -219,7 +219,8 @@ function searchChildren(){
 }
 
 function toggleSelectAll(){
-	var allRows = $('#treetable tbody input:visible');
+	
+	var allRows = $('#treeTable tbody input:visible');
 	
 	allRows.forEach(function(item){
 		item.checked = !item.checked;
