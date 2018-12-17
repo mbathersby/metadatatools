@@ -224,6 +224,8 @@ function toggleSelectAll(){
 	
 	for(var i = 0; i < allRows.length; i++){ 
 		allRows[i].checked = !allRows[i].checked;
+		var rowIndex = allRows[i].id.replace("checkbox-", "");
+		rowSelected(rowIndex);
 	};
 }
 
