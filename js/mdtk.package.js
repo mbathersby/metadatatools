@@ -222,9 +222,9 @@ function toggleSelectAll(){
 	
 	var allRows = $('#treeTable tbody input:visible');
 	
-	allRows.forEach(function(item){
-		item.checked = !item.checked;
-	});
+	for(var i = 0; i < allRows.length; i++){ 
+		allRows[i].checked = !allRows[i].checked;
+	};
 }
 
 function rowSelected(i){
