@@ -133,6 +133,8 @@ function parentSelected(){
 	$('#treeTable tbody').html(null);
 	$('#noMetadataMessage').addClass('slds-hide');
 	
+	var listSize = 0;
+	
 	CONN.metadata.list(query, CONN.version, function(err, res){
 		
 		if (err) { 
@@ -149,24 +151,27 @@ function parentSelected(){
 		
 		else if (!Array.isArray(res)){
 			xmlChildren = res;
+			listSize = xmlChildren.length;
 			
-			} else {
 			xmlChildren = res.sort(function(a, b) {
 				return a.fullName.localeCompare(b.fullName);
 			});
 		}
+			
 		
 		xmlChildren.forEach(function(item, index){
 			
 			var childType = item.type;
 			var childName = item.fullName;
 			var checked = '';
+			var checkedRows = 0;
 			var rowColor = '#ffffff';
 			
 			if(Object.keys(xmlObj.body).includes(childType)){
 				if(xmlObj.body[childType].includes(childName)){
 					checked = 'checked';
 					rowColor = '#E7F3FD';
+					checkedRows++;
 				}
 			}
 			
@@ -191,6 +196,13 @@ function parentSelected(){
 		});
 		
 		$('#metadataTree').removeClass('slds-hide');
+		
+		if(checkedRows = listSize){
+			$('#check-select-all-label').checked = true;
+			} else {
+			$('#check-select-all-label').checked = false;
+		}
+		
 	});
 }
 
@@ -233,12 +245,13 @@ function rowSelected(i){
 	
 	var row = $('checkbox-' + i).prevObject[0].activeElement;
 	
-	
 	var childType = xmlChildren[i].type;
 	var childName = xmlChildren[i].fullName;
 	
 	console.log(childType);
 	console.log(childName);
+	
+	console.log
 	
 	if(row.checked){
 		
