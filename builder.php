@@ -96,7 +96,7 @@
 									</div>
 								</div>
 							</th>
-							<th>
+							<th style="padding-left: 24px;">
 								Component Name
 							</th>
 						</thead>
