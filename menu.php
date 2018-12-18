@@ -76,6 +76,11 @@
 						<span class="slds-truncate" title="Home">Package Builder</span>
 					</a>
 				</li>
+				<li class="slds-context-bar__item">
+					<a href="/profileSync.php" name="builder" class="slds-context-bar__label-action" title="Package Builder">
+						<span class="slds-truncate" title="Home">Profile Synchroniser</span>
+					</a>
+				</li>
 				
 			</ul>
 		</nav>
