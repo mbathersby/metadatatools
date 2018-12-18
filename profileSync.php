@@ -31,8 +31,8 @@
 		
 		<div class="slds-grid slds-gutters">
 
-			<div class="slds-col slds-size_1-of-2">
-				<div class="slds-box slds-theme_default slds-m-around_small">
+			<div class="slds-col slds-size_1-of-2 slds-p-around_small">
+				<div class="slds-box slds-theme_default">
 					<div class="slds-form-element">
 						<label class="slds-form-element__label" for="combobox-id-12">Select Source Profile</label>
 						<div class="slds-form-element__control">
@@ -56,7 +56,7 @@
 				</div>
 				</div>
 		
-			<div class="slds-col slds-size_1-of-2 slds-m-around_small">
+			<div class="slds-col slds-size_1-of-2 slds-p-around_small">
 				<div class="slds-box slds-theme_default">
 					<button class="slds-button slds-button_neutral slds-align_absolute-center	" onclick="loginTarget('login');">Login to Target Org</button>
 				</div>
