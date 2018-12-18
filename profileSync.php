@@ -29,4 +29,36 @@
 			</div>
 		</div>
 		
+		<div class="slds-grid slds-gutters slds-m-around_x-small">
+
+			<div class="slds-col slds-size_1-of-2">
+				<div class="slds-box slds-theme_default">
+				<div class="slds-form-element">
+					<label class="slds-form-element__label" for="combobox-id-12">Select Source Profile</label>
+					<div class="slds-form-element__control">
+						<div class="slds-combobox_container">
+							<div id="metadata-combobox" class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+								<div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+									<svg class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" aria-hidden="true">
+										<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="slds/assets/icons/utility-sprite/svg/symbols.svg#search" />
+									</svg>
+									<input type="text" onkeyup="searchProfiles()" class="slds-input slds-combobox__input" id="metadata-search" aria-autocomplete="list" aria-controls="listbox-id-9" autoComplete="off" role="textbox" placeholder="Search..." />
+								</div>
+								<div id="listbox-id-10" class="slds-dropdown slds-dropdown_length-5 slds-dropdown_fluid" role="listbox">
+									<ul class="slds-listbox slds-listbox_vertical" role="presentation" id="metadata-listbox">
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="slds-col slds-size_1-of-2">
+			
+			</div>
+			
+		</div>
+		
 <?php include 'footer.php'; ?>
