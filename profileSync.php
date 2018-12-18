@@ -59,8 +59,8 @@
 			<div class="slds-col slds-size_1-of-2 slds-p-around_small">
 				<div class="slds-box slds-theme_default">
 					<div class=" slds-align_absolute-center">
-						<button class="slds-button slds-button_neutral" onclick="loginTarget('login');">Login to Target Production Org</button>
-						<button class="slds-button slds-button_neutral" onclick="loginTarget('sandbox');">Login to Target Sandbox Org</button>
+						<button class="slds-button slds-button_neutral slds-p-around_x-small" onclick="loginTarget('login');">Login to Target Production Org</button>
+						<button class="slds-button slds-button_neutral slds-p-around_x-small" onclick="loginTarget('sandbox');">Login to Target Sandbox Org</button>
 					</div>
 				</div>
 			</div>
