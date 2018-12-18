@@ -55,7 +55,7 @@
 			</div>
 		
 			<div class="slds-box slds-theme_default slds-size_1-of-2 slds-m-around_x-small">
-				<button class="slds-button slds-button_neutral" onclick="loginTarget('login');">Login to Target Org</button>
+				<button class="slds-button slds-button_neutral slds-align_absolute_center" onclick="loginTarget('login');">Login to Target Org</button>
 			</div>
 			
 		</div>
